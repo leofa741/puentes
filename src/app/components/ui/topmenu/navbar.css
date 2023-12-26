@@ -1,0 +1,28 @@
+
+.tittle{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-top: 0.3rem;
+}
+
+.subtittle{
+    margin-left: 6rem;
+    margin-top: -0.4rem;
+    font-size: 0.6rem;
+}
+
+@media (max-width: 768px) {
+    .tittle{
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-left: 0rem;
+        margin-top: 0.3rem;
+    }
+
+    .subtittle{
+        margin-left: 0rem;
+        margin-top: 0rem;
+        font-size: 0.6rem;
+    }
+}

@@ -17,9 +17,9 @@ export default function Home() {
   return (
     <>
     <Title title="Home Page" subtitle="Puentech" />
-      <div className="flex flex-col items-center justify-center min-h-screen py-2">          
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">        
    
-        <h1 className="text-9xl font-extrabold text-white tracking-widest">HOME PAGE</h1>
+        <h1 className="text-6xl font-bold text-center">     HOME PAGE</h1>
     
       </div>
     </>

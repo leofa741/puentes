@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css'
 import { inter, montserrat } from './config/fonts'
 
@@ -18,6 +18,7 @@ export default function RootLayout({children,}: {  children: React.ReactNode}) {
       <body className={montserrat.className}>
        
         {children}
+        <Analytics />
         </body>
     </html>
   )

@@ -23,12 +23,7 @@ export const Footer = () => {
           <li className="mb-2">
             <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Stuff for developers</a>
           </li>
-          <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Another one</a>
-          </li>
-          <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Last time</a>
-          </li>
+       
         </ul>
       </div>
       <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
@@ -117,14 +112,8 @@ export const Footer = () => {
           Melbourne, FL 32904
         </address>
       </div>
-      <div className="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
-        <h6 className="font-bold mb-2">Free Resources</h6>
-        <p className="mb-4 text-sm">Use our HTML blocks for <strong>FREE</strong>.<br/>
-          <em>All are MIT License</em></p>
-      </div>
-      <div className="px-4 md:w-1/4 md:ml-auto mt-6 sm:mt-4 md:mt-0">
-        <button className="px-4 py-2 bg-purple-800 hover:bg-purple-900 rounded text-white">Get Started</button>
-      </div>
+    
+     
     </div>
   </div>
 </footer>

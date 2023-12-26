@@ -6,6 +6,7 @@ import { inter, montserrat } from './config/fonts'
 
 
 export const metadata: Metadata = {
+  themeColor: '#000000',
   title: 'Puentech - Puentes Digitales',
   description: 'Talento profesional, procesos y tecnologías asociadas, determinan nuestras áreas de conocimiento en Outsourcing de Innovación. ',
 }

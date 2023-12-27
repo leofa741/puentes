@@ -1,21 +1,21 @@
 
 .title{
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #fff;
     margin-top: 0.5rem;
     margin-left: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 
 }
 
 
 .subtitle{
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.7rem;
+    font-weight: 300;
     color: #fff; 
     margin-top: -1rem;
-    margin-left: 6rem;
+    margin-left: 4rem;
    
 }
 

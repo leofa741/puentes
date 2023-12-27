@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Metadata } from 'next';
 import { Title } from '../components';
 import { BannerHeader } from '../components/bannerheader/BannerHeader';
+import { Carrousel } from '../components/carrousel/Carrousel';
 
 
 
@@ -23,11 +24,7 @@ export default function Home() {
     <div className='titleheader'>
       <Title title="Home Page" subtitle="Puentech" />
       </div>
-      <BannerHeader 
-      title="Puentech"
-       descripcion=" determinan nuestras áreas de conocimiento en Outsourcing de Innovación. "
-        video={'/assets/videos/equipo.mp4'} />
-        
+      <Carrousel />
 
 
 <div className="flex min-h-screen flex-col items-center justify-between p-24">

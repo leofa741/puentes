@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import './navbar.css';
 import { useUIStore } from '@/app/store';
+import Image from 'next/image';
 
 
 
@@ -31,6 +32,10 @@ export const NavbarDark = () => {
             </div>
             <div className='subtittle' >
               <span >Deploying ideeas</span>
+            </div>
+            <div className='image' >
+              <Image src='/assets/img/logo.png'
+               width={30} height={30} alt='logo' className='rounded-full hover:shadow-2xl' />
             </div>
 
 

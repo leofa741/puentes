@@ -11,6 +11,16 @@
     margin-top: -0.4rem;
     font-size: 0.6rem;
 }
+.image{
+    margin-left: 11rem;
+    margin-top: -2.5rem;
+    z-index: 100;
+    rotate: 30deg;
+  
+
+  
+}
+
 
 @media (max-width: 768px) {
     .tittle{
@@ -25,4 +35,12 @@
        margin-top: -0.3rem;
         font-size: 0.6rem;
     }
+    .image{
+        margin-left: 10rem;
+        margin-top: -2.5rem;
+        z-index: 100;
+        rotate: 30deg;   
+      
+    }
+
 }

@@ -6,16 +6,18 @@ import { Button } from '@material-tailwind/react';
 import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import './navbar.css';
+import { useUIStore } from '@/app/store';
 
 
 
 export const NavbarDark = () => {
 
   const pathname = usePathname();
+  const openMenu = useUIStore(state => state.openSideMenu);
 
   return (
     <>
-      <nav className=' flex justify-between items-center h-14 bg-black text-white relative shadow-sm ' role='navigation'
+      <nav className=' flex justify-between items-center h-16 bg-black text-white relative shadow-sm hover:shadow-2xl  hover:bg-blue-gray-900 -500 fast-out-slow-in z-100 transition duration-500 ease-in-out' role='navigation'
         style={{
           position: 'sticky',
           top: '0',
@@ -24,10 +26,10 @@ export const NavbarDark = () => {
 
         <div className='px-3 cursor-pointer '>
           <Link href='/' passHref>
-          <div className='tittle'>
-            <span className={`${montserrat.className}text-black  font-bold`} style={{ letterSpacing: '0.1rem', }}> PUENTES <span className='text-white font-bold' style={{ letterSpacing: '0.1rem' }}>  DIGITALES</span>  </span>
+            <div className='tittle'>
+              <span className={`${montserrat.className}text-black  font-bold`} style={{ letterSpacing: '0.1rem', }}> PUENTES <span className='text-white font-bold' style={{ letterSpacing: '0.1rem' }}>  DIGITALES</span>  </span>
             </div>
-            <div className='subtittle' > 
+            <div className='subtittle' >
               <span >Deploying ideeas</span>
             </div>
 
@@ -69,10 +71,12 @@ export const NavbarDark = () => {
           </Link>
 
 
+          <button className=' text-white font-bold py-2 px-4 rounded'   onClick={() => openMenu()}  >
+            <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
+            </svg>
 
-          <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
-          </svg>
+          </button>
 
 
 

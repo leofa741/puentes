@@ -14,7 +14,10 @@ export const Sidebar = () => {
 
 
   return (
-    <div>
+    <div
+   
+    >
+      {/* Button */ }
 
       {/* Background black */ }
       {
@@ -39,7 +42,7 @@ export const Sidebar = () => {
       }
 
       {/* Sidemenu */ }
-      <nav
+      <nav   style={{zIndex: '10010'}}
         className={
           clsx(
             "fixed p-5 right-0 top-0 w-[200px] h-screen bg-white z-20 transition-all duration-500 ease-in-out overflow-y-auto ",

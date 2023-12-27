@@ -7,7 +7,6 @@ import { inter, montserrat } from './config/fonts'
 
 export const metadata: Metadata = {
   keywords: 'Puentech, Puentes Digitales, Outsourcing de Innovación, Talento profesional, procesos y tecnologías asociadas, determinan nuestras áreas de conocimiento en Outsourcing de Innovación. ',
-
   title: 'Puentech - Puentes Digitales',
   description: 'Talento profesional, procesos y tecnologías asociadas, determinan nuestras áreas de conocimiento en Outsourcing de Innovación. ',
 }
@@ -20,18 +19,21 @@ export default function RootLayout({children,}: {  children: React.ReactNode}) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#000000" />   
-      
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon.png" />
-       
+        <meta name="theme-color" content="#000000" /> 
+        <meta name="description" content="Talento profesional, procesos y tecnologías asociadas, determinan nuestras áreas de conocimiento en Outsourcing de Innovación. " />
+        <meta name="keywords" content="Puentech, Desarrollo web, Outsourcing de Innovación, Talento profesional,Ecommerce, diseñño web, aplicaciones web, aplicaciones móviles, desarrollo de software, desarrollo de aplicaciones, desarrollo de aplicaciones móviles, desarrollo de aplicaciones web " />
+        <meta name="author" content="Puentech" />
+        <meta name="robots" content="index, follow" />     
+        <link rel="icon" href="/assets/img/logo.png" />      
    
         </head>
       <body className={montserrat.className}>
        
         {children}
         <Analytics />
+
+
+
         </body>
     </html>
   )

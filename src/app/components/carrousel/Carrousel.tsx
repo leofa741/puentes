@@ -23,8 +23,8 @@ export const Carrousel = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 text-3xl sm:text-2xl  md:text-4xl lg:text-5xl"
-
+                                className="mb-4 text-3xl xs:text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl"
+                               
                                 placeholder={""}
                             >
                                 PUENTES DIGITALES

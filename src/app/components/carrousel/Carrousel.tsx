@@ -23,7 +23,7 @@ export const Carrousel = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 xs:text-[1rem] sm:text-2xl md:text-5xl lg:text-6xl"
+                                className="mb-4 xs:text-[1rem] sm:text-[1rem] md:text-5xl lg:text-6xl"
                                
                                 placeholder={""}
                             >

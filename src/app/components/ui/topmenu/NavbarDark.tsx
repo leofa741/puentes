@@ -44,7 +44,7 @@ export const NavbarDark = () => {
 
           </Link>
         </div>
-
+       
         <div className=' hidden sm:flex md:flex lg:flex xl:flex 2xl:flex items-center space-x-4 '>
 
 
@@ -89,15 +89,17 @@ export const NavbarDark = () => {
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
            ${pathname == '/soluciones' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}> Soluciones</span>
           </Link>
-          <Link href='/empresa'>
-            <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
-            ${pathname == '/empresa' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
-              Nosotros</span>
-          </Link>
+      
           <Link href='/services'>
             <span className={`${montserrat.className}m-2 p-2rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
             ${pathname == '/services' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
               Servicios</span>  </Link>
+
+              <Link href='/empresa'>
+            <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
+            ${pathname == '/empresa' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
+              Nosotros</span>
+          </Link>
           <Link href='/contact'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
             ${pathname == '/contact' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
@@ -112,7 +114,7 @@ export const NavbarDark = () => {
           </Link>
 
 
-          <button className=' text-white font-bold py-2 px-4 rounded  ' onClick={() => openMenu()}  >
+          <button className=' text-white font-bold py-2 px-4 rounded   visible xl:invisible lg:invisible md:invisible sm:block ' onClick={() => openMenu()}  >
             <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
               <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
             </svg>

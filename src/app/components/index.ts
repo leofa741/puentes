@@ -4,3 +4,4 @@ export * from './ui/sidebar/Sidebar'
 export * from './footer/Footer';
 
 export * from './title/Title';
+export * from './social/Social';

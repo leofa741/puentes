@@ -1,5 +1,5 @@
 
-import {   Footer, NavbarDark, Sidebar,  } from '../components';
+import {   Footer, NavbarDark, Sidebar, Social,  } from '../components';
 import '../globals.css'
 
 
@@ -14,6 +14,7 @@ export default function ShopLayout({
     <main className="">
      <NavbarDark/>
      <Sidebar/>
+     <Social/>
         {children}
         <Footer/>
     </main>

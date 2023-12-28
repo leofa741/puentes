@@ -18,8 +18,7 @@ export const BannerHeader = ({title, descripcion, video}: Props) => {
                   <div className="col-12">
                       <div className="intro">
                       <video autoPlay loop muted  
-                              style={{width: "100%",
-                                      height: "100%",
+                              style={{width: "100%",                                    
                                       objectFit: "cover",
                                       position: "absolute",
                                       top: "0",

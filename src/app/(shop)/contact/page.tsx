@@ -1,4 +1,5 @@
 import { Title } from '@/app/components'
+import { BannerHeader } from '@/app/components/bannerheader/BannerHeader'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -14,7 +15,13 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
-     <Title title="Contacto" subtitle="Puentech" />
+     <div className='titleheader'>
+        <Title title="Contactos" subtitle="Puentech" />
+      </div>
+      <BannerHeader
+        title="Contactos"
+        descripcion="Puentech"
+        video='/assets/videos/contact-us.mp4' />
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
 
       <h1 className="text-6xl font-bold text-center">

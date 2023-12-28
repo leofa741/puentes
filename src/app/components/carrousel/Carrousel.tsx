@@ -11,20 +11,25 @@ export const Carrousel = () => {
                 autoplay={true}
                 loop={true}
                 autoplayDelay={5000}
-                className="video-container" placeholder={""}>
+            
+                className="carrousel-container " placeholder={""}>
                 <div className="relative w-full h-min-144">
-                    <img
-                        src="/assets/img/sitio-web.webp"
-                        alt="image 1"
-                        className=" w-full object-cover h-min-144"
-                    />
+                <video autoPlay loop muted  
+                              style={{width: "100%",                                    
+                                      objectFit: "cover",
+                                      position: "absolute",
+                                      top: "0",
+                                       left: "0",
+                                       zIndex: "-1"
+                                       }} >
+                            <source src='/assets/videos/Digital.mp4' type="video/mp4"   />
+                      </video>
                     <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
                         <div className="w-3/4 text-center md:w-2/4">
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-2 text-lg xs:text-xl sm:text-xl md:text-4xl lg:text-5xl"
-
+                                className="mt-32 text-lg xs:text-xl sm:text-xl md:text-4xl lg:text-5xl"
                                 placeholder={""}
                             >
                                 PUENTES DIGITALES
@@ -32,7 +37,7 @@ export const Carrousel = () => {
                             <Typography
                                 variant="lead"
                                 color="white"
-                                className="mb-12 text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
+                                className=" text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
                                 placeholder={""}
                             >
                                 SOLUCIONES TECNOLOGICAS A TU ALCANCE

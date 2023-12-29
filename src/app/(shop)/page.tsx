@@ -52,11 +52,7 @@ export default function Home() {
 
 
             <ServicesComp />
-            <h3 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
-              Nuestas tecnologías
-
-            </h3>
-            <PartNer />
+        
 
 
           </article>

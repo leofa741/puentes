@@ -66,14 +66,14 @@
 @media screen and (max-width: 768px) {
   .slider {
     height: 100px;
-    width: 260px;
+    width: 220px;
   }
   .slider::before, .slider::after {
     height: 50px;
     width: 100px;
   }
   .slider .slide-track {
-    width: calc(250px * 5);
+    width: calc(220px * 5);
   }
   .slider .slide img {
     height: 50px;

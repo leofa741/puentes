@@ -4,8 +4,9 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 248,248,248;
   --background-end-rgb: 255, 255, 255;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,23 +27,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.transition-all:hover {
-  transition-duration: 75ms;
-}
-.transition-all:focus {
-  transition-duration: 75ms;
-}
-.transition-all:active {
-  transition-duration: 75ms;
-}
-.transition-all:disabled {
-  transition-duration: 150ms;
-}
+
 
 .titleheader {
 
@@ -52,3 +37,25 @@ body {
   z-index: 10 !important;
   position: relative !important;
 }
+.div-home {
+  margin-top: -130px !important;
+  z-index: 10 !important;
+ margin-left: 650px !important;
+  rotate: 20deg !important;
+  position: relative !important;
+}
+
+@media (max-width: 768px) {
+  .div-home {
+    margin-top: -120px !important;
+    z-index: 10 !important;
+   margin-left: 200px !important;
+    rotate: 20deg !important;
+}
+.div-home img {
+  width: 100px !important;
+  height: 100px !important;
+  margin-bottom: 20px !important;
+}
+}
+

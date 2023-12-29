@@ -40,7 +40,7 @@ export const Carrousel = () => {
                                 className=" text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
                                 placeholder={""}
                             >
-                                SOLUCIONES TECNOLOGICAS A TU ALCANCE
+                               IMPULSO DIGITAL PARA TU NEGOCIO
                             </Typography>
 
                         </div>

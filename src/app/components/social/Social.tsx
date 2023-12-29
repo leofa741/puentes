@@ -4,6 +4,7 @@ import './social.css'
 import { IoLogoGoogle, IoLogoInstagram, IoLogoLinkedin, IoLogoXing } from 'react-icons/io5'
 import { SiGmail } from "react-icons/si";
 import { FaThreads } from "react-icons/fa6";
+import { BsTwitterX } from "react-icons/bs";
 
 
 
@@ -17,7 +18,7 @@ export const Social = () => {
 			<div className="social">
 				<ul>
 					{/* <li><a href="https://www.facebook.com/www.puentesdigitales.com.ar" target="_blank" className="icon-facebook"><FacebookIcon/></a></li> */}
-					<li><a href="https://twitter.com/puentesdig" target="_blank" className="icon-twitter"><IoLogoXing  size={27}/></a></li>
+					<li><a href="https://twitter.com/puentesdig" target="_blank" className="icon-twitter"><BsTwitterX  size={27}/></a></li>
 
 				</ul>
 

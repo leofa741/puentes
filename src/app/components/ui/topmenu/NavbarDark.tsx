@@ -67,7 +67,7 @@ export const NavbarDark = () => {
                 <div className="py-1">
 
 
-                  <Link href="/practicas" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600 hover:text-white rounded transition-all ${pathname == '/practicas' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Nuestras Prácticas</Link>
+                  <Link href="/practicas" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Nuestras Prácticas</Link>
                   <Link href="/practicas" tabIndex={1} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600 hover:text-white rounded transition-all" role="menuitem" >Nuestras Prácticas</Link>
 
                   <Link href="/practicas" tabIndex={2} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left  hover:bg-gray-600 hover:text-white rounded transition-all" role="menuitem" >Nuestras Prácticas</Link>

@@ -1,4 +1,5 @@
 import { Title } from '@/app/components'
+
 import Image from 'next/image'
 
 export default function Home() {
@@ -11,6 +12,8 @@ export default function Home() {
         Puentech - Home bis
         
       </h1>
+
+
      
     </div>
     </>

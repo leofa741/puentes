@@ -5,3 +5,7 @@ export * from './footer/Footer';
 
 export * from './title/Title';
 export * from './social/Social';
+export * from './homecomponent/HomeComponent';
+export * from './cardpracticas/CardPracticas';
+export * from './services/ServicesComp';
+export * from './partner/PartNer';

@@ -45,12 +45,13 @@ export default function Home() {
                 height={200}
               />
             </div>
-           
-
-            <CardPracticas />
+            {/* <HomeComponent /> */}
 
 
-            <ServicesComp />
+            {/* <CardPracticas /> */}
+
+
+            {/* <ServicesComp /> */}
 
             <h4 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
               Nuestas tecnologías

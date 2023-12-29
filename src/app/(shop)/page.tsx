@@ -45,10 +45,9 @@ export default function Home() {
                 height={200}
               />
             </div>
-            <HomeComponent />
+           
 
-
-         
+            <CardPracticas />
 
 
             <ServicesComp />

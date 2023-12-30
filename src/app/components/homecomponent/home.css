@@ -109,7 +109,7 @@
 .section-title::before {
     position: absolute;
     content: "";
-    width: calc(100% + 80px);
+    width: calc(100% + 50px);
     height: 2px;
     bottom: 2px;
     left: -40px;
@@ -120,7 +120,7 @@
 .section-title::after {
     position: absolute;
     content: "";
-    width: calc(100% + 100px);
+    width: calc(100% + 70px);
     height: 2px;
     bottom: 2px;
     left: -50px;
@@ -129,19 +129,19 @@
 }
 
 .section-title.text-start::before {
-    width: calc(100% + 40px);
+    width: calc(100% + 20px);
     left: 0;
 }
 
 .section-title.text-start::after {
-    width: calc(100% + 60px);
+    width: calc(100% + 30px);
     left: -10px;
 }
 
 @media (max-width: 767px) {
     .section-title::before,
     .section-title::after {
-        width: calc(100% + 40px);
+        width: calc(100% + 30px);
         left: 0;
     }
 

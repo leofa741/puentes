@@ -13,21 +13,27 @@ export const metadata: Metadata = {
 export default function NuestrasPracticas() {
   return (
     <>
-     <div className='titleheader'>
-     <Title title="Prácticas" subtitle="Puentech" />
-     </div>
-     <BannerHeader 
-      title="Prácticas"
-      descripcion = "Puentech"
-      video='/assets/videos/equipo.mp4'/>
+      <div className='titleheader'>
+        <Title title="Prácticas" subtitle="Puentech" />
+      </div>
+      <BannerHeader
+        title="Prácticas"
+        descripcion="Puentech"
+        video='/assets/videos/equipo.mp4' />
 
-    <div className="flex min-h-screen flex-col items-center justify-between p-24 xs:p-12 md:p-24 lg:p-24 xl:p-24 2xl:p-24">
+      <div className="flex min-h-screen flex-col items-center justify-between p-2 ">
+        <div className="flex justify-between px-4 mx-auto  sm:px-6 lg:px-8">
+          <article className="mx-auto w-full max-w-[1500px]">
 
-      <h1 className="text-6xl font-bold text-center xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">
-        Puentech - Practicas
-      </h1>
-     
-    </div>
+
+            <h1 className="text-6xl font-bold text-center xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">
+              INNOVACIÓN
+            </h1>
+
+          </article>
+        </div>
+
+      </div>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Metadata } from 'next';
-import { CardPracticas, HomeComponent, PartNer, ServicesComp, Title } from '../components';
+import { CardPracticas, HomeComponent, ServicesComp, Title } from '../components';
 import { Carrousel } from '../components/carrousel/Carrousel';
 
 
@@ -24,8 +24,8 @@ export default function Home() {
       <Carrousel />
 
 
-      <div className="flex min-h-screen flex-col items-center justify-between p-2 ">
-        <div className="flex justify-between px-4 mx-auto  sm:px-6 lg:px-8">
+      <div className="flex min-h-screen flex-col items-center justify-items-center  p-2 ">
+        <div className="flex px-4 mx-auto  sm:px-6 lg:px-8">
           <article className="mx-auto w-full max-w-[1500px]">
 
             <h1 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center mt-8 w-full px-4 mx-auto sm:px-6 lg:px-8">
               <p className="mt-2 text-center xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl">
               <span className="text-center  font-extrabold text-[#009FFF]  xs:text-xl sm:text-xl md:text-xl lg:text-5xl xl:text-5xl 2xl:text-[29px]"
-              >Software Factory </span>dedicada al desarrollo e integración de tecnologías de la información. Formamos equipos de trabajo integrados por profesionales de amplia experiencia en la industria.
+              >Software Factory </span>dedicada al desarrollo de tecnologías de la información. Somos un equipos integrado por profesionales con una amplia trayectoria en la industria.
               </p>
             </div>
            
@@ -47,12 +47,7 @@ export default function Home() {
 
             <ServicesComp />
 
-            <h4 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
-              Nuestas tecnologías
-            </h4>
-            <PartNer />
-
-
+          
           </article>
 
         </div>

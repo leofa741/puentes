@@ -95,10 +95,7 @@ export const Sidebar = () => {
 
           <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right translate-y-2 scale-95">
             <div className="absolute right-0 w-36 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-              <div className="px-4 py-3">
-                <p className="text-sm  text-gray-900 leading-5">Signed in as</p>
-                <p className="text-sm font-medium leading-5 text-gray-900 truncate">tom@example.com</p>
-              </div>
+            
               <div className="py-1">
                 <Link href="/practicas" className="flex items-center mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
                   <span className="ml-3 text-l" onClick={() => closeMenu()}>Practicas</span>
@@ -142,9 +139,7 @@ export const Sidebar = () => {
 
 
         {/* Line Separator */}
-        <div className="w-full h-px bg-gray-200 my-10" />
-
-
+        <div className="w-full h-px bg-gray-200 my-5" />
 
 
         <Link
@@ -157,17 +152,10 @@ export const Sidebar = () => {
 
 
         {/* Line Separator */}
-        <div className="w-full h-px bg-gray-200 my-10" />
-
-
-
-
+        <div className="w-full h-px bg-gray-200 my-5" />
 
 
       </nav>
-
-
-
 
 
     </div>

@@ -5,7 +5,7 @@ export const CardPracticas = () => {
   return (
     <>
 
-    <div className="containercard max-w-[1200px]"> 
+    <div className="containercard items-center justify-items-center  max-w-[1300px]"> 
 
         <div className="card">
             <div className="face face1">

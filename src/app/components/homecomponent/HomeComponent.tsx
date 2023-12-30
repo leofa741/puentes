@@ -15,7 +15,8 @@ export const HomeComponent = () => {
                 </div>
                 <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div className="h-100">
-                        <h6 className=" section-title text-start  pe-2 font-bold text-2xl ">Puentes Digitales</h6>
+                        <h6 className=" section-title text-start  pe-2 font-bold  xs:text-xl sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl">Puentes Digitales</h6>
+                      
                          
                         <h1 className="mb-4  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl"> #1
                         <span className="text-2xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-4xl 2xl:text-4xl "> En Soluciónes digitales </span>

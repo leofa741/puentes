@@ -26,8 +26,11 @@ export default function NuestrasPracticas() {
           <article className="mx-auto w-full max-w-[1500px]">
 
 
-            <h1 className="text-6xl font-bold text-center xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">
-              INNOVACIÓN
+          
+
+            <h1 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
+            INNOVACIÓN
+
             </h1>
 
           </article>

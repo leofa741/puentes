@@ -106,7 +106,7 @@
 .section-title::before {
     position: absolute;
     content: "";
-    width: 50px;
+    width: calc(100% + 80px);
     height: 2px;
     bottom: 4px;
     left: -40px;
@@ -126,12 +126,12 @@
 }
 
 .section-title.text-start::before {
-    width: 50px;
+    width: calc(100% + 40px);
     left: 0;
 }
 
 .section-title.text-start::after {
-    width: calc(100% + 100px);
+    width: calc(100% + 60px);
     left: -10px;
 }
 

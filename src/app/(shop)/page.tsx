@@ -24,7 +24,7 @@ export default function Home() {
       <Carrousel />
 
 
-      <div className="flex min-h-screen flex-col items-center justify-between p-6 ">
+      <div className="flex min-h-screen flex-col items-center justify-between p-8 ">
         <div className="flex justify-between px-4 mx-auto  sm:px-6 lg:px-8">
           <article className="mx-auto w-full max-w-[1500px]">
 

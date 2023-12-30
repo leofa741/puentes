@@ -5,7 +5,7 @@ import './contentservices.css'
 export const ServicesComp = () => {
   return (
     <>
-    <div className="cards-1  w-full max-w-[1500px] ">
+    <div className="cards-1  w-full max-w-[1200px]">
         <div className=" container">
             <div className="flex justify-center">
                 <div className="col-lg-12">                      

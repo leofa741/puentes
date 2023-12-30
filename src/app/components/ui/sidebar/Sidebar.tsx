@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import clsx from 'clsx';
-import { IoCloseOutline, IoConstructOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicketOutline } from 'react-icons/io5';
+import { IoCloseOutline, IoConstructOutline, IoHomeOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicketOutline } from 'react-icons/io5';
 import { useUIStore } from '@/app/store';
 import { IoIosArrowBack, IoIosArrowDown } from "react-icons/io";
 import { montserrat } from '@/app/config/fonts';
@@ -75,21 +75,19 @@ export const Sidebar = () => {
 
         {/* Line Separator */}
         <div className="w-full h-px bg-gray-200 my-10" />
-
+        <Link href="/" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+          <IoHomeOutline size={18} />&nbsp;&nbsp;
+          <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Home</span>
+        </Link>
 
         {/* DropdownList */}
         <div className=" dropdown">
           <span className="">
-
-
             <button className="flex justify-center p-2 transition duration-150 ease-in-out   hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
               type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117  ">
-
               <IoIosArrowDown size={18} />
               <span className={`${montserrat.className}ml-3 text-l`}>&nbsp;&nbsp;Prácticas</span>
             </button>
-
-
           </span>
 
 
@@ -107,33 +105,26 @@ export const Sidebar = () => {
                   <span className="ml-3 text-l" onClick={() => closeMenu()}>Practicas</span>
                 </Link>
 
-              </div>
-              {/* <div className="py-1">
-                <a href="javascript:void(0)" tabIndex={3} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >Sign out</a>
-                </div> */}
+              </div>        
 
             </div>
           </div>
         </div>
 
-
-
-
-
         <Link href="/soluciones" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-          <IoIosArrowDown size={18} />
+          <IoIosArrowDown size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Soluciones</span>
         </Link>
         <Link href="/empresa" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-          <IoIosArrowDown size={18} />
+          <IoIosArrowDown size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Nosotros</span>
         </Link>
         <Link href="/services" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-          <IoIosArrowDown size={18} />
+          <IoIosArrowDown size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Servicios</span>
         </Link>
         <Link href="/contact" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-          <IoIosArrowDown size={18} />
+          <IoIosArrowDown size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Contacto</span>
         </Link>
 
@@ -146,7 +137,7 @@ export const Sidebar = () => {
           href="/"
           className="flex items-center mt-1 p-2 hover:bg-gray-100 rounded transition-all"
         >
-          <IoLogInOutline size={18} />
+          <IoLogInOutline size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`}>Ingresar</span>
         </Link>
 

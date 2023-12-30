@@ -24,7 +24,7 @@ export default function Home() {
       <Carrousel />
 
 
-      <div className="flex min-h-screen flex-col items-center justify-between p-8 ">
+      <div className="flex min-h-screen flex-col items-center justify-between p-2 ">
         <div className="flex justify-between px-4 mx-auto  sm:px-6 lg:px-8">
           <article className="mx-auto w-full max-w-[1500px]">
 
@@ -32,9 +32,10 @@ export default function Home() {
               Puentech
 
             </h1>
-            <div className="flex flex-col items-center justify-center mt-8 w-full">
+            <div className="flex flex-col items-center justify-center mt-8 w-full px-4 mx-auto sm:px-6 lg:px-8">
               <p className="mt-2 text-center xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl">
-                Ofrecemos soluciones innovadoras para la transformación digital de las empresas.
+              <span className="text-center  font-extrabold text-[#009FFF]  xs:text-xl sm:text-xl md:text-xl lg:text-5xl xl:text-5xl 2xl:text-[29px]"
+              >Software Factory </span>dedicada al desarrollo e integración de tecnologías de la información. Formamos equipos de trabajo integrados por profesionales de amplia experiencia en la industria.
               </p>
             </div>
            

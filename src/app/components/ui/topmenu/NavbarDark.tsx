@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { DropDownList } from './DropDownList';
 
 import './dropdown.css'
+import { IoIosArrowDown } from 'react-icons/io';
 
 
 export const NavbarDark = () => {
@@ -50,15 +51,32 @@ export const NavbarDark = () => {
 
           {/* DropdownList */}
           <div className="  dropdown hover:bg-gray-900 hover:text-white">
-            <span className="rounded-md shadow-sm">
+
+{/* 
+          <span className="rounded-md shadow-sm">
+        
+        <button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" 
+       type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
+        <span>Prácticas</span>
+        <svg className="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+       
+        </button>
+        
+        </span> */}
 
 
-              <button className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white `} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}
+
+             <span className="rounded-md shadow-sm">
+
+              <button className={`${montserrat.className}m-2 pl-3 pr-4 inline-flex justify-center rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white    ${pathname == '/practicas' ? 'bg-gray-900' : ''}`}
+               style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}
                 type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
-                <span>Prácticas</span>
+                <span>Prácticas  </span>
+                <svg className="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+       
               </button>
 
-            </span>
+            </span> 
 
 
             <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
@@ -89,11 +107,13 @@ export const NavbarDark = () => {
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
            ${pathname == '/soluciones' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}> Soluciones</span>
           </Link>
-      
+
           <Link href='/services'>
-            <span className={`${montserrat.className}m-2 p-2rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
-            ${pathname == '/services' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
-              Servicios</span>  </Link>
+            <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
+           ${pathname == '/services' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}> Servicios</span>
+          </Link>
+      
+      
 
               <Link href='/empresa'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white

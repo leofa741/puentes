@@ -9,3 +9,5 @@ export * from './homecomponent/HomeComponent';
 export * from './cardpracticas/CardPracticas';
 export * from './services/ServicesComp';
 export * from './partner/PartNer';
+export * from './timelineprojects/TimelineProject';
+export * from './timelineprojects/TimelineProject_1';

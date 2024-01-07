@@ -45,14 +45,14 @@ export const NavbarDark = () => {
 
           </Link>
         </div>
-       
+
         <div className=' hidden sm:flex md:flex lg:flex xl:flex 2xl:flex items-center space-x-4 '>
 
 
           {/* DropdownList */}
           <div className="  dropdown hover:bg-gray-900 hover:text-white">
 
-{/* 
+            {/* 
           <span className="rounded-md shadow-sm">
         
         <button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800" 
@@ -65,31 +65,30 @@ export const NavbarDark = () => {
         </span> */}
 
 
-
-             <span className="rounded-md shadow-sm">
-
-              <button className={`${montserrat.className}m-2 pl-3 pr-4 inline-flex justify-center rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white    ${pathname == '/practicas' ? 'bg-gray-900' : ''}`}
-               style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}
+<Link href="/practicas" tabIndex={0} className={`  py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >
+            
+            <span className="">
+              <button className={`${montserrat.className}m-2 pl-3 pr-4 inline-flex justify-center rounded-md transition duration-500     ${pathname == '/practicas' ? 'bg-gray-900' : ''}`}
+                style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}
                 type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
                 <span>Prácticas  </span>
                 <svg className="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-       
               </button>
-
-            </span> 
+            </span>
+            </Link>
 
 
             <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
               <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-              
+
                 <div className="py-1">
-
-
-                  <Link href="/practicas" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Nuestras Prácticas</Link>
-                  <Link href="/practicas" tabIndex={1} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600 hover:text-white rounded transition-all" role="menuitem" >Nuestras Prácticas</Link>
-
-                  <Link href="/practicas" tabIndex={2} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left  hover:bg-gray-600 hover:text-white rounded transition-all" role="menuitem" >Nuestras Prácticas</Link>
-                  </div>
+                  <Link href="/practicas/innovacion" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/innovacion' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Innovación</Link>
+                  <Link href="/practicas/descubrimiento" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/descubrimiento' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Descubrimiento</Link>
+                  <Link href="/practicas/integracion" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/integracion' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Integración</Link>
+                  <Link href="/practicas/equipo" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/equipo' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Equipo</Link>
+                  <Link href="/practicas/devops" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/devops' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >DevOps</Link>
+                  <Link href="/practicas/calidad" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/calidad' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Calidad</Link>
+               </div>
 
                 {/* <div className="py-1">
                   <a href="javascript:void(0)" tabIndex={3} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >Sign out</a>
@@ -102,7 +101,7 @@ export const NavbarDark = () => {
 
 
 
-      
+
           <Link href='/soluciones'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
            ${pathname == '/soluciones' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}> Soluciones</span>
@@ -112,10 +111,10 @@ export const NavbarDark = () => {
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
            ${pathname == '/services' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}> Servicios</span>
           </Link>
-      
-      
 
-              <Link href='/empresa'>
+
+
+          <Link href='/empresa'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
             ${pathname == '/empresa' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
               Nosotros</span>

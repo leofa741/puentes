@@ -53,7 +53,7 @@ export const Footer = () => {
             <a href="/" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Home</a>
           </li>
           <li className="mb-2">
-            <a href="/practicas" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Practicas</a>
+            <a href="/practicas/innovacion" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Practicas</a>
           </li>
           <li className="mb-2">
             <a href="/services" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">servicios</a>

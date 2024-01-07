@@ -95,14 +95,26 @@ export const Sidebar = () => {
             <div className="absolute right-0 w-36 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
             
               <div className="py-1">
-                <Link href="/practicas/innovacion" className="flex items-center mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                <Link href="/practicas" className="flex items-center mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
                   <span className="ml-3 text-l" onClick={() => closeMenu()}>Practicas</span>
                 </Link>
-                <Link href="/practicas" className="flex items-center-mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Practicas</span>
+                <Link href="/practicas/innovacion" className="flex items-center-mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Innovación</span>
                 </Link>
-                <Link href="/practicas" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Practicas</span>
+                <Link href="/practicas/descubrimiento" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Descubrimiento</span>
+                </Link>
+                <Link href="/practicas/integracion" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Integración</span>
+                </Link>
+                <Link href="/practicas/equipo" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Equipo</span>
+                </Link>
+                <Link href="/practicas/devops" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>DevOps</span>
+                </Link>
+                <Link href="/practicas/calidad" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Calidad</span>
                 </Link>
 
               </div>        

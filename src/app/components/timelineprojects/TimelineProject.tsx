@@ -46,18 +46,18 @@ export const TimelineProject = (props: Props) => {
 								<h6 className="timeline__event__difference"></h6>
 							</li>
 
-							<li className="timeline__event">
+							<li className="timeline__event is--weekend">
 								<p className="timeline__event__date">Día 2 Levantar requerimientos</p>
 							</li>
-							<li className="timeline__event">
+							<li className="timeline__event is--weekend">
 								<p className="timeline__event__date">Día 3</p>
 							</li>
 
-							<li className="timeline__event ">
+							<li className="timeline__event is--weekend ">
 								<p className="timeline__event__date">Día 4</p>
 							</li>
 
-							<li className="timeline__event">
+							<li className="timeline__event is--weekend">
 								<p className="timeline__event__date">Día 5</p>
 							</li>
 
@@ -82,18 +82,18 @@ export const TimelineProject = (props: Props) => {
 							</li>
 
 						</div>
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 							<p className="timeline__event__date">Día 11</p>
 						</li>
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 							<p className="timeline__event__date">Día 12</p>
 						</li>
 
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 							<p className="timeline__event__date">Día 13</p>
 						</li>
 
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 							<p className="timeline__event__date">Día 14</p>
 						</li>
 
@@ -105,7 +105,7 @@ export const TimelineProject = (props: Props) => {
 							<p className="timeline__event__date">Día 29</p>
 						</li>
 
-						<li className="timeline__event  is--today is--complete">
+						<li className="timeline__event is--monday is--today is--complete">
 							<p className="timeline__event__date">Día 30</p>
 							<figure className="dot">
 							</figure>
@@ -114,26 +114,56 @@ export const TimelineProject = (props: Props) => {
 
 						</li>
 
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 							<p className="timeline__event__date">Día 31</p>
 						</li>
 
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 							<p className="timeline__event__date">Día ..</p>
 						</li>
 
-						<li className="timeline__event is--today is--complete">
+						<li className="timeline__event is--monday is--today is--complete">
 							<p className="timeline__event__date">Día 39</p>
 							<figure className="dot">
 							</figure>
 
-							<h5 className="timeline__event__title">{props.next3? props.next3:'DESARROLLO EVOLUTIVO'}</h5>
+							<h5 className="timeline__event__title">{props.next3 ? props.next3 : 'DESARROLLO EVOLUTIVO'}</h5>
 
 							<h6 className="timeline__event__difference"></h6>
 
 						</li>
 
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
+						<p className="timeline__event__date">...</p>
+						</li>
+
+						<li className="timeline__event is--weekend">
+						<p className="timeline__event__date">...</p>
+						</li>
+
+						<li className="timeline__event is--weekend">
+						<p className="timeline__event__date">...</p>
+						</li>
+
+						<li className="timeline__event  is--monday">
+						<p className="timeline__event__date">...</p>
+						</li>
+
+						<li className="timeline__event is--weekend">
+						<p className="timeline__event__date">...</p>
+						</li>
+
+						<li className="timeline__event is--weekend">
+						<p className="timeline__event__date">...</p>
+						</li>
+
+						<li className="timeline__event is--weekend">
+
+						<p className="timeline__event__date">...</p>
+
+						</li>
+
+						<li className="timeline__event is--weekend">
 						<p className="timeline__event__date">...</p>
 						</li>
 
@@ -149,21 +179,7 @@ export const TimelineProject = (props: Props) => {
 						<p className="timeline__event__date">...</p>
 						</li>
 
-						<li className="timeline__event">
-						<p className="timeline__event__date">...</p>
-						</li>
-
-						<li className="timeline__event">
-						<p className="timeline__event__date">...</p>
-						</li>
-
-						<li className="timeline__event">
-
-						<p className="timeline__event__date">...</p>
-
-						</li>
-
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 						<p className="timeline__event__date">...</p>
 						</li>
 
@@ -175,23 +191,7 @@ export const TimelineProject = (props: Props) => {
 						<p className="timeline__event__date">...</p>
 						</li>
 
-						<li className="timeline__event is--monday">
-						<p className="timeline__event__date">...</p>
-						</li>
-
-						<li className="timeline__event">
-						<p className="timeline__event__date">...</p>
-						</li>
-
-						<li className="timeline__event">
-						<p className="timeline__event__date">...</p>
-						</li>
-
-						<li className="timeline__event">
-						<p className="timeline__event__date">...</p>
-						</li>
-
-						<li className="timeline__event">
+						<li className="timeline__event is--weekend">
 							<p className="timeline__event__date">...</p>
 						</li>				
 						

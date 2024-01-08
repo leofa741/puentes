@@ -47,6 +47,12 @@ export default function NuestrasPracticas() {
                       <br />
                       Transforma las necesidades e ideas de negocio en soluciones informáticas. Detecta los procesos de información que responden a las necesidades y genera los activos digitales que se requieren.
                       <br />
+                      Levantar requerimientos consiste en preguntarle a los clientes qué quieren o qué necesitan. Pero sabemos que hay una gran diferencia entre lo que los clientes quieren, lo que piden y lo que necesitan:
+
+Lo que el cliente quiere: es aumentar las ventas
+Lo que el cliente pide: es una campaña marketing digital
+Lo que el cliente necesita: es mejorar información sobre el producto porque los usuarios no la entienden y esto hace que se pierdan ventas.
+Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quiere o lo que pide (que como dijimos, no necesariamente es lo que necesita).
                     </p>
                   </div>
 
@@ -200,12 +206,16 @@ export default function NuestrasPracticas() {
                       </h3>
                       <p className="text-gray-600 mb-8">
                         Relevamiento de las necesidades del cliente, análisis de la competencia,
-                        y definición de los objetivos del proyecto.
+                        y definición de los objetivos del proyecto.Levantar requerimientos,
+                        <br /> Lo que el cliente quiere: es aumentar las ventas
+                        <br /> Lo que el cliente pide: es una campaña marketing digital
+                        <br /> Lo que el cliente necesita: es mejorar información sobre el producto porque los usuarios no la entienden y esto hace que se pierdan ventas.
 
                         <br />
                         <br />
+                        
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Requerimientos generales
+                        Levantar Requerimientos generales
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Plataforma tecnológica

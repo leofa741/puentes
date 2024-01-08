@@ -47,7 +47,7 @@ export const TimelineProject = (props: Props) => {
 							</li>
 
 							<li className="timeline__event">
-								<p className="timeline__event__date">Día 2</p>
+								<p className="timeline__event__date">Día 2 Levantar requerimientos</p>
 							</li>
 							<li className="timeline__event">
 								<p className="timeline__event__date">Día 3</p>

@@ -29,7 +29,7 @@ export const TimelineProject_2 = (props: Props) => {
 						<div className="timeline__endured">
 							<div className="aside filled " style={{ height: 1050 }}>
 								<div className="aside__line filled__line">
-									<div className="filled__line__completed" style={{ height: 990 }} >
+									<div className="filled__line__completed" style={{ height: 970 }} >
 									</div>
 								</div>
 							</div>

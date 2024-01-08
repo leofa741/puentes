@@ -47,7 +47,7 @@ export default function NuestrasPracticas() {
                       <br />
                       Transforma las necesidades e ideas de negocio en soluciones informáticas. Detecta los procesos de información que responden a las necesidades y genera los activos digitales que se requieren.
                       <br />
-                      Levantar requerimientos consiste en preguntarle a los clientes qué quieren o qué necesitan. Pero sabemos que hay una gran diferencia entre lo que los clientes quieren, lo que piden y lo que necesitan:
+                      En la etapa de levantar requerimientos consiste en preguntarle a los clientes qué quieren o qué necesitan. Pero sabemos que hay una gran diferencia entre lo que los clientes quieren, lo que piden y lo que necesitan:
 
 Lo que el cliente quiere: es aumentar las ventas
 Lo que el cliente pide: es una campaña marketing digital

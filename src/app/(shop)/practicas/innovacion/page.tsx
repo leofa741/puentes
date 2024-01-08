@@ -72,8 +72,8 @@ Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quier
                         d="M119.9,721.42c-3-5.51.4-12.27,4.29-17.18s8.61-10,8.51-16.29c-.15-9-9.7-14.31-17.33-19.09a84,84,0,0,1-15.56-12.51A22.8,22.8,0,0,1,95,650c-1.58-3.52-1.54-7.52-1.44-11.37q.51-19.26,1.91-38.49"
                         fill="none"
                         stroke="#3f3d56"
-                        stroke-miterlimit="10"
-                        stroke-width="4"
+                        strokeMiterlimit="10"
+                        strokeWidth="4"
                       />
                       <path transform="translate(-11.5 -150.75)" d="M81,599.39a14,14,0,0,1,7-11.5l3.14,6.22-.1-7.53a14.22,14.22,0,0,1,4.63-.56A14,14,0,1,1,81,599.39Z" fill="#57b894" />
                       <path transform="translate(-11.5 -150.75)" d="M106,694.38a14,14,0,1,0-.68-11.3l8.77,7.13L104.46,688A14,14,0,0,0,106,694.38Z" fill="#57b894" />
@@ -106,8 +106,8 @@ Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quier
                         d="M385.31,507a66.46,66.46,0,0,1-16.1,28.82l-35.53-55.59,15.69-24.78a.66.66,0,0,1,1.1,0C353.76,460.32,371,486,385.31,507Z"
                         fill="none"
                         stroke="#f2f2f2"
-                        stroke-miterlimit="10"
-                        stroke-width="2"
+                        strokeMiterlimit="10"
+                        strokeWidth="2"
                       />
                       <path transform="translate(-11.5 -150.75)" d="M337.5,452.5a15,15,0,0,1-12.12,14.73l-15-23.51a15,15,0,0,1,27.16,8.78Z" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />
                       <path transform="translate(-11.5 -150.75)" d="m347.5 481.5" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />

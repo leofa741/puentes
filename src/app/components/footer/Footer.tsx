@@ -12,37 +12,37 @@ export const Footer = () => {
   <div className="container  sm:mx-auto px-4">
     <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 justify-between items-center">
       <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
-        <h5 className="text-xl font-bold mb-6">Features</h5>
+        <h5 className="text-xl font-bold mb-6">Nosotros</h5>
         <ul className="list-none footer-links">
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Cool stuff</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Misión & Visión</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Random feature</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Fundadores</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Team feature</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Equipo</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Stuff for developers</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Politicas</a>
           </li>
        
         </ul>
       </div>
       <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
-        <h5 className="text-xl font-bold mb-6">Resources</h5>
+        <h5 className="text-xl font-bold mb-6">Servicios</h5>
         <ul className="list-none footer-links">
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Resource</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">E-commerce</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Resource name</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Bases de datos</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Another resource</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">DevOps</a>
           </li>
           <li className="mb-2">
-            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Final resource</a>
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Consultoria</a>
           </li>
         </ul>
       </div>

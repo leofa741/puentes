@@ -30,7 +30,7 @@ export default function NuestrasPracticas() {
 
             <section >
               <div className="">
-                <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+              <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
                   INNOVACIÓN
                 </h1>
                 <div className="w-full mb-4">
@@ -47,6 +47,12 @@ export default function NuestrasPracticas() {
                       <br />
                       Transforma las necesidades e ideas de negocio en soluciones informáticas. Detecta los procesos de información que responden a las necesidades y genera los activos digitales que se requieren.
                       <br />
+                      En la etapa de levantar requerimientos consiste en preguntarle a los clientes qué quieren o qué necesitan. Pero sabemos que hay una gran diferencia entre lo que los clientes quieren, lo que piden y lo que necesitan:
+
+Lo que el cliente quiere: es aumentar las ventas
+Lo que el cliente pide: es una campaña marketing digital
+Lo que el cliente necesita: es mejorar información sobre el producto porque los usuarios no la entienden y esto hace que se pierdan ventas.
+Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quiere o lo que pide (que como dijimos, no necesariamente es lo que necesita).
                     </p>
                   </div>
 
@@ -66,8 +72,8 @@ export default function NuestrasPracticas() {
                         d="M119.9,721.42c-3-5.51.4-12.27,4.29-17.18s8.61-10,8.51-16.29c-.15-9-9.7-14.31-17.33-19.09a84,84,0,0,1-15.56-12.51A22.8,22.8,0,0,1,95,650c-1.58-3.52-1.54-7.52-1.44-11.37q.51-19.26,1.91-38.49"
                         fill="none"
                         stroke="#3f3d56"
-                        stroke-miterlimit="10"
-                        stroke-width="4"
+                        strokeMiterlimit="10"
+                        strokeWidth="4"
                       />
                       <path transform="translate(-11.5 -150.75)" d="M81,599.39a14,14,0,0,1,7-11.5l3.14,6.22-.1-7.53a14.22,14.22,0,0,1,4.63-.56A14,14,0,1,1,81,599.39Z" fill="#57b894" />
                       <path transform="translate(-11.5 -150.75)" d="M106,694.38a14,14,0,1,0-.68-11.3l8.77,7.13L104.46,688A14,14,0,0,0,106,694.38Z" fill="#57b894" />
@@ -100,8 +106,8 @@ export default function NuestrasPracticas() {
                         d="M385.31,507a66.46,66.46,0,0,1-16.1,28.82l-35.53-55.59,15.69-24.78a.66.66,0,0,1,1.1,0C353.76,460.32,371,486,385.31,507Z"
                         fill="none"
                         stroke="#f2f2f2"
-                        stroke-miterlimit="10"
-                        stroke-width="2"
+                        strokeMiterlimit="10"
+                        strokeWidth="2"
                       />
                       <path transform="translate(-11.5 -150.75)" d="M337.5,452.5a15,15,0,0,1-12.12,14.73l-15-23.51a15,15,0,0,1,27.16,8.78Z" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />
                       <path transform="translate(-11.5 -150.75)" d="m347.5 481.5" fill="none" stroke="#f2f2f2" strokeMiterlimit="10" strokeWidth="2" />
@@ -181,36 +187,41 @@ export default function NuestrasPracticas() {
                   </div>
                 </div>
 
-
-
                 <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-                  <div className="w-full sm:w-1/2 p-6 mt-6">
-                  
-                    <TimelineProject />
+                  <div className="w-full sm:w-1/2 p-6 mt-6">                  
+                    <TimelineProject
+                    start='INICIACIÓN' 
+                    next='LINEAMIENTOS' 
+                    next2='PRODUCUCTO VIABLE'
+                    next3='DESARROLLO EVOLUTIVO'
+
+                     />
                   </div>
 
                   <div className="w-full sm:w-1/2 p-6 mt-6">
-
-
                     <div className="align-middle">
-                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">                        
                       <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
                         INICIACIÓN
                       </h3>
                       <p className="text-gray-600 mb-8">
                         Relevamiento de las necesidades del cliente, análisis de la competencia,
-                        y definición de los objetivos del proyecto.
+                        y definición de los objetivos del proyecto.Levantar requerimientos,
+                        <br /> Lo que el cliente quiere: es aumentar las ventas
+                        <br /> Lo que el cliente pide: es una campaña marketing digital
+                        <br /> Lo que el cliente necesita: es mejorar información sobre el producto porque los usuarios no la entienden y esto hace que se pierdan ventas.
 
                         <br />
                         <br />
+                        
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Requerimientos generales
+                        Levantar Requerimientos generales
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Plataforma tecnológica
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Funcionalidades
+                        Etapas del proyecto
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Diseño de equipos
@@ -221,11 +232,10 @@ export default function NuestrasPracticas() {
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                       <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                        INICIACIÓN
+                        LINEAMIENTOS
                       </h3>
                       <p className="text-gray-600 mb-8">
-                        Relevamiento de las necesidades del cliente, análisis de la competencia,
-                        y definición de los objetivos del proyecto.
+                      Antes de dar inicio a la construcción del proyecto se deben definir los lineamientos
 
                         <br />
                         <br />
@@ -233,40 +243,75 @@ export default function NuestrasPracticas() {
                         Requerimientos generales
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Plataforma tecnológica
+                        UX/UI
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Funcionalidades
+                        Diseño del proyecto
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Diseño de equipos
+                        Definición de la arquitectura
+                        <br />
+                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
+                        Entregables
+
                       </p>
                     </div>
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                       <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                        INICIACIÓN
+                        PRODUCUCTO VIABLE
                       </h3>
                       <p className="text-gray-600 mb-8">
-                        Relevamiento de las necesidades del cliente, análisis de la competencia,
-                        y definición de los objetivos del proyecto.
+                      Implementación de las principales características del producto que permitan lanzar una versión al mercado,
+                      La idea es que el producto sea lo suficientemente bueno para que los usuarios lo utilicen y aporten feedback.
 
                         <br />
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Requerimientos generales
+                        Backlog de tareas
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Plataforma tecnológica
+                        Desarrollo iterativo
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Funcionalidades
+                        Control de entregables
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Diseño de equipos
+                        Pruebas de aceptación de usuario
+                        <br />
+                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
+                        Pruebas en producción
                       </p>
                     </div>
+
+                    <div className="align-middle">
+                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
+                      DESARROLLO EVOLUTIVO
+                      </h3>
+                      <p className="text-gray-600 mb-8">
+                      Implementación de funcionalidades adicionales que permitan evolucionar el producto base o incorporar nuevas
+                      características que permitan mejorar la experiencia de usuario.
+                      <br />
+                        <br />
+                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
+                        Requerimientos adicionales
+                        <br />
+                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
+                        Hitos y entregables
+                        <br />
+                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
+                        Refinamiento de Backlog
+                        <br />
+                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
+                        Desarrollo iterativo
+                        <br />
+                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
+                        Liberación de versiones
+                      </p>
+                    </div>
+
 
 
                   </div>

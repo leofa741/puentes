@@ -23,14 +23,14 @@
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 960px;
+  width: 100%;
 }
 .slider::before, .slider::after {
   background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
   height: 100px;
   position: absolute;
-  width: 200px;
+  width: 100px;
   z-index: 2;
 }
 .slider::after {
@@ -50,14 +50,14 @@
 }
 .slider .slide {
     height: 80px;
-    width: 300px;
+    width: 250px;
 
 }
 
 .slider .slide img {
-    height: 80px;
-     width: 200px;
-    margin: 5px;
+    height: 70px;
+     width: 170px;
+    margin: 10px 10px;
 
 
 }
@@ -66,11 +66,11 @@
 @media screen and (max-width: 768px) {
   .slider {
     height: 100px;
-    width: 220px;
+    width: 100%;
   }
   .slider::before, .slider::after {
     height: 50px;
-    width: 100px;
+    width: 50px;
   }
   .slider .slide-track {
     width: calc(220px * 5);

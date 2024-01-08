@@ -30,7 +30,7 @@ export default function NuestrasPracticas() {
 
             <section >
               <div className="">
-                <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+              <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
                   INNOVACIÓN
                 </h1>
                 <div className="w-full mb-4">

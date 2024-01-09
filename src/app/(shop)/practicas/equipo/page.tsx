@@ -32,8 +32,8 @@ export default function NuestrasPracticas() {
 
             <section >
               <div className="">
-              <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
-              EQUIPO
+                <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
+                  EQUIPO
                 </h1>
                 <div className="w-full mb-4">
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -42,10 +42,10 @@ export default function NuestrasPracticas() {
 
                   <div className="w-5/6 sm:w-1/2 p-6">
                     <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                    Formación de células de desarrollo especializadas en metodologías de trabajo ágil con conocimiento en las principales tecnologías del mercado.
+                      Formación de células de desarrollo especializadas en metodologías de trabajo ágil con conocimiento en las principales tecnologías del mercado.
                     </h3>
                     <p className="text-gray-600 mb-8">
-                    Permite que las organizaciones puedan focalizarse en su negocio sin involucrarse en la implementación técnica. Mediante el uso de metodologías ágiles, las células de trabajo conocen los objetivos del negocio, definen las implementaciones y generan delivery continuo.  </p>
+                      Permite que las organizaciones puedan focalizarse en su negocio sin involucrarse en la implementación técnica. Mediante el uso de metodologías ágiles, las células de trabajo conocen los objetivos del negocio, definen las implementaciones y generan delivery continuo.  </p>
                   </div>
 
 
@@ -180,30 +180,30 @@ export default function NuestrasPracticas() {
                 </div>
 
                 <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-                  <div className="w-full sm:w-1/2 p-6 mt-6">   
+                  <div className="w-full sm:w-1/2 p-6 mt-6">
 
-                  <Image
-                  src="/assets/img/mejorar-desarrollo-proyectos-IT.jpeg"
-                  alt="Consultoria"
-                  width={500}
-                  height={500}
-                  className="rounded-md"
-                />               
-                 
+                    <Image
+                      src="/assets/img/mejorar-desarrollo-proyectos-IT.jpeg"
+                      alt="Consultoria"
+                      width={500}
+                      height={500}
+                      className="rounded-md"
+                    />
+
                   </div>
 
                   <div className="w-full sm:w-1/2 p-6 mt-6">
                     <div className="align-middle">
-                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">                        
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      DIAGNÓSTICO INICIAL
+                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        DIAGNÓSTICO INICIAL
                       </h3>
                       <p className="text-gray-600 mb-8">
                         Relevamiento de las necesidades del cliente, análisis de la competencia,
                         y definición de los objetivos del proyecto.Levantar requerimientos,
                         <br /> Reconocimiento organizacional y entendimiento del por qué es necesario formar una célula de trabajo. <br />
                         <br />
-                        
+
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Entendimiento del negocio y principales objetivos
                         <br />
@@ -227,12 +227,11 @@ export default function NuestrasPracticas() {
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      FORMACIÓN DE EQUIPO
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        FORMACIÓN DE EQUIPO
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Selección y capacitación de profesionales.
-
+                        Selección y capacitación de profesionales.
                         <br />
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
@@ -244,18 +243,16 @@ export default function NuestrasPracticas() {
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Capacitación técnica continua
                         <br />
-                      
-
                       </p>
                     </div>
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      PUESTA EN MARCHA
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        PUESTA EN MARCHA
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Iniciar y dar seguimiento a las actividades de desarrollo.
+                        Iniciar y dar seguimiento a las actividades de desarrollo.
                         <br />
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
@@ -269,29 +266,15 @@ export default function NuestrasPracticas() {
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Entrega de funcionalidades
-                       
+
                       </p>
                     </div>
-
-                
-
-
                   </div>
                 </div>
               </div>
             </section>
-
-         
-
-          
-          
-           
-
-
-
           </article>
         </div>
-
       </div>
     </>
   )

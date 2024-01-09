@@ -30,8 +30,8 @@ export default function NuestrasPracticas() {
 
             <section >
               <div className="">
-              <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
-                DESCUBRIMIENTO
+                <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
+                  DESCUBRIMIENTO
                 </h1>
                 <div className="w-full mb-4">
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -43,28 +43,25 @@ export default function NuestrasPracticas() {
                       Desarrollo de soluciones tecnológicas y transformación digital.
                     </h3>
                     <p className="text-gray-600 mb-8">
-                    El proceso de desarrollo de software es un camino complejo que requiere planificación, colaboración y ejecución eficiente. Una etapa crucial en este proceso es la fase de descubrimiento, donde se sientan las bases para el proyecto completo. Desde P.D, como especialistas en desarrollo de software y programación a medida, te vamos a explicar cómo la fase de descubrimiento puede ahorrar tiempo y dinero, así como su impacto en el éxito general del desarrollo de software.  <br />
-                    Un descubrimiento, permite reducir las incertidumbres que se presentan al dar inicio a un proyecto y contar con una hoja de ruta clara.
-                    que involucran la ejecución de un proyecto de desarrollo de software o transformación digital.
-                    Profundiza en las necesidades del negocio, los requerimientos funcionales, procesos, sistemas informáticos y la plataforma tecnológica, con el fin de definir un diagnóstico que describa “el hoy”, “hacia dónde ir” y “los pasos necesarios”
+                      El proceso de desarrollo de software es un camino complejo que requiere planificación, colaboración y ejecución eficiente. Una etapa crucial en este proceso es la fase de descubrimiento, donde se sientan las bases para el proyecto completo. Desde P.D, como especialistas en desarrollo de software y programación a medida, te vamos a explicar cómo la fase de descubrimiento puede ahorrar tiempo y dinero, así como su impacto en el éxito general del desarrollo de software.  <br />
+                      Un descubrimiento, permite reducir las incertidumbres que se presentan al dar inicio a un proyecto y contar con una hoja de ruta clara.
+                      que involucran la ejecución de un proyecto de desarrollo de software o transformación digital.
+                      Profundiza en las necesidades del negocio, los requerimientos funcionales, procesos, sistemas informáticos y la plataforma tecnológica, con el fin de definir un diagnóstico que describa “el hoy”, “hacia dónde ir” y “los pasos necesarios”
                     </p>
                   </div>
-
 
                   <div className="w-full sm:w-1/2 p-6">
                     <img className="w-full sm:h-80 mx-auto" src="/assets/img/services_consultory.png.webp" />
                   </div>
                 </div>
 
-
-
                 <div className="flex flex-wrap flex-col-reverse sm:flex-row">
                   <div className="w-full sm:w-1/2 p-6 mt-6">
-                  
-                    <TimelineProject_1 
-                    next4='REQUERIMIENTOS GENERALES'
-                    next5='PLATAFORMA TECNOLÓGICA'
-                    next6='ETAPAS DE PROYECTO'
+
+                    <TimelineProject_1
+                      next4='REQUERIMIENTOS GENERALES'
+                      next5='PLATAFORMA TECNOLÓGICA'
+                      next6='ETAPAS DE PROYECTO'
                     />
                   </div>
 
@@ -73,11 +70,11 @@ export default function NuestrasPracticas() {
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      REQUERIMIENTOS GENERALES
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        REQUERIMIENTOS GENERALES
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Los fundamentos de la fase de descubrimiento
+                        Los fundamentos de la fase de descubrimiento
 
                         <br />
                         <br />
@@ -98,11 +95,11 @@ export default function NuestrasPracticas() {
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      PLATAFORMA TECNOLÓGICA
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        PLATAFORMA TECNOLÓGICA
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Obtenga los lineamientos tecnológicos en términos de hardware, software y comunicaciones
+                        Obtenga los lineamientos tecnológicos en términos de hardware, software y comunicaciones
 
                         <br />
                         <br />
@@ -125,11 +122,11 @@ export default function NuestrasPracticas() {
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      ETAPAS DE PROYECTO
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        ETAPAS DE PROYECTO
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Conozca las etapas de un proyecto de desarrollo de software
+                        Conozca las etapas de un proyecto de desarrollo de software
 
                         <br />
                         <br />
@@ -146,24 +143,12 @@ export default function NuestrasPracticas() {
                         Entregables finales
                       </p>
                     </div>
-
-
                   </div>
                 </div>
               </div>
             </section>
-
-         
-
-          
-          
-           
-
-
-
           </article>
         </div>
-
       </div>
     </>
   )

@@ -31,7 +31,7 @@ export default function NuestrasPracticas() {
             <section >
               <div className="">
               <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
-                  INNOVACIÓN
+                  DEVOPS
                 </h1>
                 <div className="w-full mb-4">
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -40,19 +40,10 @@ export default function NuestrasPracticas() {
 
                   <div className="w-5/6 sm:w-1/2 p-6">
                     <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      Desarrollo de soluciones tecnológicas y transformación digital.
+                    Implementación de procesos CI/CD para pipelines de desarrollo de productos de software con foco en la integración continua, entrega continua y despliegue continuo.
                     </h3>
                     <p className="text-gray-600 mb-8">
-                      El uso de tecnología moderna y las buenas prácticas de desarrollo de productos son esenciales para acompañar el negocio en su transformación digital.
-                      <br />
-                      Transforma las necesidades e ideas de negocio en soluciones informáticas. Detecta los procesos de información que responden a las necesidades y genera los activos digitales que se requieren.
-                      <br />
-                      En la etapa de levantar requerimientos consiste en preguntarle a los clientes qué quieren o qué necesitan. Pero sabemos que hay una gran diferencia entre lo que los clientes quieren, lo que piden y lo que necesitan:
-
-Lo que el cliente quiere: es aumentar las ventas
-Lo que el cliente pide: es una campaña marketing digital
-Lo que el cliente necesita: es mejorar información sobre el producto porque los usuarios no la entienden y esto hace que se pierdan ventas.
-Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quiere o lo que pide (que como dijimos, no necesariamente es lo que necesita).
+                    DevOps es una metodología que permite a las empresas desarrollar y entregar productos de software con mayor velocidad y calidad.
                     </p>
                   </div>
 
@@ -189,42 +180,30 @@ Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quier
 
                 <div className="flex flex-wrap flex-col-reverse sm:flex-row">
                   <div className="w-full sm:w-1/2 p-6 mt-6">                  
-                    <TimelineProject
-                    start='INICIACIÓN' 
-                    next='LINEAMIENTOS' 
-                    next2='PRODUCUCTO VIABLE'
-                    next3='DESARROLLO EVOLUTIVO'
-
-                     />
+                  <img className="w-full sm:h-90 mx-auto" src="/assets/img/devops.png" />
                   </div>
 
                   <div className="w-full sm:w-1/2 p-6 mt-6">
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">                        
                       <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                        INICIACIÓN
+                      INTEGRACIÓN CONTINUA
                       </h3>
                       <p className="text-gray-600 mb-8">
-                        Relevamiento de las necesidades del cliente, análisis de la competencia,
-                        y definición de los objetivos del proyecto.Levantar requerimientos,
-                        <br /> Lo que el cliente quiere: es aumentar las ventas
-                        <br /> Lo que el cliente pide: es una campaña marketing digital
-                        <br /> Lo que el cliente necesita: es mejorar información sobre el producto porque los usuarios no la entienden y esto hace que se pierdan ventas.
-
-                        <br />
+                      Automatización de los procesos que involucran el desarrollo de software. Una solución al problema de tener demasiadas ramas de una aplicación en desarrollo a la vez que pueden entrar en conflicto entre sí.
                         <br />
                         
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Levantar Requerimientos generales
+                        Revisión de código
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Plataforma tecnológica
+                        Unificación de ramas
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Etapas del proyecto
+                        Pruebas unitarias
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Diseño de equipos
+                        Compilación
                       </p>
                     </div>
 
@@ -232,25 +211,20 @@ Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quier
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                       <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                        LINEAMIENTOS
+                      ENTREGA CONTINUA
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Antes de dar inicio a la construcción del proyecto se deben definir los lineamientos
+                      Automatización del proceso de entrega del software, permitiendo que pueda ser implementado en producción de forma confiable y sencilla.
 
                         <br />
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Requerimientos generales
+                        Pruebas de negocio
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        UX/UI
+                        Publicación en ambiente de pruebas
                         <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Diseño del proyecto
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Definición de la arquitectura
-                        <br />
+                       
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Entregables
 
@@ -260,58 +234,23 @@ Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quier
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                       <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                        PRODUCUCTO VIABLE
+                      DESPLIEGUE CONTINUO
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Implementación de las principales características del producto que permitan lanzar una versión al mercado,
-                      La idea es que el producto sea lo suficientemente bueno para que los usuarios lo utilicen y aporten feedback.
-
+                      Automatización del proceso de publicación de nuevos cambios directamente a un ambiente productivo donde puede ser utilizado por un usuario final.
                         <br />
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Backlog de tareas
+                        Automatización de tareas de sysadmin
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Desarrollo iterativo
+                        Gestión de la configuración versionada
                         <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Control de entregables
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Pruebas de aceptación de usuario
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Pruebas en producción
+                      
                       </p>
                     </div>
 
-                    <div className="align-middle">
-                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      DESARROLLO EVOLUTIVO
-                      </h3>
-                      <p className="text-gray-600 mb-8">
-                      Implementación de funcionalidades adicionales que permitan evolucionar el producto base o incorporar nuevas
-                      características que permitan mejorar la experiencia de usuario.
-                      <br />
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Requerimientos adicionales
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Hitos y entregables
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Refinamiento de Backlog
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Desarrollo iterativo
-                        <br />
-                        <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
-                        Liberación de versiones
-                      </p>
-                    </div>
-
+                 
 
 
                   </div>

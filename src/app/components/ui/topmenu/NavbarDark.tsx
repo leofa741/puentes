@@ -65,16 +65,16 @@ export const NavbarDark = () => {
         </span> */}
 
 
-<Link href="/practicas" tabIndex={0} className={`  py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >
-            
-            <span className="">
-              <button className={`${montserrat.className}m-2 pl-3 pr-4 inline-flex justify-center rounded-md transition duration-500     ${pathname == '/practicas' ? 'bg-gray-900' : ''}`}
-                style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}
-                type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
-                <span>Prácticas  </span>
-                <svg className="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-              </button>
-            </span>
+            <Link href="/practicas" tabIndex={0} className={`  py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >
+
+              <span className="">
+                <button className={`${montserrat.className}m-2 pl-3 pr-4 inline-flex justify-center rounded-md transition duration-500     ${pathname == '/practicas' ? 'bg-gray-900' : ''}`}
+                  style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}
+                  type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
+                  <span>Prácticas  </span>
+                  <svg className="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                </button>
+              </span>
             </Link>
 
 
@@ -88,7 +88,7 @@ export const NavbarDark = () => {
                   <Link href="/practicas/equipo" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/equipo' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Equipo</Link>
                   <Link href="/practicas/devops" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/devops' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >DevOps</Link>
                   <Link href="/practicas/calidad" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/practicas/calidad' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Calidad</Link>
-               </div>
+                </div>
 
                 {/* <div className="py-1">
                   <a href="javascript:void(0)" tabIndex={3} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >Sign out</a>
@@ -96,11 +96,6 @@ export const NavbarDark = () => {
               </div>
             </div>
           </div>
-
-
-
-
-
 
           <Link href='/soluciones'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
@@ -111,8 +106,6 @@ export const NavbarDark = () => {
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
            ${pathname == '/services' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}> Servicios</span>
           </Link>
-
-
 
           <Link href='/empresa'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
@@ -126,12 +119,9 @@ export const NavbarDark = () => {
         </div>
 
         <div className='flex items-center px-4 cursor-pointer  space-x-4 '>
-
-
           <Link href='/search'>
             <IoSearchSharp className='w-6 h-6' />
           </Link>
-
 
           <button className=' text-white font-bold py-2 px-4 rounded   visible xl:invisible lg:invisible md:invisible sm:block ' onClick={() => openMenu()}  >
             <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
@@ -139,9 +129,6 @@ export const NavbarDark = () => {
             </svg>
 
           </button>
-
-
-
 
         </div>
       </nav>

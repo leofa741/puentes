@@ -1,4 +1,4 @@
-import {  TimelineProject_2, Title } from '@/app/components'
+import { TimelineProject_2, Title } from '@/app/components'
 import { BannerHeader } from '@/app/components/bannerheader/BannerHeader'
 import { Metadata } from 'next'
 import { IoIosCheckmarkCircleOutline, IoIosMenu } from 'react-icons/io'
@@ -30,7 +30,7 @@ export default function NuestrasPracticas() {
 
             <section >
               <div className="">
-              <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
+                <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-gray-800">
                   INTEGRACIÓN
                 </h1>
                 <div className="w-full mb-4">
@@ -40,12 +40,12 @@ export default function NuestrasPracticas() {
 
                   <div className="w-5/6 sm:w-1/2 p-6">
                     <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                    Conexión de sistemas de información, aislados entre ellos y con diferentes responsabilidades, permitiendo que trabajen juntos de manera funcional.
+                      Conexión de sistemas de información, aislados entre ellos y con diferentes responsabilidades, permitiendo que trabajen juntos de manera funcional.
                     </h3>
                     <p className="text-gray-600 mb-8">
-                    La integración de aplicaciones logra abstraer los procesos de los componentes de software y/o hardware que posea la organización, viendo a los sistemas como un todo.
+                      La integración de aplicaciones logra abstraer los procesos de los componentes de software y/o hardware que posea la organización, viendo a los sistemas como un todo.
 
-Al mismo tiempo, las diferentes tecnologías de los sistemas son transparentes, ya que se trabaja en conectar las interfaces y no en modificar las mismas.
+                      Al mismo tiempo, las diferentes tecnologías de los sistemas son transparentes, ya que se trabaja en conectar las interfaces y no en modificar las mismas.
                     </p>
                   </div>
 
@@ -56,28 +56,28 @@ Al mismo tiempo, las diferentes tecnologías de los sistemas son transparentes, 
                 </div>
 
                 <div className="flex flex-wrap flex-col-reverse sm:flex-row">
-                  <div className="w-full sm:w-1/2 p-6 mt-6">                  
+                  <div className="w-full sm:w-1/2 p-6 mt-6">
                     <TimelineProject_2
-                    next7='ESTRATEGIA DE INTEGRACIÓN'
-                    next8='CONSTRUCCIÓN DE ARQUITECTURA'
-                    next9='INTEGRACIÓN DE SISTEMAS'
-                    next10='TRANSFERENCIA DE CONOCIMIENTOS'
-             
+                      next7='ESTRATEGIA DE INTEGRACIÓN'
+                      next8='CONSTRUCCIÓN DE ARQUITECTURA'
+                      next9='INTEGRACIÓN DE SISTEMAS'
+                      next10='TRANSFERENCIA DE CONOCIMIENTOS'
 
-                     />
+
+                    />
                   </div>
 
                   <div className="w-full sm:w-1/2 p-6 mt-6">
                     <div className="align-middle">
-                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">                        
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      ESTRATEGIA DE INTEGRACIÓN
+                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        ESTRATEGIA DE INTEGRACIÓN
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Evaluación y planificación de una estrategia para detectar y guiar la integración de los sistemas de información.
+                        Evaluación y planificación de una estrategia para detectar y guiar la integración de los sistemas de información.
                         <br />
                         <br />
-                        
+
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Sistemas de información involucrados
                         <br />
@@ -98,11 +98,11 @@ Al mismo tiempo, las diferentes tecnologías de los sistemas son transparentes, 
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      CONSTRUCCIÓN DE ARQUITECTURA
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        CONSTRUCCIÓN DE ARQUITECTURA
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Instalación y configuración de los servicios base, tanto software y hardware, necesarios para dar soporte a todos los procesos de integración de aplicaciones
+                        Instalación y configuración de los servicios base, tanto software y hardware, necesarios para dar soporte a todos los procesos de integración de aplicaciones
 
                         <br />
                         <br />
@@ -114,18 +114,18 @@ Al mismo tiempo, las diferentes tecnologías de los sistemas son transparentes, 
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Instalación y configuración de servicios
-                        
+
 
                       </p>
                     </div>
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      INTEGRACIÓN DE SISTEMAS
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        INTEGRACIÓN DE SISTEMAS
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Desarrollo y configuración de interfaces de sistemas informáticos bajo diferentes tecnologías y estándares.
+                        Desarrollo y configuración de interfaces de sistemas informáticos bajo diferentes tecnologías y estándares.
                         <br />
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
@@ -147,12 +147,12 @@ Al mismo tiempo, las diferentes tecnologías de los sistemas son transparentes, 
 
                     <div className="align-middle">
                       <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                      <CgMenuGridO   className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />                       
-                      TRANSFERENCIA DE CONOCIMIENTOS
+                        <CgMenuGridO className="inline-block w-8 h-8 -mt-2 mr-1 text-black" />
+                        TRANSFERENCIA DE CONOCIMIENTOS
                       </h3>
                       <p className="text-gray-600 mb-8">
-                      Generación de programas de capacitación teóricos y prácticos para el traspaso de conocimiento a equipos internos de las organizaciones.
-                      <br />
+                        Generación de programas de capacitación teóricos y prácticos para el traspaso de conocimiento a equipos internos de las organizaciones.
+                        <br />
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Creación de programas de capacitación
@@ -162,28 +162,14 @@ Al mismo tiempo, las diferentes tecnologías de los sistemas son transparentes, 
                         <br />
                         <IoIosCheckmarkCircleOutline className="inline-block w-8 h-8 text-green-500" />
                         Dictado de cursos y capacitaciones
-                       
                       </p>
                     </div>
-
-
-
                   </div>
                 </div>
               </div>
             </section>
-
-         
-
-          
-          
-           
-
-
-
           </article>
         </div>
-
       </div>
     </>
   )

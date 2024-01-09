@@ -36,7 +36,7 @@ export default function Home() {
               <p className="mt-2 text-center xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl">
               <span className="text-center  font-extrabold text-[#009FFF]  xs:text-xl sm:text-xl md:text-xl lg:text-5xl xl:text-5xl 2xl:text-[29px]"
               >Software Factory </span>dedicada al desarrollo de tecnologías de la información. Somos un equipos integrado por profesionales con una amplia trayectoria en la industria.
-              </p>
+              </p> 
             </div>
            
             <HomeComponent />

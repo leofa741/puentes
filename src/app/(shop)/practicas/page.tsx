@@ -335,54 +335,76 @@ export default function NuestrasPracticas() {
 
                   <div className="w-full sm:w-1/2 p-6 mt-6">
                     <div className="align-middle">
-                      <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
+                      <h3 className="text-3xl   font-bold leading-none mb-3">
                         Nuestras Prácticas
                       </h3>
                       <p className="text-gray-600 mb-8">
                         Nuestras prácticas son áreas de conocimiento de alta integración entre profesionales, procesos y tecnologías asociadas. Cada una de ellas está centrada en una tecnología o proceso innovador. Se responsabilizan de la creación y co-creación, definición e implementación de soluciones, para innovar en base a las necesidades del cliente. <br />
                         <br /> <br />
-                        Control de Versiones:
-
+                      
+                        <span className=" text-[#009FFF]   xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">   Control de Versiones: </span>      
                         Utilizar sistemas de control de versiones como Git para realizar un seguimiento de los cambios en el código fuente y facilitar la colaboración entre desarrolladores.
-                        Desarrollo Ágil:
                         <br /> <br />
+                       
+                        <span className=" text-[#009FFF]    xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl"> Desarrollo Ágil: </span>                       
                         Adoptar metodologías ágiles como Scrum o Kanban para mejorar la flexibilidad y la capacidad de respuesta a los cambios en los requisitos del proyecto.
-                        Automatización de Pruebas:
-                        <br /> <br />
+                       
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap">
+                    <div className="align-middle">
+                   
+                      <p className="text-gray-600 mb-8">
+                    
+                       <span className=" text-[#009FFF]   xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Automatización de Pruebas: </span>                       
                         Implementar suites de pruebas automatizadas para garantizar la calidad del código y facilitar la detección temprana de errores.
-                        Integración Continua (CI):
                         <br /> <br />
+                        <span className=" text-[#009FFF]   xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Integración Continua (CI):</span>
+                        
+                        
                         Configurar sistemas de integración continua para automatizar la construcción, prueba y despliegue del software en un entorno controlado.
-                        Despliegue Continuo (CD):
                         <br /> <br />
+                        
+                        <span className=" text-[#009FFF]    xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Despliegue Continuo (CD):</span>
                         Adoptar prácticas de despliegue continuo para automatizar la entrega del software en entornos de producción después de pasar las pruebas.
-                        Revisión de Código:
                         <br /> <br />
+                        
+                        <span className=" text-[#009FFF]  xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Revisión de Código:</span>
                         Realizar revisiones de código entre pares para mejorar la calidad del código y fomentar el aprendizaje y la colaboración dentro del equipo.
-                        Refactorización Continua:
                         <br /> <br />
+                        
+                        <span className=" text-[#009FFF]  text-start  xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Refactorización Continua:</span>
                         Mantener un código limpio y fácil de entender mediante la refactorización constante para mejorar la estructura y eliminar la deuda técnica.
-                        Gestión de Dependencias:
                         <br /> <br />
+                        
+                        <span className=" text-[#009FFF]  text-start  xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Gestión de Dependencias:</span>
                         Utilizar herramientas de gestión de dependencias (por ejemplo, npm, Maven) para gestionar eficientemente las bibliotecas y dependencias del proyecto.
-                        Documentación Clara:
                         <br /> <br />
+                       
+                        <span className=" text-[#009FFF]  text-start   xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl"> Documentación Clara:</span>
                         Mantener una documentación clara y actualizada que describa la arquitectura, el diseño y el funcionamiento del software.
-                        Seguridad del Software:
                         <br /> <br />
+                        
+                        <span className=" text-[#009FFF] text-start   xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Seguridad del Software:</span>
                         Integrar prácticas de seguridad en todo el ciclo de vida del desarrollo de software para proteger contra vulnerabilidades y ataques.
-                        Monitoreo y Análisis de Rendimiento:
                         <br /> <br />
+                       
+                       <span className=" text-[#009FFF]   text-start  xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl">Monitoreo y Análisis de Rendimiento:</span>
                         Implementar herramientas de monitoreo y análisis de rendimiento para identificar y solucionar problemas de manera proactiva.
-                        Comunicación Efectiva:
                         <br /> <br />
+                       
+                        <span className=" text-[#009FFF]  text-start  xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl"> Comunicación Efectiva:</span>
                         Fomentar una comunicación efectiva dentro del equipo y con los stakeholders para garantizar la alineación en los objetivos y enfoques.
                         Estas prácticas pueden variar según el tipo de proyecto, el equipo y las necesidades específicas de la organización. Adoptar un enfoque pragmático y estar abierto a la mejora continua es clave para el éxito en el desarrollo de software.
 
                       </p>
                     </div>
                   </div>
-                </div>
+
+
+
               </div>
             </section>
           </article>

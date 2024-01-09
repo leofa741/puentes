@@ -93,7 +93,7 @@ export const Sidebar = () => {
 
           <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right translate-y-2 scale-95">
             <div className="absolute right-0 w-36 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-            
+
               <div className="py-1">
                 <Link href="/practicas" className="flex items-center mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
                   <span className="ml-3 text-l" onClick={() => closeMenu()}>Practicas</span>
@@ -117,7 +117,7 @@ export const Sidebar = () => {
                   <span className="ml-3 text-l" onClick={() => closeMenu()}>Calidad</span>
                 </Link>
 
-              </div>        
+              </div>
 
             </div>
           </div>
@@ -152,15 +152,10 @@ export const Sidebar = () => {
           <IoLogInOutline size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`}>Ingresar</span>
         </Link>
-
-
         {/* Line Separator */}
         <div className="w-full h-px bg-gray-200 my-5" />
 
-
       </nav>
-
-
     </div>
   );
 }

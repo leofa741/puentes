@@ -47,12 +47,11 @@ export default function NuestrasPracticas() {
                       <br />
                       Transforma las necesidades e ideas de negocio en soluciones informáticas. Detecta los procesos de información que responden a las necesidades y genera los activos digitales que se requieren.
                       <br />
-                      En la etapa de levantar requerimientos consiste en preguntarle a los clientes qué quieren o qué necesitan. Pero sabemos que hay una gran diferencia entre lo que los clientes quieren, lo que piden y lo que necesitan:
+                      <br />
+                      
+Las prácticas de desarrollo de software se refieren a los enfoques y métodos que los equipos de desarrollo utilizan para construir, probar, desplegar y mantener software de manera eficiente y efectiva. Aquí hay algunas prácticas comunes y recomendadas en el desarrollo de software:
 
-Lo que el cliente quiere: es aumentar las ventas
-Lo que el cliente pide: es una campaña marketing digital
-Lo que el cliente necesita: es mejorar información sobre el producto porque los usuarios no la entienden y esto hace que se pierdan ventas.
-Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quiere o lo que pide (que como dijimos, no necesariamente es lo que necesita).
+                  
                     </p>
                   </div>
 
@@ -345,7 +344,51 @@ Así, cuando levantamos requerimientos, nos centramos en lo que el cliente quier
               </h3>
               <p className="text-gray-600 mb-8">
               Nuestras prácticas son áreas de conocimiento de alta integración entre profesionales, procesos y tecnologías asociadas. Cada una de ellas está centrada en una tecnología o proceso innovador. Se responsabilizan de la creación y co-creación, definición e implementación de soluciones, para innovar en base a las necesidades del cliente. <br />
-                <br />
+                <br /> <br />
+                Control de Versiones:
+
+Utilizar sistemas de control de versiones como Git para realizar un seguimiento de los cambios en el código fuente y facilitar la colaboración entre desarrolladores.
+Desarrollo Ágil:
+<br /> <br />
+Adoptar metodologías ágiles como Scrum o Kanban para mejorar la flexibilidad y la capacidad de respuesta a los cambios en los requisitos del proyecto.
+Automatización de Pruebas:
+<br /> <br />
+Implementar suites de pruebas automatizadas para garantizar la calidad del código y facilitar la detección temprana de errores.
+Integración Continua (CI):
+<br /> <br />
+Configurar sistemas de integración continua para automatizar la construcción, prueba y despliegue del software en un entorno controlado.
+Despliegue Continuo (CD):
+<br /> <br />
+Adoptar prácticas de despliegue continuo para automatizar la entrega del software en entornos de producción después de pasar las pruebas.
+Revisión de Código:
+<br /> <br />
+Realizar revisiones de código entre pares para mejorar la calidad del código y fomentar el aprendizaje y la colaboración dentro del equipo.
+Refactorización Continua:
+<br /> <br />
+Mantener un código limpio y fácil de entender mediante la refactorización constante para mejorar la estructura y eliminar la deuda técnica.
+Gestión de Dependencias:
+<br /> <br />
+Utilizar herramientas de gestión de dependencias (por ejemplo, npm, Maven) para gestionar eficientemente las bibliotecas y dependencias del proyecto.
+Documentación Clara:
+<br /> <br />
+Mantener una documentación clara y actualizada que describa la arquitectura, el diseño y el funcionamiento del software.
+Seguridad del Software:
+<br /> <br />
+Integrar prácticas de seguridad en todo el ciclo de vida del desarrollo de software para proteger contra vulnerabilidades y ataques.
+Monitoreo y Análisis de Rendimiento:
+
+Implementar herramientas de monitoreo y análisis de rendimiento para identificar y solucionar problemas de manera proactiva.
+Comunicación Efectiva:
+<br /> <br />
+Fomentar una comunicación efectiva dentro del equipo y con los stakeholders para garantizar la alineación en los objetivos y enfoques.
+Estas prácticas pueden variar según el tipo de proyecto, el equipo y las necesidades específicas de la organización. Adoptar un enfoque pragmático y estar abierto a la mejora continua es clave para el éxito en el desarrollo de software.
+
+
+
+
+
+
+
               
 
                 

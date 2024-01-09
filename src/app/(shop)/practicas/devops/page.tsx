@@ -40,10 +40,12 @@ export default function NuestrasPracticas() {
 
                   <div className="w-5/6 sm:w-1/2 p-6">
                     <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
-                    Implementación de procesos CI/CD para pipelines de desarrollo de productos de software con foco en la integración continua, entrega continua y despliegue continuo.
-                    </h3>
-                    <p className="text-gray-600 mb-8">
                     DevOps es una metodología que permite a las empresas desarrollar y entregar productos de software con mayor velocidad y calidad.
+
+                   </h3>
+                    <p className="text-gray-600 mb-8">
+                    Implementación de procesos CI/CD para pipelines de desarrollo de productos de software con foco en la integración continua, entrega continua y despliegue continuo.
+                   
                     </p>
                   </div>
 

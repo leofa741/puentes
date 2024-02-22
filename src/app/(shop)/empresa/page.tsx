@@ -23,7 +23,8 @@ export default function Empresa() {
         descripcion="Puentech"
         video='/assets/videos/historia.mp4' />
 
-      <div className="flex min-h-screen flex-col items-center justify-between p-24">
+<div className="flex min-h-screen flex-col items-center justify-items-center  p-2 ">
+        <div className="flex px-4 mx-auto  sm:px-6 lg:px-8">
 
         <article className="mx-auto w-full max-w-[1500px]">
 
@@ -67,6 +68,8 @@ export default function Empresa() {
 
         </article>
 
+
+      </div>
 
       </div>
     </>

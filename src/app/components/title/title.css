@@ -1,0 +1,42 @@
+
+.title{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-bottom: 0.6rem;
+
+}
+
+
+.subtitle{
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: #fff; 
+    margin-top: -1rem;
+    margin-left: 4rem;
+   
+}
+
+@media screen and (max-width: 768px){
+    .title{
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+        margin-top: 0.3rem;
+        margin-left: 0.5rem;
+        margin-bottom: 0.5rem;   
+    
+    }
+    
+    
+    .subtitle{
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: #fff; 
+        margin-top: -1rem;
+        margin-left: 3.1rem !important;
+       
+    }
+}

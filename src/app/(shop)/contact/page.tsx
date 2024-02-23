@@ -1,4 +1,4 @@
-import { Title } from '@/app/components'
+import { BanerServicesContact, Title } from '@/app/components'
 import { BannerHeader } from '@/app/components/bannerheader/BannerHeader'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -71,7 +71,7 @@ export default function Contact() {
               </p>
               <a href="mailto:infoplataformaweb@gmail.com" >infoplataformaweb@gmail.com</a>
             </div>
-
+            <BanerServicesContact />
           </article>
         </div>
 

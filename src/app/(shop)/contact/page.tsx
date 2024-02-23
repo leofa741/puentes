@@ -71,10 +71,10 @@ export default function Contact() {
               </p>
               <a href="mailto:infoplataformaweb@gmail.com" >infoplataformaweb@gmail.com</a>
             </div>
-            <BanerServicesContact />
+           
           </article>
         </div>
-
+        <BanerServicesContact />
       </div>
     </>
   )

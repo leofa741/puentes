@@ -21,7 +21,7 @@ export default function Contact() {
       <BannerHeader
         title="Contactos"
         descripcion="Puentech"
-        video='/assets/videos/contact-us.mp4' />
+        video='/assets/videos/siguenos.mp4' />
       <div className="flex min-h-screen flex-col items-center justify-items-center  p-2 ">
         <div className="flex px-4 mx-auto  sm:px-6 lg:px-8">
 

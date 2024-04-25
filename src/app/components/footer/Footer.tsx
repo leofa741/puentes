@@ -10,7 +10,78 @@ export const Footer = () => {
   <>
   <footer className="footer-1 bg-gray-100 py-8 sm:py-12">
   <div className="container  sm:mx-auto px-4">
-  
+    {/* <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 justify-between items-center">
+      <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
+        <h5 className="text-xl font-bold mb-6">Nosotros</h5>
+        <ul className="list-none footer-links">
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Misión & Visión</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Fundadores</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Equipo</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Politicas</a>
+          </li>
+       
+        </ul>
+      </div>
+      <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
+        <h5 className="text-xl font-bold mb-6">Servicios</h5>
+        <ul className="list-none footer-links">
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">E-commerce</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Bases de datos</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">DevOps</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Consultoria</a>
+          </li>
+        </ul>
+      </div>
+      <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+        <h5 className="text-xl font-bold mb-6">Links</h5>
+        <ul className="list-none footer-links">
+          <li className="mb-2">
+            <a href="/" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Home</a>
+          </li>
+          <li className="mb-2">
+            <a href="/practicas/innovacion" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Practicas</a>
+          </li>
+          <li className="mb-2">
+            <a href="/services" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">servicios</a>
+          </li>
+          <li className="mb-2">
+            <a href="/contact" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Contacto</a>
+          </li>
+        </ul>
+      </div>
+      <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+        <h5 className="text-xl font-bold mb-6">Help</h5>
+        <ul className="list-none footer-links">
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Support</a>
+          </li>
+          <li className="mb-2">
+            <a href="#" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Help Center</a>
+          </li>
+          <li className="mb-2">
+            <a href="/contact" className="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Contactos</a>
+          </li>
+        </ul>
+      </div>
+
+
+   
+
+    </div> */}
 
     <div className="sm:flex sm:flex-wrap sm:-mx-4 mt-6 pt-3 sm:mt-12 sm:pt-12 border-t">
       

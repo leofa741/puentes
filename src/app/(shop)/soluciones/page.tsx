@@ -129,11 +129,54 @@ export default function Soluciones() {
 
 
         <h4 className="w-full my-2 text-2xl font-bold leading-tight text-left text-gray-800">
-          Desarrollo de software
+          Los clientes esperan más
         </h4>
 
         <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
-          Desarrollamos software a medida para que puedas acceder a ellas desde cualquier dispositivo con conexión a internet.
+          Sin embargo, a medida que nuestro mundo se ha acelerado aún más, los clientes se han
+          vuelto impacientes. El tiempo es un activo valioso, y eso significa que los compradores
+          esperan y recompensan a los minoristas que ofrecen una experiencia de compra
+          optimizada y personalizada. Los clientes quieren:
+        </p>
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          • Ser reconocidos como un cliente valioso en todos los canales de compras minoristas.
+        </p>
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          • Acceder a productos seleccionados y contenido de marca recomendados
+          en función de las preferencias y necesidades.
+        </p>
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          • Recibir ofertas de promociones y descuentos para recompensar la lealtad.
+        </p>
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          • Recibir solo campañas de marketing que se aplican a ellos.
+        </p>
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          • Recibir opciones rápidas y sencillas para comprar y devolver artículos.
+        </p>
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          • Ser tratados de manera justa, respetuosa y rápida cuando surgen problemas.
+        </p>
+        <h4 className="w-full my-2 text-2xl font-bold leading-tight text-left text-gray-800">
+          Los datos son el motor
+        </h4>
+
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          Si bien los procesos automatizados son un componente fundamental para proporcionar
+          estos servicios mejorados, los datos son el motor. Del mismo modo que el comerciante
+          de antaño recordaba detalles específicos sobre las preferencias de compra de nuestros
+          abuelos, los minoristas modernos necesitan datos para administrar a los clientes, ofrecer
+          un servicio de primera clase y aumentar los ingresos a gran escala.
+        </p>
+        <p className="w-full my-2 text-l leading-tight text-left text-gray-600 mb-8">
+          Dicho esto, los datos sobre clientes individuales pueden ayudar a los minoristas a personalizar las experiencias. Sin embargo,
+          los datos agregados (de los clientes y las operaciones) pueden ayudar a los minoristas a crear estrategias basadas en datos
+          para definir las carteras de productos en función de las preferencias de los clientes; pronosticar la demanda para adquirir,
+          reponer y almacenar el inventario de manera más eficiente; y optimizar las presentaciones de los productos para fomentar la venta
+          cruzada y aumentar los ingresos. La recopilación y extracción de datos con una estrategia centralizada que los hace
+          fácilmente accesibles para los equipos y las personas que los necesitan permite a los minoristas utilizar el aprendizaje automático
+          para aprender del pasado y utilizar esos hallazgos para mejorar y predecir el futuro, a fin de aumentar las ventas, mejorar las
+          experiencias de los clientes y empleados, gestionar las operaciones de manera más eficiente, reducir los residuos y mejorar la sostenibilidad.
         </p>
 
       </div>

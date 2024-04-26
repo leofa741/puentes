@@ -39,8 +39,6 @@ export const NavbarDark = () => {
               <Image src='/assets/img/logo.png'
                 width={30} height={30} alt='logo' className='rounded-full hover:shadow-2xl' />
             </div>
-
-
           </Link>
         </div>
 
@@ -76,11 +74,32 @@ export const NavbarDark = () => {
               </div>
             </div>
           </div>
+        
 
-          <Link href='/soluciones'>
-            <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
-           ${pathname == '/soluciones' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}> Soluciones</span>
-          </Link>
+          {/* DropdownList soluciones */}
+          <div className="  dropdown hover:bg-gray-900 hover:text-white">
+
+            <Link href="/soluciones" tabIndex={0} className={`  py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >
+
+              <span className="">
+                <button className={`${montserrat.className}m-2 pl-3 pr-4 inline-flex justify-center rounded-md transition duration-500     ${pathname == '/soluciones' ? 'bg-gray-900' : ''}`}
+                  style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}
+                  type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
+                  <span>Soluciones </span>
+                  <svg className="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                </button>
+              </span>
+            </Link>
+
+            <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+              <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+
+                <div className="py-1">
+                  <Link href="/soluciones/datos" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones/datos' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >La importancia de los datos</Link>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           {/* DropdownList services */}
@@ -105,7 +124,7 @@ export const NavbarDark = () => {
                   <Link href="/services/desarrolloweb" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/services/desarrolloweb' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Sistemas a Medida</Link>
                   <Link href="/services/e-commerce" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/services/e-commerce' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >E-commerce</Link>
                   <Link href="/services/mantenimiento-de-aplicaciones" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/services/mantenimiento-de-aplicaciones' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >Mantenimiento de Aplicaciones</Link>
-                
+
                 </div>
               </div>
             </div>
@@ -127,7 +146,7 @@ export const NavbarDark = () => {
         </div>
 
         <div className='flex items-center px-4 cursor-pointer  space-x-4 '>
-        
+
 
           <button className=' text-white font-bold py-2 px-4 rounded   visible xl:invisible lg:invisible md:invisible sm:block ' onClick={() => openMenu()}  >
             <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>

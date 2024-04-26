@@ -63,7 +63,7 @@ export const Sidebar = () => {
         />
 
 
-      
+
 
         {/* Line Separator */}
         <div className="w-full h-px bg-gray-200 my-10" />
@@ -119,14 +119,18 @@ export const Sidebar = () => {
           <IoIosArrowDown size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Soluciones</span>
         </Link>
+        <Link href="/soluciones/datos" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+          <IoIosArrowDown size={29} />&nbsp;&nbsp;
+          <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>La importancia de los datos</span>
+        </Link>
         <Link href="/empresa" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
           <IoIosArrowDown size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Nosotros</span>
         </Link>
-     
 
-           {/* DropdownList */}
-           <div className=" dropdown">
+
+        {/* DropdownList */}
+        <div className=" dropdown">
           <span className="">
             <button className="flex justify-center p-2 transition duration-150 ease-in-out   hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
               type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117  ">
@@ -153,8 +157,6 @@ export const Sidebar = () => {
                   <span className="ml-3 text-l" onClick={() => closeMenu()}>Mantenimiento de Aplicaciones</span>
                 </Link>
 
-                
-               
               </div>
 
             </div>
@@ -173,8 +175,8 @@ export const Sidebar = () => {
         <div className="w-full h-px bg-gray-200 my-5" />
 
 
-     
-      
+
+
       </nav>
     </div>
   );

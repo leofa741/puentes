@@ -229,6 +229,8 @@ export default function Datos() {
 
 
       </div>
+      <br/>
+      <br/>
 
     </>
   )

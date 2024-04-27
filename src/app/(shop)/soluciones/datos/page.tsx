@@ -225,9 +225,6 @@ export default function Datos() {
           analítica, la IA y el ML para innovar y crear una ventaja competitiva.
         </p>
 
-
-
-
       </div>
       <br/>
       <br/>

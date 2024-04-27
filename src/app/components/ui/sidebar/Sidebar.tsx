@@ -115,9 +115,9 @@ export const Sidebar = () => {
           </div>
         </div>
 
-        <Link href="/soluciones" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-          <IoIosArrowDown size={18} />&nbsp;&nbsp;
-          <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Soluciones</span>
+        <Link href="/soluciones/convertirse-en-comercio-minorista-basado-en-datos" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+          <IoIosArrowDown size={39} />&nbsp;&nbsp;
+          <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Comercio minorista basado en datos</span>
         </Link>
         <Link href="/soluciones/datos" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
           <IoIosArrowDown size={29} />&nbsp;&nbsp;

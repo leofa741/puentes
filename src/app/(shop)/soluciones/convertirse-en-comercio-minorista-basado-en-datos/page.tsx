@@ -179,6 +179,8 @@ export default function Soluciones() {
           experiencias de los clientes y empleados, gestionar las operaciones de manera más eficiente, reducir los residuos y mejorar la sostenibilidad.
         </p>
 
+        <a className="w-full my-2 text-l font-bold text-right text-black mb-8" href='/soluciones/datos' >Leer la importancia de los datos</a>
+
       </div>
 
     </>

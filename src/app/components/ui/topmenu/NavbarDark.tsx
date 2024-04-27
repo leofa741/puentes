@@ -79,7 +79,7 @@ export const NavbarDark = () => {
           {/* DropdownList soluciones */}
           <div className="  dropdown hover:bg-gray-900 hover:text-white">
 
-            <Link href="/soluciones" tabIndex={0} className={`  py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >
+            <Link href="" tabIndex={0} className={`  py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >
 
               <span className="">
                 <button className={`${montserrat.className}m-2 pl-3 pr-4 inline-flex justify-center rounded-md transition duration-500     ${pathname == '/soluciones' ? 'bg-gray-900' : ''}`}
@@ -95,6 +95,8 @@ export const NavbarDark = () => {
               <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
 
                 <div className="py-1">
+                <Link href="/soluciones/convertirse-en-comercio-minorista-basado-en-datos" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones/convertirse-en-comercio-minorista-basado-en-datos' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >La importancia de los datos</Link>
+               
                   <Link href="/soluciones/datos" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones/datos' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >La importancia de los datos</Link>
                 </div>
               </div>

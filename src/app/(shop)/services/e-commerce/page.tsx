@@ -73,10 +73,10 @@ export default function Ecommerce() {
                     color: "black",
                     textAlign: "center",
                     fontWeight: "bold",
-                    fontSize: "2.5rem",
+                    fontSize: "1.5rem",
                     fontFamily: "sans-serif",
                     textTransform: "uppercase",
-                    letterSpacing: "0.2rem",
+                    letterSpacing: "0.1rem",
                     textShadow: '4px 4px 9px #000000',
                   }}>
                   Implementación

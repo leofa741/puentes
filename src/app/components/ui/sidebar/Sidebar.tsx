@@ -63,7 +63,7 @@ export const Sidebar = () => {
         />
 
 
-      
+
 
         {/* Line Separator */}
         <div className="w-full h-px bg-gray-200 my-10" />
@@ -115,18 +115,43 @@ export const Sidebar = () => {
           </div>
         </div>
 
-        <Link href="/soluciones" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
-          <IoIosArrowDown size={18} />&nbsp;&nbsp;
-          <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Soluciones</span>
-        </Link>
+
+
+        {/* DropdownList soluciones */}
+        <div className=" dropdown">
+          <span className="">
+            <button className="flex justify-center p-2 transition duration-150 ease-in-out   hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
+              type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117  ">
+              <IoIosArrowDown size={18} />
+              <span className={`${montserrat.className}ml-3 text-l`}>&nbsp;&nbsp;Soluciones</span>
+            </button>
+          </span>
+
+          <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right translate-y-2 scale-95">
+            <div className="absolute right-0 w-36 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+
+              <div className="py-1">
+                <Link href="/soluciones/convertirse-en-comercio-minorista-basado-en-datos" className="flex items-center mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>Comercio minorista basado en datos</span>
+                </Link>
+                <Link href="/soluciones/datos" className="flex items-center-mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+                  <span className="ml-3 text-l" onClick={() => closeMenu()}>La importancia de los datos</span>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <Link href="/empresa" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
           <IoIosArrowDown size={18} />&nbsp;&nbsp;
           <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Nosotros</span>
         </Link>
-     
 
-           {/* DropdownList */}
-           <div className=" dropdown">
+
+        {/* DropdownList */}
+        <div className=" dropdown">
           <span className="">
             <button className="flex justify-center p-2 transition duration-150 ease-in-out   hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
               type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117  ">
@@ -153,8 +178,6 @@ export const Sidebar = () => {
                   <span className="ml-3 text-l" onClick={() => closeMenu()}>Mantenimiento de Aplicaciones</span>
                 </Link>
 
-                
-               
               </div>
 
             </div>
@@ -173,8 +196,8 @@ export const Sidebar = () => {
         <div className="w-full h-px bg-gray-200 my-5" />
 
 
-     
-      
+
+
       </nav>
     </div>
   );

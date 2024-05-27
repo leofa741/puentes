@@ -10,7 +10,7 @@ export const Footer = () => {
   <>
   <footer className="footer-1 bg-gray-100 py-8 sm:py-12">
   <div className="container  sm:mx-auto px-4">
-    <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 justify-between items-center">
+    {/* <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4 justify-between items-center">
       <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
         <h5 className="text-xl font-bold mb-6">Nosotros</h5>
         <ul className="list-none footer-links">
@@ -81,7 +81,7 @@ export const Footer = () => {
 
    
 
-    </div>
+    </div> */}
 
     <div className="sm:flex sm:flex-wrap sm:-mx-4 mt-6 pt-3 sm:mt-12 sm:pt-12 border-t">
       

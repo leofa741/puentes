@@ -17,7 +17,8 @@ export default function Services() {
   return (
     <>
       <div className='titleheader'>
-        <Title title="Servicios" subtitle="Puentech" />
+        <Title title="Servicios" subtitle="Puentech" /> 
+        
       </div>
       <BannerHeader
         title="Servicios"

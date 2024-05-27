@@ -13,7 +13,7 @@ export const BanerServicesContact = () => {
                 <h2 className="subtitle-services">Servicios</h2>
               </div>
               <a  
-                href="https://wa.me/+5491136038167?text=Hola%20me%20gustaria%20saber%20mas%20sobre%20diseños%20web%20a medida"
+                href="https://wa.me/+5491141461312?text=Hola%20me%20gustaria%20saber%20mas%20sobre%20diseños%20web%20a medida"
               className="button">Contactanos</a>
             </div>
           </div>

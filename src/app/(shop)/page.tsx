@@ -7,7 +7,7 @@ import { Carrousel } from '../components/carrousel/Carrousel';
 
 
 export const metadata: Metadata = {
-  keywords: ' diseño web,ecommerce,app,software,desarrollo,devops,base de datos,sql,mysql,postgresql,oracle,sqlserver,react,angular,flutter,android,ios,java,nodejs,express,typescript,javascript,html,css,bootstrap,tailwind,materialize,materialdesign,git,github,gitlab,bitbucket,azure,aws,googlecloud,firebase,heroku,netlify,vercel,linux,windows,ubuntu',
+  keywords: 'Diseño web, ecommerce, app, software, desarrollo, devops, base de datos, sql, mysql, postgresql, sqlserver, react, angular,flutter,android,ios,java,nodejs,express,typescript,javascript,html,css,bootstrap,tailwind,materialize,materialdesign,git,github,gitlab,bitbucket,azure,aws,googlecloud,firebase,heroku,netlify,vercel,linux,windows,ubuntu',
   title: "Home Page | Puentech",
   description: "Puentech es una empresa de desarrollo de software, aplicaciones móviles, aplicaciones web, ecommerce, devops, base de datos, diseño web, diseño de tiendas online, con la mejor tecnología y experiencia de usuario.",
 
@@ -40,6 +40,7 @@ export default function Home() {
             </div>
            
             <HomeComponent />
+            
 
 
             <CardPracticas />

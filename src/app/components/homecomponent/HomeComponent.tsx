@@ -27,6 +27,8 @@ export const HomeComponent = () => {
                         <p className="mb-4">  Talento profesional, procesos y tecnologías asociadas, determinan nuestras áreas de conocimiento en Outsourcing de Innovación.</p>                      
                         
                         <p className="mb-4"> Transformamos ideas en productos digitales, a través de un proceso de innovación que integra diseño, tecnología y estrategia.</p>
+
+                        
                          
                         
 

@@ -21,9 +21,9 @@ const createTransporter = async () => {
     service: 'gmail',
     auth: {
       type: 'OAuth2',
-      user: process.env.SENDER_EMAIL_ADDRESS,
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      user:"infoplataformaweb@gmail.com",
+      clientId: "709090017620-0fjftvvqusj4n5tg48ehahv6krsdlioa.apps.googleusercontent.com",
+      clientSecret: "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",
       refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
       accessToken: accessToken.token || ''
     }

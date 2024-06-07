@@ -3,6 +3,7 @@ import createTransporter from '@/lib/oauth2';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 
+
 type Data = {
   success: boolean;
   message?: string;
@@ -38,6 +39,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       res.status(500).json({ success: false, error: 'Error al enviar el correo' });
     }
   } else {
-    res.status(405).json({ success: false, message: 'Método no permitido' });
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 };

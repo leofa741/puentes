@@ -28,7 +28,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const res = await fetch('/api/send-email', {
+      const res = await fetch('./app/api/send-email.ts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

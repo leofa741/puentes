@@ -28,12 +28,14 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const res = await fetch('./app/api/send-email.ts', {
+      const res = await fetch('/send-email.ts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
+      
+       
       });
 
       if (res.ok) {
@@ -48,6 +50,7 @@ export default function Contact() {
         throw new Error(errorData.error || 'Error al enviar el correo');
       }
     } catch (error: any) {
+      console.log(error);
       setError(error.message);
     }
   };
@@ -56,7 +59,7 @@ export default function Contact() {
 
   return (
     <>
-  <div className="min-h-screen p-2 flex flex-col items-center justify-center">
+  <div >
       <div className="titleheader w-full">
         <Title title="Contactos" subtitle="Puentech" />
       </div>

@@ -1,4 +1,5 @@
 // pages/api/send-email.ts
+
 import createTransporter from '@/lib/oauth2';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -13,7 +14,7 @@ type Data = {
 export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
-    console.log(req.body);
+    console.log("yo",req.body);
 
     const mailOptions = {
       from:'infoplataformaweb@gmail.com',

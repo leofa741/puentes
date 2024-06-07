@@ -1,23 +1,44 @@
 // pages/api/send-email.ts
-
-import createTransporter from '@/lib/oauth2';
 import { NextApiRequest, NextApiResponse } from 'next';
+import nodemailer from 'nodemailer';
+import { google } from 'googleapis';
 
+const OAuth2 = google.auth.OAuth2;
 
+const createTransporter = async () => {
+  const oauth2Client = new OAuth2(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    process.env.GOOGLE_REDIRECT_URI
+  );
 
-type Data = {
-  success: boolean;
-  message?: string;
-  error?: string;
+  oauth2Client.setCredentials({
+    refresh_token: process.env.GOOGLE_REFRESH_TOKEN
+  });
+
+  const accessToken = await oauth2Client.getAccessToken();
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      type: 'OAuth2',
+      user: process.env.SENDER_EMAIL_ADDRESS,
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+      accessToken: accessToken.token || ''
+    }
+  });
+
+  return transporter;
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
-    console.log("yo",req.body);
 
     const mailOptions = {
-      from:'infoplataformaweb@gmail.com',
+      from: process.env.SENDER_EMAIL_ADDRESS,
       to: 'infoplataformaweb@gmail.com', // Reemplaza con tu dirección de correo electrónico
       subject: `Nuevo mensaje de ${name}`,
       text: `

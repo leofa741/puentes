@@ -28,34 +28,32 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const res = await fetch('/send-email.ts', {
+      const res = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
-      
-       
+        body: JSON.stringify(formData)
       });
 
       if (res.ok) {
+        console.log('Mensaje enviado con éxito',res.json());
         setSubmitted(true);
         setFormData({
           name: '',
           email: '',
           message: ''
         });
+        setError(null);
       } else {
         const errorData = await res.json();
         throw new Error(errorData.error || 'Error al enviar el correo');
       }
     } catch (error: any) {
-      console.log(error);
+      console.error(error);
       setError(error.message);
     }
   };
-
-
 
   return (
     <>

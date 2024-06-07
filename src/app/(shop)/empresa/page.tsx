@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Empresa() {
   return (
     <>
-      <div className="min-h-screen p-2 flex flex-col items-center justify-center">
+      <div >
       <div className="titleheader">
         <Title title="Nosotros" subtitle="Puentech" />
       </div>

@@ -17,43 +17,12 @@ export default function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (res.ok) {
-        console.log('Mensaje enviado con éxito',res.json());
-        setSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          message: ''
-        });
-        setError(null);
-      } else {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Error al enviar el correo');
-      }
-    } catch (error: any) {
-      console.error(error);
-      setError(error.message);
-    }
-  };
 
   return (
     <>
@@ -93,10 +62,9 @@ export default function Contact() {
             <p className="text-lg">Buenos Aires, Argentina</p>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="mt-8 w-full max-w-lg mx-auto bg-white p-8 shadow-md rounded-lg">
+        <form action="https://formspree.io/f/xyyrqqvg" method="POST" className="mt-8 w-full max-w-lg mx-auto bg-white p-8 shadow-md rounded-lg">
           <h2 className="text-2xl font-bold mb-6 text-center">Formulario de Contacto</h2>
           {submitted && <p className="text-green-500 text-center">Mensaje enviado con éxito!</p>}
-          {error && <p className="text-red-500 text-center">Error: {error}</p>}
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
               Nombre
@@ -108,6 +76,7 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Tu nombre"
+              name="name"
               required
             />
           </div>
@@ -122,6 +91,7 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Tu correo electrónico"
+              name="email"
               required
             />
           </div>
@@ -136,6 +106,7 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Escribe tu mensaje aquí"
+              name="message"
               required
             ></textarea>
           </div>

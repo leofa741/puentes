@@ -13,7 +13,7 @@ export default function ShopLayout({
   return (
     <main className="">
         <head>
-        <title>Mi página de inicio</title>
+        <title>Puentes Digitales</title>
         <meta name="description" content="Puentech es una empresa de desarrollo de software, aplicaciones móviles, aplicaciones web, ecommerce, devops, base de datos, diseño web, diseño de tiendas online, con la mejor tecnología y experiencia de usuario." />
         <meta name="keywords" content="Diseño web, ecommerce, app, software, desarrollo, devops, base de datos, sql, mysql, postgresql, sqlserver, react, angular,android,ios,java,nodejs,express,typescript,javascript,html,css,bootstrap,tailwind,materialdesign,git,github,gitlab,bitbucket,azure,aws" />
         <meta name="author" content="Puentes Digitales" />

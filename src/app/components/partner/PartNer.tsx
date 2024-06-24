@@ -32,7 +32,7 @@ export const PartNer = () => {
 		</div>
         <div className="slide">
 			<img src="/assets/img/vvcode.png"  alt="" />
-		</div>
+		</div>		
         <div className="slide">
 			<img src="/assets/img/angular.png"  alt="" />
 		</div>

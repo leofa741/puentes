@@ -62,23 +62,22 @@
 
 }
 
-
 @media screen and (max-width: 768px) {
   .slider {
-    height: 100px;
+    height: 150px; /* Incrementar la altura para mejorar la visibilidad */
     width: 100%;
   }
   .slider::before, .slider::after {
-    height: 50px;
-    width: 50px;
+    height: 75px; /* Incrementar la altura */
+    width: 75px;  /* Incrementar el ancho */
   }
   .slider .slide-track {
-    width: calc(220px * 5);
+    width: calc(220px * 5); /* Ajustar si tienes más o menos de 5 elementos */
   }
   .slider .slide img {
-    height: 50px;
-    width: 100px;
+    height: 100px; /* Ajustar la altura de las imágenes */
+    width: auto;  /* Mantener la proporción de las imágenes */
+    max-width: 100%; /* Asegurar que las imágenes no superen el ancho del contenedor */
   }
-
 }
 

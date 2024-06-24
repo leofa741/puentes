@@ -87,7 +87,7 @@
     display: flex; /* Usar flexbox para centrar las imágenes */
     justify-content: center; /* Centrar las imágenes horizontalmente */
     align-items: center; /* Centrar las imágenes verticalmente */
-    margin: 0 15px; /* Reducir el espaciado entre las diapositivas */
+    margin: 0 25px; /* Reducir el espaciado entre las diapositivas */
   }
   .slider .slide img {
     max-height: 80px; /* Reducir la altura máxima de las imágenes */

@@ -61,26 +61,36 @@
 
 
 }
+
 @media screen and (max-width: 768px) {
   .slider {
-    height: 150px; /* Incrementar la altura para mejorar la visibilidad */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
     width: 100%;
+    overflow: hidden; /* Ocultar el contenido desbordado */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
   }
   .slider::before, .slider::after {
-    height: 75px; /* Incrementar la altura */
-    width: 75px;  /* Incrementar el ancho */
+    content: ''; /* Asegurarse de que estos pseudo-elementos tengan contenido vacío */
+    height: 50px; /* Ajustar la altura */
+    width: 50px;  /* Ajustar el ancho */
   }
   .slider .slide-track {
-    width: calc(220px * 5); /* Ajustar si tienes más o menos de 5 elementos */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    transition: transform 0.5s ease; /* Transición suave para el deslizamiento */
   }
   .slider .slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Asegurarse de que las imágenes ocupen toda la altura del slider */
+    flex: 0 0 auto; /* Asegurarse de que los elementos no se estiren */
+    width: 100px; /* Ancho fijo para las diapositivas */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+    display: flex; /* Usar flexbox para centrar las imágenes */
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    align-items: center; /* Centrar las imágenes verticalmente */
+    margin: 0 10px; /* Espaciado entre las diapositivas */
   }
   .slider .slide img {
-    max-height: 100%; /* Asegurarse de que las imágenes no superen la altura del contenedor */
+    max-height: 100px; /* Limitar la altura máxima de las imágenes */
     width: auto; /* Mantener la proporción de las imágenes */
     object-fit: cover; /* Asegurarse de que las imágenes se redimensionen adecuadamente */
   }

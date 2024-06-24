@@ -11,7 +11,7 @@ export default function Home() {
       <h1 className="text-6xl font-bold text-center">
         Puentech - Home bis
         
-      </h1>
+      </h1> 
 
    
 

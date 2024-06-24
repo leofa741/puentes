@@ -39,6 +39,9 @@ export const PartNer = () => {
         <div className="slide">
 			<img src="/assets/img/react.png"  alt="" />
 		</div>
+		<div className="slide">
+			<img src="/assets/img/nest.png"  alt="" />
+		</div>
         <div className="slide">
 			<img src="/assets/img/next.png"  alt="" />
 		</div>

@@ -82,16 +82,17 @@
   }
   .slider .slide {
     flex: 0 0 auto; /* Asegurarse de que los elementos no se estiren */
-    width: 100px; /* Ancho fijo para las diapositivas */
+    width: 80px; /* Reducir el ancho de las diapositivas */
     height: auto; /* Permitir que la altura se ajuste automáticamente */
     display: flex; /* Usar flexbox para centrar las imágenes */
     justify-content: center; /* Centrar las imágenes horizontalmente */
     align-items: center; /* Centrar las imágenes verticalmente */
-    margin: 0 10px; /* Espaciado entre las diapositivas */
+    margin: 0 5px; /* Reducir el espaciado entre las diapositivas */
   }
   .slider .slide img {
-    max-height: 100px; /* Limitar la altura máxima de las imágenes */
+    max-height: 80px; /* Reducir la altura máxima de las imágenes */
     width: auto; /* Mantener la proporción de las imágenes */
-    object-fit: cover; /* Asegurarse de que las imágenes se redimensionen adecuadamente */
+    max-width: 100%; /* Limitar el ancho máximo de las imágenes */
+    object-fit: contain; /* Asegurarse de que las imágenes se redimensionen adecuadamente */
   }
 }

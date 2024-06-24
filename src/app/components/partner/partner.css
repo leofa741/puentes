@@ -61,7 +61,6 @@
 
 
 }
-
 @media screen and (max-width: 768px) {
   .slider {
     height: 150px; /* Incrementar la altura para mejorar la visibilidad */
@@ -74,10 +73,15 @@
   .slider .slide-track {
     width: calc(220px * 5); /* Ajustar si tienes más o menos de 5 elementos */
   }
+  .slider .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Asegurarse de que las imágenes ocupen toda la altura del slider */
+  }
   .slider .slide img {
-    height: 100px; /* Ajustar la altura de las imágenes */
-    width: auto;  /* Mantener la proporción de las imágenes */
-    max-width: 100%; /* Asegurar que las imágenes no superen el ancho del contenedor */
+    max-height: 100%; /* Asegurarse de que las imágenes no superen la altura del contenedor */
+    width: auto; /* Mantener la proporción de las imágenes */
+    object-fit: cover; /* Asegurarse de que las imágenes se redimensionen adecuadamente */
   }
 }
-

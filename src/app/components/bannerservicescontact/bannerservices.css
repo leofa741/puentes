@@ -1,7 +1,5 @@
-
 .bannerservices {
   position: relative;
-  height: 100%;
   width: 100%;
   background: none;
   overflow: hidden;
@@ -23,16 +21,16 @@
   position: relative;
   z-index: 2;
   width: 100%;
+  max-width: 1200px;
   height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
 .bannerservices .content-wrapperr {
-  margin: auto;
   width: 100%;
   max-width: 706px;
-  padding: 30px;
   text-align: center;
 }
 
@@ -56,7 +54,8 @@
   z-index: 1;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
+  width: 300px; /* Adjust size as needed */
 }
 
 .button {
@@ -77,30 +76,22 @@
 }
 
 @media (min-width: 650px) {
-  .bannerservices .illo {
-    right: 0;
-    left: auto;
-  }
-
-  .bannerservices .illo {
-    right: 260px;
-    left: auto;
-  }
-
   .bannerservices .content-wrapperr {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
+  }
+
+  .bannerservices .contentservices {
+    justify-content: space-between;
   }
 
   .bannerservices .content-wrapperr .headline {
     flex-grow: 1;
-    padding-left: 80px;
   }
 
   .button {
-    flex: 0 0 200px;
+    align-self: flex-start;
   }
 }

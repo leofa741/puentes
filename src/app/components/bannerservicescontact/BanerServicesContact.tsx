@@ -14,7 +14,7 @@ href="https://wa.me/+5491141461312?text=Hola%20me%20gustaria%20saber%20mas%20sob
 className="button">Contactanos</a> 
           </div>
         </div>
-        <img src="../../public/assets/img/ilustracion.png" alt="Ilustración" className="illo" />
+        <img src="../../public/assets/img/logo.png" alt="Ilustración" className="illo" />
       </div>
     </div>
   );

@@ -120,9 +120,10 @@ export default function Contact() {
           </div>
         </form>
       </div>
-      <BanerServicesContact />
+     
   
     </div>
+    <BanerServicesContact />
     </>
   )
 }

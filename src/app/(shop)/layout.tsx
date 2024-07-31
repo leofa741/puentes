@@ -11,7 +11,7 @@ export default function ShopLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="">
+    <main >
         <head>
         <title>Puentes Digitales</title>
         <meta name="description" content="Puentech es una empresa de desarrollo de software, aplicaciones móviles, aplicaciones web, ecommerce, devops, base de datos, diseño web, diseño de tiendas online, con la mejor tecnología y experiencia de usuario." />
@@ -28,7 +28,9 @@ export default function ShopLayout({
       <Social />
       {children}
       <h4 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
-        Tecnologías
+      <br />
+        Tecnologías que usamos
+        <br />       
       </h4>
       <br />
 

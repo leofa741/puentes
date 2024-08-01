@@ -54,7 +54,7 @@ export default function Datos() {
 
           <div className="w-full sm:w-1/2 p-6">
             <ImagenCard
-              url={"../assets/img/learning1.png"}
+              url={"../assets/img/deep-learning.png"}
             />
           </div>
         </div>

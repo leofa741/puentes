@@ -123,7 +123,7 @@ export const Sidebar = () => {
             <button className="flex justify-center p-2 transition duration-150 ease-in-out   hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
               type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117  ">
               <IoIosArrowDown size={18} />
-              <span className={`${montserrat.className}ml-3 text-l`}>&nbsp;&nbsp;Soluciones</span>
+              <span className={`${montserrat.className}ml-3 text-l`}>&nbsp;&nbsp;#MachineLearning</span>
             </button>
           </span>
 

@@ -54,7 +54,7 @@ export default function Datos() {
 
           <div className="w-full sm:w-1/2 p-6">
             <ImagenCard
-              url={"https://github.com/leofa741/prixma/blob/master/src/assets/img/E-Commerce.png?raw=true"}
+              url={"../assets/img/learning.png"}
             />
           </div>
         </div>

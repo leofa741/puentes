@@ -1,0 +1,90 @@
+.cards-1 {
+	width: 100%;
+	
+
+
+}
+
+.cards-1 .h2-heading {
+	margin-bottom: 3.5rem;
+}
+
+.cards-1 .card {
+	max-width: 16rem;
+	margin-right: auto;
+	margin-bottom: 3.5rem;
+	margin-left: auto;
+	padding: 0;
+	border: none;
+}
+
+.cards-1 .card-image {
+	max-width: 16rem;
+	margin-right: auto;
+	margin-bottom: 2rem;
+	margin-left: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.cards-1 .card-image:hover {
+    opacity: 0.5;
+}
+
+.cards-1 .card-title {
+	margin-bottom: 1.5rem;
+	font: 700 1.25rem/1.75rem "Open Sans", sans-serif;
+	color: #212529;
+	text-align: center;
+}
+
+.cards-1 .card-body {
+	padding: 0;
+	border: none;
+	text-align: center;
+
+
+    
+}
+.above-heading {
+	margin-bottom: 1.5rem;
+	font: 700 1.25rem/1.75rem "Open Sans", sans-serif;
+	color: #212529;
+	text-align: center;
+}
+
+.animacion-block {
+	
+	animation: fadeIn 1s ease-out forwards;
+  }
+
+  .animacion-block1 {
+	
+	animation: fadeIn 3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+
+
+  @media (min-width: 768px) {
+	.cards-1 .card {
+		max-width: 18rem;
+		margin-right: 1.5rem;
+		margin-bottom: 3.5rem;
+		margin-left: 1.5rem;
+		padding: 0;
+		border: none;
+		
+	}
+	.cards-1 .card-image {
+		max-width: 18rem;
+	}
+}
+
+  

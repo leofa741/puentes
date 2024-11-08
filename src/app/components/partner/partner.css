@@ -1,0 +1,98 @@
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 10));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 10));
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+          animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+.slider .slide {
+    height: 80px;
+    width: 250px;
+
+}
+
+.slider .slide img {
+    height: 70px;
+     width: 170px;
+    margin: 10px 10px;
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .slider {
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+    width: 100%;
+    overflow: hidden; /* Ocultar el contenido desbordado */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    align-items: center; /* Centrar los elementos verticalmente */
+  }
+  .slider::before, .slider::after {
+    content: ''; /* Asegurarse de que estos pseudo-elementos tengan contenido vacío */
+    height: 50px; /* Ajustar la altura */
+    width: 50px;  /* Ajustar el ancho */
+  }
+  .slider .slide-track {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    transition: transform 0.5s ease; /* Transición suave para el deslizamiento */
+  }
+  .slider .slide {
+    flex: 0 0 auto; /* Asegurarse de que los elementos no se estiren */
+    width: 80px; /* Reducir el ancho de las diapositivas */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+    display: flex; /* Usar flexbox para centrar las imágenes */
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    align-items: center; /* Centrar las imágenes verticalmente */
+    margin: 0 25px; /* Reducir el espaciado entre las diapositivas */
+  }
+  .slider .slide img {
+    max-height: 80px; /* Reducir la altura máxima de las imágenes */
+    width: auto; /* Mantener la proporción de las imágenes */
+    max-width: 100%; /* Limitar el ancho máximo de las imágenes */
+    object-fit: contain; /* Asegurarse de que las imágenes se redimensionen adecuadamente */
+  }
+}

@@ -1,9 +1,8 @@
 
-
-
 import { BlogGrid } from '@/app/components/blogComponent/BlogGrid';
 import React from 'react';
 
+import { Metadata } from 'next'
 
 
 
@@ -39,9 +38,15 @@ const posts: Post[] = [
     },
 ];
 
+
+export const metadata: Metadata = {
+  keywords: 'E-commerce, diseño web, apis, Desarrollo web, ecommerce, aplicaciones web, aplicaciones móviles, desarrollo de software, desarrollo de aplicaciones, desarrollo de aplicaciones móviles, desarrollo de aplicaciones web ',
+  title: "E-commerce| Puentech",
+  description: "Puentech es una empresa de desarrollo de software que se especializa en la creación de aplicaciones web y sitios web para pequeñas y medianas empresas.",
+
+}
+
 const BlogPage: React.FC =  () => {
-
-
 
 
     return (

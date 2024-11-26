@@ -1,45 +1,55 @@
 'use client';
 
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
+type Post = {
+    id: number;
+    title: string;
+    description: string;
+    imageUrl: string;
+    link: string;
+};
 
+export default function ArticuloPage({ params }: { params: { id: string } }) {
+    const [articulo, setArticulo] = useState<Post | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const router = useRouter(); // Manejar navegación
 
-const posts = [
-    {
-        id: 1,
-        title: 'numero1 Puentes Digitales adquiere Gestión IT y planifica inversiones para el desarrollo de la firma en Latam',
-        description: 'Descubre cómo la colaboración entre Puentes Digitales y GitLab está transformando la industria del desarrollo de software mediante la inteligencia artificial.',
-        imageUrl: '/assets/img/angular.png',
-        link: '/blog/articulo/1',
-    },
-    {
-        id: 2,
-        title: ' numero2 Puentes Digitales adquiere Gestión IT y planifica inversiones para el desarrollo de la firma en Latam',
-        description: 'Con esta adquisición, Puentes Digitales suma una nueva área de conocimiento en Testing y Calidad en software con certificación internacional.',
-        imageUrl: '/assets/img/angular.png',
-        link: '/blog/articulo/2',
-    },
-    {
-        id: 3,
-        title: 'numero3 Puentes Digitales adquiere Gestión IT y planifica inversiones para el desarrollo de la firma en Latam',
-        description: 'Con esta adquisición, Puentes Digitales suma una nueva área de conocimiento en Testing y Calidad en software con certificación internacional.',
-        imageUrl: '/assets/img/angular.png',
-        link: '/blog/articulo/3',
-    },
-];
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                const response = await fetch('/data/posts.json');
+                if (!response.ok) {
+                    throw new Error('Error al cargar los datos');
+                }
+                const posts: Post[] = await response.json();
+                const foundPost = posts.find((post) => post.id === parseInt(params.id));
+                if (!foundPost) {
+                    router.push('/404'); // Redirigir a la página 404 si no se encuentra el artículo
+                    return;
+                }
+                setArticulo(foundPost);
+            } catch (error) {
+                console.error('Error fetching article:', error);
+                router.push('/404');
+            } finally {
+                setIsLoading(false);
+            }
+        };
 
+        fetchPost();
+    }, [params.id, router]);
 
-
-export default function ArticuloPage({ params }: { params: { id: string } }) { 
-
-
-    
-    const articulo = posts.find((post) => post.id === parseInt(params.id));
+    if (isLoading) {
+        return <p className="text-center py-10">Cargando artículo...</p>;
+    }
 
     if (!articulo) {
-        notFound(); // Muestra la página 404 si no se encuentra el artículo
+        return null; // Esto no debería ocurrir debido al manejo anterior
     }
 
     return (
@@ -47,11 +57,8 @@ export default function ArticuloPage({ params }: { params: { id: string } }) {
             <div className="container mx-auto px-4">
                 {/* Encabezado */}
                 <header className="text-center mb-10">
-
-
                     <h1 className="text-4xl font-extrabold text-gray-900 leading-tight">
-                        {articulo.title} 
-
+                        {articulo.title}
                     </h1>
                     <div className="mt-4 border-t-4 border-blue-500 w-16 mx-auto"></div>
                 </header>
@@ -76,8 +83,10 @@ export default function ArticuloPage({ params }: { params: { id: string } }) {
                                 {articulo.description}
                             </p>
                             <div className="text-center lg:text-left">
-                                <Link className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg text-lg font-semibold hover:bg-blue-600 transition duration-300"
-                                    href='/blog/articulos'>
+                                <Link
+                                    className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg text-lg font-semibold hover:bg-blue-600 transition duration-300"
+                                    href="/blog/articulos"
+                                >
                                     Leer más artículos
                                 </Link>
                             </div>
@@ -86,7 +95,5 @@ export default function ArticuloPage({ params }: { params: { id: string } }) {
                 </div>
             </div>
         </div>
-
-
     );
 }

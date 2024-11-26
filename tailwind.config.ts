@@ -1,4 +1,3 @@
-
 import type { Config } from 'tailwindcss'
 
 
@@ -12,8 +11,19 @@ module.exports = withMT({
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
-  },
+    extend: {
+        animation: {
+            loading: 'loading 1.5s infinite',
+        },
+        keyframes: {
+            loading: {
+                '0%': { transform: 'translateX(-100%)' },
+                '50%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(100%)' },
+            },
+        },
+    },
+},
   plugins: [],
 });
 
@@ -33,6 +43,8 @@ const config: Config = {
   plugins: [],
 }
 export default config
+
+
 
 
 

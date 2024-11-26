@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "numero1 Puentes Digitales adquiere Gestión IT y planifica inversiones para el desarrollo de la firma en Latam",
+      "description": "Descubre cómo la colaboración entre Puentes Digitales y GitLab está transformando la industria del desarrollo de software mediante la inteligencia artificial.",
+      "imageUrl": "/assets/img/angular.png",
+      "link": "/blog/articulo/1"
+    },
+    {
+      "id": 2,
+      "title": "numero2 Puentes Digitales adquiere Gestión IT y planifica inversiones para el desarrollo de la firma en Latam",
+      "description": "Con esta adquisición, Puentes Digitales suma una nueva área de conocimiento en Testing y Calidad en software con certificación internacional.",
+      "imageUrl": "/assets/img/angular.png",
+      "link": "/blog/articulo/2"
+    },
+    {
+      "id": 3,
+      "title": "numero3 Puentes Digitales adquiere Gestión IT y planifica inversiones para el desarrollo de la firma en Latam",
+      "description": "Con esta adquisición, Puentes Digitales suma una nueva área de conocimiento en Testing y Calidad en software con certificación internacional.",
+      "imageUrl": "/assets/img/angular.png",
+      "link": "/blog/articulo/3"
+    }
+  ]
+  

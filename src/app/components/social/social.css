@@ -1,0 +1,378 @@
+.social {
+	position: fixed;	/* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	right: 0;	/* Establecemos la barra en la izquierda */
+	top: 250px;	/* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000;	/* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+.social ul {
+	list-style: none;	/* Eliminamos los marcadores de la lista */
+}
+
+
+.social ul li a {
+	display: block;	/* Hacemos que el ancho y alto de los enlaces sean los mismos que el de la imagen */
+	width: 50px;	/* Establecemos el ancho de los enlaces */
+	height: 50px;	/* Establecemos el alto de los enlaces */
+	color: #fff;	background: #000000;
+	padding: 10px 15px;
+	text-decoration: none;
+	-webkit-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;	/* Establecemos una transición a todas las propiedades */
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+
+}
+
+
+/* Establecemos los colores de cada red social, aprovechando su class */
+.social ul li .icon-twitter {	background: #000000;}
+
+
+.social img {
+	width: 23px;
+	height: 25px;
+
+}
+
+
+.social ul li a:hover {
+	padding: 10px 35px;	
+}
+
+.social ul li a:hover {
+	padding: 10px 35px;	
+}
+
+
+.social1 {
+	position: fixed;	/* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	right: 0;	/* Establecemos la barra en la izquierda */
+	top: 303px;/* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000;	/* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+
+.social1 ul {
+	list-style: none;	/* Eliminamos los marcadores de la lista */
+}
+
+
+.social1 ul li a {
+	display: block;	/* Hacemos que el ancho y alto de los enlaces sean los mismos que el de la imagen */
+	width: 50px;	/* Establecemos el ancho de los enlaces */
+	height: 50px;	/* Establecemos el alto de los enlaces */
+	color: #fff;	background: #000;
+	padding: 10px 15px;
+	text-decoration: none;
+	-webkit-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;	/* Establecemos una transición a todas las propiedades */
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+
+/* Establecemos los colores de cada red social, aprovechando su class */
+.social1 ul li .icon-twitter {	background: #00abf0;}
+.social1 ul li .icon-linkedin {	background: #0077B5;}
+.social1 ul li .icon-facebook {	background: #3b5998;}
+.social1 ul li .icon-mail {	background: #FF795A;}
+.social1 ul li .icon-whatsapp {	background: #25D366;}
+.social1 ul li .icon-instagram {	background: #C13584;}
+.social1 ul li .icon-youtube {	background: #FF0000;}
+.social1 ul li .icon-pinterest {	background: #BD081C;}
+.social1 ul li .icon-threads {	background: #222020;}
+
+.social1 ul li a:hover {
+	padding: 10px 35px;	
+	
+}
+
+.social2 {
+	position: fixed;	/* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	right: 0;	/* Establecemos la barra en la izquierda */
+	top: 356px;	/* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000;	/* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+
+.social2 ul {
+	list-style: none;	/* Eliminamos los marcadores de la lista */
+}
+
+
+.social2 ul li a {
+	display: block;	/* Hacemos que el ancho y alto de los enlaces sean los mismos que el de la imagen */
+	width: 50px;	/* Establecemos el ancho de los enlaces */
+	height: 50px;	/* Establecemos el alto de los enlaces */
+	color: #fff;	background: #000;
+	padding: 10px 15px;
+	text-decoration: none;
+	-webkit-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;	/* Establecemos una transición a todas las propiedades */
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+
+}
+
+
+/* Establecemos los colores de cada red social, aprovechando su class */
+.social2 ul li .icon-twitter {	background: #00abf0;}
+.social2 ul li .icon-facebook {	background: #3b5998;}
+.social2 ul li .icon-mail {	background: #FF795A;}
+.social2 ul li .icon-whatsapp {	background: #25D366;}
+.social2 ul li .icon-instagram {	background: #C13584;}
+.social2 ul li .icon-youtube {	background: #FF0000;}
+.social2 ul li .icon-linkedin {	background: #0077B5;}
+.social2 ul li .icon-pinterest {	background: #BD081C;}
+
+.social2 ul li a:hover {
+	padding: 10px 35px;		
+}
+
+
+.social3 {
+	position: fixed;	/* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	right: 0;	/* Establecemos la barra en la izquierda */
+	top: 409px;	/* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000;	/* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+
+}
+
+
+.social3 ul {
+	list-style: none;	/* Eliminamos los marcadores de la lista */
+}
+
+
+.social3 ul li a {
+	display: block;	/* Hacemos que el ancho y alto de los enlaces sean los mismos que el de la imagen */
+	width: 50px;	/* Establecemos el ancho de los enlaces */
+	height: 50px;	/* Establecemos el alto de los enlaces */
+	color: #fff;	background: #000;
+	padding: 10px 15px;
+	text-decoration: none;
+	-webkit-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;	/* Establecemos una transición a todas las propiedades */
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+
+}
+
+
+.social3 ul li .icon-threads {	background: #222020;}
+
+.social3 img {
+	width: 20px;
+	height: 22px;
+	border-radius: 50%;
+}
+
+.social3 ul li a:hover {
+	padding: 10px 35px;	
+}
+
+
+.social4 {
+	position: fixed;	/* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	right: 0;	/* Establecemos la barra en la izquierda */
+	top: 462px;	/* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000;	/* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+
+}
+
+
+.social4 ul {
+	list-style: none;	/* Eliminamos los marcadores de la lista */
+
+}
+
+
+.social4 ul li a {
+	display: block;	/* Hacemos que el ancho y alto de los enlaces sean los mismos que el de la imagen */
+	width: 70px;	/* Establecemos el ancho de los enlaces */
+	height: 70px;	/* Establecemos el alto de los enlaces */
+	color: #fff;	background: #000;
+	padding: 10px 35px;	
+	text-decoration: none;
+	-webkit-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;	/* Establecemos una transición a todas las propiedades */
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+}
+
+
+.social4 ul li .icon-twitter {	background: #00abf0;}
+.social4 ul li .icon-facebook {	background: #3b5998;}
+.social4 ul li .icon-mail {	
+		padding: 10px 35px;																																		
+	background: #FF795A;
+	transition: all 500ms ease;
+}
+.social4 ul li .icon-whatsapp {	background: #25D366;}
+.social4 ul li .icon-instagram {	background: #C13584;}
+.social4 ul li .icon-youtube {	background: #FF0000;}
+.social4 ul li .icon-linkedin {	background: #0077B5;}
+.social4 ul li .icon-pinterest {	background: #BD081C;}
+
+
+.social4 ul li a:hover {
+	width: 120px;	
+	padding: 10px 45px;	
+}
+
+
+
+@media (max-width: 768px) {
+
+	.social {
+		position: fixed;	
+		right: 25px;		
+		top: 250px;		
+		z-index: 2000;
+		margin-right: -25px;
+	}
+
+	.social ul {
+		list-style: none;
+
+	}
+
+	.social ul li {
+		padding-bottom: 2px;
+
+	}
+
+	.social ul li a {
+		width: 35px;
+		height: 35px;
+		padding: 5px 5px;
+	}
+
+	.social ul li a:hover {
+		padding: 5px 5px;
+
+	}
+
+	.social1 {
+		position: fixed;
+		right: 25px;
+		top: 288px;
+		z-index: 2000;
+		margin-right: -25px;
+	}
+
+	.social1 ul {
+		list-style: none;
+
+	}
+
+	.social1 ul li {
+		padding-bottom: 2px;
+	}
+
+	.social1 ul li a {
+		width: 35px;
+		height: 35px;
+		padding: 5px 5px;
+	}
+
+	.social1 ul li a:hover {
+		padding: 5px 5px;
+	}
+
+
+	.social2 {
+		position: fixed;
+		right: 25px;
+		top: 326px;
+		z-index: 2000;
+		margin-right: -25px;
+	}
+
+	.social2 ul {
+		list-style: none;
+	}
+
+	.social2 ul li {
+		padding-bottom: 2px;
+	}
+
+	.social2 ul li a {
+		width: 35px;
+		height: 35px;
+		padding: 5px 5px;
+	}
+
+	.social2 ul li a:hover {
+		padding: 5px 5px;
+
+	}
+
+	.social3 {
+		position: fixed;
+		right: 25px;
+		top: 364px;
+		z-index: 2000;
+		margin-right: -25px;
+	}
+
+	.social3 ul {
+		list-style: none;
+	}
+
+	.social3 ul li {
+		padding-bottom: 2px;
+
+	}
+
+	.social3 ul li a {
+		width: 35px;
+		height: 35px;
+		padding: 5px 5px;
+
+	}
+
+	.social3 ul li a:hover {
+		padding:  5px 5px;
+	}
+
+	.social4 {
+		position: fixed;
+		right: 25px;
+		top: 401px;
+		z-index: 2000;
+		margin-right: -25px;
+	}
+
+	.social4 ul {
+		list-style: none;
+
+	}
+
+	.social4 ul li {
+		padding-bottom: 2px;	
+
+	}
+
+	.social4 ul li a {
+		width: 35px;
+		height: 60px;
+		padding: 5px 5px;
+	}
+
+	.social4 ul li a:hover {
+		padding: 5px 5px;
+	}
+
+	
+}

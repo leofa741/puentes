@@ -15,14 +15,14 @@ type Post = {
 export default function BlogIdClientComponent({ post }: { post: Post }) {
   return (
     <div className="container mx-auto py-12 px-6 max-w-4xl">
-      <h1 className="text-5xl font-serif font-extrabold text-gray-900 mb-6">{post.title}</h1>
+      <h1 className="text-5xl  font-extrabold text-gray-900 mb-6">{post.title}</h1>
       <p className="text-xl text-gray-700 italic mb-4">{post.subtitle}</p>
       
       <Image
         src={post.imageUrl}
         alt={post.title}
-        width={800} // Ajusta el tamaño de la imagen para mayor impacto visual
-        height={450}
+        width={500} // Ajusta el tamaño de la imagen para mayor impacto visual
+        height={300}
         className="my-8 rounded-lg shadow-lg transform transition-all hover:scale-105"
       />
       

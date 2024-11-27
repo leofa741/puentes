@@ -3,6 +3,7 @@ import { BlogCard } from './BlogCard';
 
 interface Post {
     id: number;
+    contenido: string | string[];
     title: string;
     subtitle: string;
     description: string;

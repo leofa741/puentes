@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 interface Post {
   id: number;
+  contenido: string | string[];
   title: string;
   subtitle: string;
   description: string;
@@ -38,6 +39,7 @@ export const BlogCard = ({ post }: { post: Post }) => {
           <div className="p-6">
             <h1 className="text-xl font-semibold text-gray-800">{post.title}</h1>
             <h3 className="text-gray-600 mt-2 font-semibold">{post.subtitle}</h3>
+            <p className="text-gray-600 mt-2">{post.contenido}</p>
             
             {/* Renderizar los primeros párrafos y el botón de "Leer más" */}
             {visibleParagraphs.map((paragraph, index) => (

@@ -4,8 +4,9 @@ import { BlogGrid } from '@/app/components/blogComponent/BlogGrid';
 import Loading from '@/app/components/loading/LoadingEfect';
 import React, { useEffect, useState } from 'react';
 
-type Post = {
+interface Post {
     id: number;
+    contenido: string | string[]; // Permitir tanto string como array de strings
     title: string;
     subtitle: string;
     description: string;

@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 type Post = {
     id: number;
     title: string;
+    subtitle: string;
     description: string;
     imageUrl: string;
     link: string;

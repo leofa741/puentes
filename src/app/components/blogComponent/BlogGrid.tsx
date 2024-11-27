@@ -4,6 +4,7 @@ import { BlogCard } from './BlogCard';
 interface Post {
     id: number;
     title: string;
+    subtitle: string;
     description: string;
     imageUrl: string;
     link: string;

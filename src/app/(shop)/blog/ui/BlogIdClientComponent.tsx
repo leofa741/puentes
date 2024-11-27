@@ -20,8 +20,8 @@ export default function BlogIdClientComponent({ post }: { post: Post }) {
       <Image
         src={post.imageUrl}
         alt={post.title}
-        width={800}
-        height={400}
+        width={640}// 
+        height={360}
         className="my-6 rounded-lg"
       />
       <p className="text-gray-800 leading-relaxed">{post.description}</p>

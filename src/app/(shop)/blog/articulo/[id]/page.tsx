@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     return {
       title: post.title,
       description: post.subtitle,
-      keywords: post.title.split(/(?=[A-Z])/).join(','),
+      keywords: 'artículo, blog, noticias, novedades',
       robots: 'index, follow', // Permite indexar y seguir enlaces
       openGraph: {
         title: post.title,

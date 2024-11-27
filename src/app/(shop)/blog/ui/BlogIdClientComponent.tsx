@@ -14,20 +14,23 @@ type Post = {
 
 export default function BlogIdClientComponent({ post }: { post: Post }) {
   return (
-    <div className="container mx-auto py-10 px-4">
-      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <p className="text-lg text-gray-600">{post.subtitle}</p>
+    <div className="container mx-auto py-12 px-6 max-w-4xl">
+      <h1 className="text-5xl font-serif font-extrabold text-gray-900 mb-6">{post.title}</h1>
+      <p className="text-xl text-gray-700 italic mb-4">{post.subtitle}</p>
+      
       <Image
         src={post.imageUrl}
         alt={post.title}
-        width={640}// 
-        height={360}
-        className="my-6 rounded-lg"
+        width={800} // Ajusta el tamaño de la imagen para mayor impacto visual
+        height={450}
+        className="my-8 rounded-lg shadow-lg transform transition-all hover:scale-105"
       />
-      <p className="text-gray-800 leading-relaxed">{post.description}</p>
+      
+      <p className="text-gray-800 leading-relaxed text-lg mb-6">{post.description}</p>
+      
       <a
         href="/blog"
-        className="inline-block mt-6 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+        className="inline-block mt-8 bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all ease-in-out"
       >
         Volver al blog
       </a>

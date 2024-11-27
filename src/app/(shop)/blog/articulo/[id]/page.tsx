@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     return {
       title: post.title,      
       description: post.subtitle,
-      keywords: typeof post.contenido === 'string' ? post.contenido.split(' ').join(', ') : post.contenido.join(', '), // Convertir el contenido en una lista de palabras clave
+      keywords: post.contenido.split(' ').join(', '), // Convertir el contenido en una lista de palabras clave
       robots: 'index, follow',
       openGraph: {
         title: post.title,

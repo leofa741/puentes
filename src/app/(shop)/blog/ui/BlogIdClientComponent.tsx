@@ -13,6 +13,7 @@ type Post = {
 };
 
 export default function BlogIdClientComponent({ post }: { post: Post }) {
+  const paragraphs = post.description.split('\n');
   return (
     <div className="container mx-auto py-12 px-6 max-w-4xl">
       <h1 className="text-5xl  font-extrabold text-gray-900 mb-6">{post.title}</h1>
@@ -26,7 +27,15 @@ export default function BlogIdClientComponent({ post }: { post: Post }) {
         className="rounded-lg mb-6" 
       />
       
-      <p className="text-gray-800 leading-relaxed text-lg mb-6">{post.description}</p>
+      <p className="text-gray-800 leading-relaxed text-lg mb-6">
+        {paragraphs.map((paragraph, index) => (
+          <span key={index}>
+            {paragraph}
+            <br />
+          </span>
+        ))}
+
+      </p>
       
       <a
         href="/blog"

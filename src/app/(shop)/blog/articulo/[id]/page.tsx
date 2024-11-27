@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     return {
       title: post.title,
       description: post.subtitle,
-      keywords: post.title.split(/[A-Z]/).join(', ').toLowerCase(),
+      keywords: post.title.split(' ').join(', '),
       robots: 'index, follow',
       openGraph: {
         title: post.title,

@@ -17,7 +17,7 @@ export default function BlogIdClientComponent({ post }: { post: Post }) {
   const paragraphs = post.description.split('\n');
 
   // Verifica si 'contenido' es un string, si es así, lo convertimos a un array
-  console.log('Contenido desde ui:', post.contenido);
+ 
 
   const tags = Array.isArray(post.contenido)
     ? post.contenido

@@ -23,7 +23,7 @@ async function fetchPost(id: string): Promise<Post | null> {
       throw new Error('Error al obtener los datos');
     }
     const posts: Post[] = await response.json();
-    console.log('Posts pageid:', posts);
+   
     return posts.find((post) => post.id === parseInt(id)) || null;
   } catch (error) {
     console.error('Error en fetchPost:', error);
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     return {
       title: post.title,      
       description: post.subtitle,
-      keywords: post.title.split(' ').join(', '), // Convertir el contenido en una lista de palabras clave
+      keywords: typeof post.contenido === 'string' ? post.contenido.split(' ').join(', ') : post.contenido.join(', '), // Convertir el contenido en una lista de palabras clave
       robots: 'index, follow',
       openGraph: {
         title: post.title,
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 export default async function ArticuloPage({ params }: { params: { id: string } }) {
   const post = await fetchPost(params.id);
 
-  console.log('Post:', post);
+
 
   if (!post) {
     return (

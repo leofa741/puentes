@@ -183,6 +183,10 @@ export const Sidebar = () => {
             </div>
           </div>
         </div>
+        <Link href="/blog" className="flex items-center -mt-1 p-2 hover:bg-gray-100 rounded transition-all"  >
+          <IoIosArrowDown size={18} />&nbsp;&nbsp;
+          <span className={`${montserrat.className}ml-3 text-l`} onClick={() => closeMenu()}>Blog</span>
+        </Link>
 
 
 

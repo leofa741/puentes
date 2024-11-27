@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface Post  {
+interface Post {
   id: number;
   contenido: string | string[]; // Permitir tanto string como array de strings
   title: string;
@@ -17,8 +17,6 @@ export default function BlogIdClientComponent({ post }: { post: Post }) {
   const paragraphs = post.description.split('\n');
 
   // Verifica si 'contenido' es un string, si es así, lo convertimos a un array
- 
-
   const tags = Array.isArray(post.contenido)
     ? post.contenido
     : post.contenido?.split(',').map((tag) => tag.trim()) || [];
@@ -66,8 +64,8 @@ export default function BlogIdClientComponent({ post }: { post: Post }) {
         </a>
       </div>
 
-      {/* Columna de tags */}
-      <div className="w-1/4 bg-gray-100 p-4 rounded-lg shadow-lg">
+      {/* Columna de tags, visible solo en pantallas grandes */}
+      <div className="w-1/4 bg-gray-100 p-4 rounded-lg shadow-lg hidden md:block">
         <h3 className="text-xl font-semibold text-gray-800 mb-4">Tags</h3>
         <div className="flex flex-wrap gap-2">
           {tags.length > 0 ? (

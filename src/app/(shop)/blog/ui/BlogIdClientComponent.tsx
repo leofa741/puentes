@@ -23,7 +23,7 @@ export default function BlogIdClientComponent({ post }: { post: Post }) {
         alt={post.title}
         width={500} // Ajusta el tamaño de la imagen para mayor impacto visual
         height={300}
-        className="my-8 rounded-lg shadow-lg transform transition-all hover:scale-105"
+        className="rounded-lg mb-6" 
       />
       
       <p className="text-gray-800 leading-relaxed text-lg mb-6">{post.description}</p>

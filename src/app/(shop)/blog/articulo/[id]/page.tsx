@@ -1,8 +1,6 @@
-// app/blog/[id]/page.tsx (archivo principal de la página)
-
+// app/blog/[id]/page.tsx
 import { Metadata } from 'next';
 import ClientComponent from '../../ui/BlogIdClientComponent';
-// Componente cliente separado
 
 type Post = {
   id: number;
@@ -13,12 +11,24 @@ type Post = {
   link: string;
 };
 
+// Función para obtener el artículo por ID
 async function fetchPost(id: string): Promise<Post | null> {
-  const response = await fetch('http://localhost:3000/data/posts.json'); // Cambia esta URL si es necesario
-  const posts: Post[] = await response.json();
-  return posts.find((post) => post.id === parseInt(id)) || null;
+  try {
+    const response = await fetch('https://www.puentesdigitales.com.ar/data/posts.json', {
+      cache: 'no-store', // Evita el uso de caché para obtener datos actualizados
+    });
+    if (!response.ok) {
+      throw new Error('Error al obtener los datos');
+    }
+    const posts: Post[] = await response.json();
+    return posts.find((post) => post.id === parseInt(id)) || null;
+  } catch (error) {
+    console.error('Error en fetchPost:', error);
+    return null;
+  }
 }
 
+// Generar metadatos dinámicos
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const post = await fetchPost(params.id);
 
@@ -26,28 +36,36 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     return {
       title: post.title,
       description: post.subtitle,
-      keywords: 'artículo, blog, noticias, novedades',
-      robots: 'index, follow', // Permite indexar y seguir enlaces
+      keywords: post.title.split(/[A-Z]/).join(', ').toLowerCase(),
+      robots: 'index, follow',
       openGraph: {
         title: post.title,
         description: post.subtitle,
         images: [{ url: post.imageUrl }],
         type: 'article',
-    },
+      },
+     
     };
   }
 
   return {
     title: 'Artículo no encontrado',
     description: 'El artículo que buscas no existe o ha sido eliminado.',
+    robots: 'noindex, nofollow',
   };
 }
 
+// Renderizar la página del artículo
 export default async function ArticuloPage({ params }: { params: { id: string } }) {
   const post = await fetchPost(params.id);
 
   if (!post) {
-    return <p>Artículo no encontrado</p>;
+    return (
+      <div className="text-center py-10">
+        <h1 className="text-2xl font-bold">Artículo no encontrado</h1>
+        <p>El artículo que buscas no existe o ha sido eliminado.</p>
+      </div>
+    );
   }
 
   return <ClientComponent post={post} />;

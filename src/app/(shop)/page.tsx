@@ -25,7 +25,9 @@ export default function Home() {
 
 
       <div className="flex min-h-screen flex-col items-center justify-items-center  p-2 ">
+      
         <div className="flex px-4 mx-auto  sm:px-6 lg:px-8">
+        
           <article className="mx-auto w-full max-w-[1500px]">
 
             <h1 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
@@ -39,8 +41,8 @@ export default function Home() {
               </p> 
             </div>
            
+           
             <HomeComponent />
-            
 
 
             <CardPracticas />
@@ -50,7 +52,7 @@ export default function Home() {
 
           
           </article>
-
+         
         </div>
       </div>
 

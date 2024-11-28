@@ -1,46 +1,108 @@
-import React from 'react'
-import './home.css'
+'use client';
+import React, { useEffect, useState } from 'react';
+import './home.css';
+
+interface Post {
+    id: number;
+    title: string;
+    imageUrl: string;
+    link: string;
+}
 
 export const HomeComponent = () => {
-  return (
-   <>
-    
-    <div className="section bg-primary pt-0 pb-0 ">
-        <div className="container">
-            <div className="row align-items-center col-12">
-                <div className="col-lg-6" >
-                    <div className="img-border">
-                        <img className="img-fluid" src="/assets/img/sitio-web.webp" alt=""/>
+    const [mostReadPosts, setMostReadPosts] = useState<Post[]>([]);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch('/data/posts.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch posts');
+                }
+                const data: Post[] = await response.json();
+                // Seleccionar los primeros 3 artículos más leídos
+                setMostReadPosts(data.slice(0, 3));
+            } catch (error) {
+                console.error('Error fetching posts:', error);
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
+    return (
+        <div className="section bg-primary pt-0 pb-0">
+            <div className="container">
+                <div className="row">
+                    {/* Columna principal */}
+                    <div className="col-lg-8">
+                        <div className="row align-items-center">
+                            <div className="col-lg-6">
+                                <div className="img-border">
+                                    <img
+                                        className="img-fluid"
+                                        src="/assets/img/sitio-web.webp"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-lg-6">
+                                <div className="h-100">
+                                    <h6 className="section-title text-start font-bold text-3xl">
+                                        Puentes Digitales
+                                    </h6>
+                                    <h1 className="mb-4 font-bold text-5xl">
+                                        Conectando el futuro
+                                        <span className="text-4xl"> soluciones digitales </span>
+                                        <span className="text-4xl"> que </span>
+                                        <span className="text-4xl"> superan expectativas</span>
+                                    </h1>
+                                    <p className="mb-4">
+                                        Talento profesional, procesos y tecnologías asociadas,
+                                        determinan nuestras áreas de conocimiento en Outsourcing de
+                                        Innovación.
+                                    </p>
+                                    <p className="mb-4">
+                                        Transformamos ideas en productos digitales, a través de un
+                                        proceso de innovación que integra diseño, tecnología y
+                                        estrategia.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div className="h-100">
-                        <h6 className=" section-title text-start  pe-2 font-bold  xs:text-xl sm:text-xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-3xl">Puentes Digitales</h6>                      
-                         
-                        <h1 className="mb-4  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl"> Conectando el futuro
-                        <span className="text-2xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-4xl 2xl:text-4xl "> soluciones digitales  </span>
-                         <span className="text-1xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-4xl 2xl:text-4xl "> que </span>   
-                         <span className="text-2xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-4xl xl:text-4xl 2xl:text-4xl ">    superan expectativa</span>                   
-                           </h1>                    
-                               
-                        
-                        <p className="mb-4">  Talento profesional, procesos y tecnologías asociadas, determinan nuestras áreas de conocimiento en Outsourcing de Innovación.</p>                      
-                        
-                        <p className="mb-4"> Transformamos ideas en productos digitales, a través de un proceso de innovación que integra diseño, tecnología y estrategia.</p>
 
-                        
-                         
-                        
-
+                    {/* Columna lateral */}
+                    <div className="col-lg-4">
+                        <aside className="bg-white shadow-lg rounded-lg p-4">
+                            <h5 className="text-lg font-bold mb-4">Artículos más leídos</h5>
+                            <ul className="space-y-4">
+                                {mostReadPosts.length > 0 ? (
+                                    mostReadPosts.map((post) => (
+                                        <li key={post.id} className="flex items-center space-x-4">
+                                            <img
+                                                src={post.imageUrl}
+                                                alt={post.title}
+                                                className="w-16 h-16 object-cover rounded-md"
+                                            />
+                                            <div>
+                                                <a
+                                                    href={post.link}
+                                                    className="text-blue-600 font-medium hover:underline"
+                                                >
+                                                    {post.title}
+                                                </a>
+                                            </div>
+                                        </li>
+                                    ))
+                                ) : (
+                                    <p className="text-gray-500">Cargando artículos...</p>
+                                )}
+                            </ul>
+                        </aside>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-   
-   
-   </>
-  )
-}
+    );
+};

@@ -53,13 +53,13 @@ export const Footer = () => {
         <a href="#" className="text-gray-400 hover:text-white">
           <IoLogoFacebook className="w-6 h-6" />
         </a>
-        <a href="#" className="text-gray-400 hover:text-white">
+        <a href="https://www.instagram.com/puentesdigitales.com.ar/" className="text-gray-400 hover:text-white">
           <IoLogoInstagram className="w-6 h-6" />
         </a>
-        <a href="#" className="text-gray-400 hover:text-white">
+        <a href="https://www.linkedin.com/in/puentesdigitales/" className="text-gray-400 hover:text-white">
           <IoLogoLinkedin className="w-6 h-6" />
         </a>
-        <a href="#" className="text-gray-400 hover:text-white">
+        <a href="mailto:infoplataformaweb@gmail.com" className="text-gray-400 hover:text-white">
           <IoLogoGoogle className="w-6 h-6" />
         </a>
         <a href="#" className="text-gray-400 hover:text-white">

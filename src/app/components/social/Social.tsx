@@ -26,7 +26,7 @@ export const Social = () => {
 			<div className="social1">
 				<ul>
 					{/* <li><a href="https://www.facebook.com/www.puentesdigitales.com.ar" target="_blank" className="icon-facebook"><FacebookIcon/></a></li> */}
-					<li><a href="https://www.linkedin.com/in/leonardofdev/" target="_blank" className="icon-linkedin"><IoLogoLinkedin size={27}/></a></li>
+					<li><a href="https://www.linkedin.com/in/puentesdigitales/" target="_blank" className="icon-linkedin"><IoLogoLinkedin size={27}/></a></li>
 
 				</ul>
 

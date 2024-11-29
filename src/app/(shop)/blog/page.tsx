@@ -12,6 +12,7 @@ interface Post {
     description: string;
     imageUrl: string;
     link: string;
+    date: string;
 }
 
 const BlogPage: React.FC = () => {

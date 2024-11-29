@@ -9,6 +9,7 @@ interface Post {
     description: string;
     imageUrl: string;
     link: string;
+    date: string;
 }
 
 export const BlogGrid = ({ posts }: { posts: Post[] }) => {

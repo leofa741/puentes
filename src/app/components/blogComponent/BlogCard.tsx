@@ -11,6 +11,7 @@ interface Post {
   description: string;
   imageUrl: string;
   link: string;
+  date: string;
 }
 
 export const BlogCard = ({ post }: { post: Post }) => {
@@ -36,6 +37,9 @@ export const BlogCard = ({ post }: { post: Post }) => {
             width={640}
             height={360}
           />
+          <div className="p-6">
+            <span className="text-sm text-gray-600">{post.date}</span>
+          </div>
           <div className="p-6">
             <h1 className="text-xl font-semibold text-gray-800">{post.title}</h1>
             <h3 className="text-gray-600 mt-2 font-semibold">{post.subtitle}</h3>

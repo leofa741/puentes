@@ -1,5 +1,8 @@
 'use client';
-import Link from 'next/link';
+
+import { formatDistanceToNow } from 'date-fns';
+import { es } from 'date-fns/locale';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 
@@ -38,27 +41,30 @@ export const BlogCard = ({ post }: { post: Post }) => {
             height={360}
           />
           <div className="p-6">
-            <span className="text-sm text-gray-600">{post.date}</span>
+            <span className="text-sm text-gray-600">
+              {formatDistanceToNow(new Date(post.date), { addSuffix: true, locale: es })}
+            </span>
           </div>
+
           <div className="p-6">
             <h1 className="text-xl font-semibold text-gray-800">{post.title}</h1>
             <h3 className="text-gray-600 mt-2 font-semibold">{post.subtitle}</h3>
-          
-            
+
+
             {/* Renderizar los primeros párrafos y el botón de "Leer más" */}
             {visibleParagraphs.map((paragraph, index) => (
               <p key={index} className="text-gray-600 mt-2">{paragraph}</p>
             ))}
-            
+
             {/* Botón de "Leer más" si no está expandido */}
-         
+
 
             {/* Enlace para ir al artículo completo */}
             <a
               href={post.link}
               className="text-blue-600 font-medium hover:underline mt-4 inline-block"
             >
-              Leer más → 
+              Leer más →
             </a>
           </div>
         </article>

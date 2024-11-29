@@ -36,7 +36,7 @@ const BlogPage: React.FC = () => {
     }, []);
 
     // Seleccionar los artículos más leídos (simulación: tomar los primeros 3)
-    const mostReadPosts = posts.slice(0, 3);
+    const mostReadPosts = posts.slice(0, 33);
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-100 text-gray-800">

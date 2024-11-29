@@ -2,6 +2,7 @@
 
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
+import { FaLinkedin } from 'react-icons/fa'; // Usa react-icons para íconos populares
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -44,7 +45,15 @@ export const BlogCard = ({ post }: { post: Post }) => {
             <span className="text-sm text-gray-600">
               {formatDistanceToNow(new Date(post.date), { addSuffix: true, locale: es })}
             </span>
-          </div>
+            <a
+    href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=puentesdigitales"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center text-blue-600 hover:underline mt-2"
+  >
+    <FaLinkedin className="w-5 h-5 mr-2" /> {/* Ícono de LinkedIn */}
+    Sígueme
+  </a>  </div>
 
           <div className="p-6">
             <h1 className="text-xl font-semibold text-gray-800">{post.title}</h1>

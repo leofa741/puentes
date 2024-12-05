@@ -7,21 +7,24 @@ interface Post {
     title: string;
     imageUrl: string;
     link: string;
+    likes: number;
 }
 
 export const HomeComponent = () => {
     const [mostReadPosts, setMostReadPosts] = useState<Post[]>([]);
-
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch('/data/posts.json');
+                const response = await fetch('/api/blog'); // Cambia a la ruta de tu API
                 if (!response.ok) {
                     throw new Error('Failed to fetch posts');
                 }
                 const data: Post[] = await response.json();
-                // Seleccionar los primeros 3 artículos más leídos
-                setMostReadPosts(data.slice(0, 3));
+                // Selecciona los 3 primeros artículos (puedes ordenar por likes u otra lógica)
+                setMostReadPosts(
+                    data.sort((a, b) => b.likes - a.likes).slice(0, 3)
+                );
+                
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }
@@ -29,6 +32,7 @@ export const HomeComponent = () => {
 
         fetchPosts();
     }, []);
+
 
     return (
         <div className="section bg-primary pt-0 pb-0">
@@ -99,6 +103,7 @@ export const HomeComponent = () => {
                                     <p className="text-gray-500">Cargando artículos...</p>
                                 )}
                             </ul>
+
                         </aside>
                     </div>
                 </div>

@@ -2,14 +2,15 @@ import React from 'react'
 import { BlogCard } from './BlogCard';
 
 interface Post {
-    id: number;
-    contenido: string | string[];
-    title: string;
-    subtitle: string;
-    description: string;
-    imageUrl: string;
-    link: string;
-    date: string;
+  id: string; // Cambiado a string
+  contenido: string | string[];
+  title: string;
+  subtitle: string;
+  description: string;
+  imageUrl: string;
+  link: string;
+  date: string;
+  likes: number;
 }
 
 export const BlogGrid = ({ posts }: { posts: Post[] }) => {

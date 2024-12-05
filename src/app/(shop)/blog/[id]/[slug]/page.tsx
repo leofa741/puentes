@@ -1,37 +1,41 @@
-// app/(shop)/blog/[id]/[slug]/page.tsx
 import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
-import BlogIdClientComponent from '../../ui/BlogIdClientComponent';
- // Asegúrate de que esta ruta sea correcta
+import BlogIdClientComponent from '../../ui/BlogIdClientComponent'; // Ajusta la ruta según tu estructura
 
 interface Post {
-  id: number;
+  id: string; // _id será convertido a string
   contenido: string | string[];
   title: string;
   subtitle: string;
   description: string;
   imageUrl: string;
   link: string;
+  date: string;
+  likes: number;
+  dislikes?: number;
 }
 
-// Función para obtener el artículo por ID
+// Función para obtener el artículo por ID desde el backend
 async function fetchPost(id: string): Promise<Post | null> {
   try {
-    const response = await fetch('https://www.puentesdigitales.com.ar/data/posts.json', {
-      cache: 'no-store',
+    console.log('fetchPost', id);
+    const response = await fetch(`http://localhost:3000/api/blogs?id=${id}`, {
+      cache: 'no-store', // Evita el almacenamiento en caché
     });
 
     if (!response.ok) {
-      throw new Error('Error al obtener los datos');
+      console.error('Error al obtener el post:', await response.text());
+      return null;
     }
 
-    const posts: Post[] = await response.json();
-    return posts.find((post) => post.id === parseInt(id)) || null;
+    const post: Post = await response.json();
+    return post || null;
   } catch (error) {
     console.error('Error en fetchPost:', error);
     return null;
   }
 }
+
 
 // Generar el slug desde el título
 function generateSlug(title: string): string {

@@ -1,0 +1,101 @@
+{
+  "id": "6644dead-661f-4f70-8f23-9b7ab98dfe46",
+  "name": "Quiero",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "location",
+          "dataType": "@sys.location",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "$location",
+          "outputDialogContexts": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "¡Por supuesto! Ofrecemos servicios como landing pages, sitios web personalizados y tiendas en línea diseñadas para cubrir tus necesidades específicas. ¿Te interesa algo en particular o necesitas más detalles?",
+            "¡Por supuesto! Ofrecemos servicios como landing pages, sitios web personalizados y tiendas en línea diseñadas para cubrir tus necesidades específicas. ¿Te interesa algo en particular o necesitas más detalles?"
+          ]
+        },
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "¡Por supuesto! Ofrecemos servicios como landing pages, sitios web personalizados y tiendas en línea diseñadas para cubrir tus necesidades específicas. ¿Te interesa algo en particular o necesitas más detalles?"
+          ]
+        }
+      ],
+      "resetContexts": true
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "desarrollo",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "c8c9493f-8be9-426a-8096-c7dadfb33a50",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "diseño",
+          "userDefined": false,
+          "alias": "location",
+          "meta": "@sys.location"
+        }
+      ],
+      "count": 0,
+      "id": "b92874f8-2648-46a3-864c-0b4e329875dd",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": " web",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "351b4c03-19d4-45b9-9e64-6ba8be2885fc",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

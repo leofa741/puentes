@@ -4,17 +4,23 @@ import React from 'react';
 import Image from 'next/image';
 
 interface Post {
-  id: number;
-  contenido: string | string[]; // Permitir tanto string como array de strings
+  id: string; // _id será convertido a string
+  contenido: string | string[];
   title: string;
   subtitle: string;
   description: string;
   imageUrl: string;
   link: string;
-};
+  date: string;
+  likes: number;
+  dislikes?: number;
+}
 
 export default function BlogIdClientComponent({ post }: { post: Post }) {
-  const paragraphs = post.description.split('\n');
+  const paragraphs = post.description
+  .replace(/\\n/g, '\n') // Convierte "\n" en saltos de línea reales
+  .split('\n');
+
 
   // Verifica si 'contenido' es un string, si es así, lo convertimos a un array
   const tags = Array.isArray(post.contenido)

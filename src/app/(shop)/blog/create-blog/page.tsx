@@ -1,15 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Asegúrate de usar `next/navigation`
+import { useRouter } from 'next/navigation';
 
 const CreateBlog = () => {
   const [formData, setFormData] = useState({
     title: '',
     subtitle: '',
     description: '',
-    imageUrl: '',
-    link: '',
+    imageFile: null as File | null, // Campo para la imagen
     date: '',
     contenido: '',
   });
@@ -21,26 +20,51 @@ const CreateBlog = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files?.[0]) {
+      setFormData({ ...formData, imageFile: e.target.files[0] });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
-    console.log('Datos enviados al backend:', formData);
-  
+
     try {
-      const response = await fetch('/api/blog', {
+      // Subir la imagen
+      let imageUrl = '';
+      if (formData.imageFile) {
+        const uploadData = new FormData();
+        uploadData.append('file', formData.imageFile);
+
+        const uploadResponse = await fetch('/api/upload', {
+          method: 'POST',
+          body: uploadData,
+        });
+
+        if (uploadResponse.ok) {
+          const uploadResult = await uploadResponse.json();
+          imageUrl = uploadResult.url;
+        } else {
+          throw new Error('Error al subir la imagen');
+        }
+      }
+
+      // Enviar datos del blog
+      const blogResponse = await fetch('/api/blog', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...formData,
+          imageUrl,
           contenido: formData.contenido.split(',').map(tag => tag.trim()), // Convierte el string de contenido en un array
         }),
       });
-  
-      if (response.ok) {
+
+      if (blogResponse.ok) {
         alert('Blog creado exitosamente');
-        router.push('/blog'); // Redirigir a la página de blogs o donde desees
+        router.push('/blog'); // Redirigir a la página de blogs
       } else {
         alert('Error al crear el blog');
       }
@@ -48,7 +72,6 @@ const CreateBlog = () => {
       console.error('Error al enviar el formulario:', error);
     }
   };
-  
 
   return (
     <div className="container mx-auto mt-10">
@@ -88,22 +111,11 @@ const CreateBlog = () => {
           />
         </div>
         <div>
-          <label className="block text-gray-700">URL de la Imagen</label>
+          <label className="block text-gray-700">Imagen</label>
           <input
-            type="text"
-            name="imageUrl"
-            value={formData.imageUrl}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2"
-          />
-        </div>
-        <div>
-          <label className="block text-gray-700">Enlace</label>
-          <input
-            type="text"
-            name="link"
-            value={formData.link}
-            onChange={handleChange}
+            type="file"
+            name="imageFile"
+            onChange={handleFileChange}
             className="w-full border border-gray-300 rounded p-2"
           />
         </div>

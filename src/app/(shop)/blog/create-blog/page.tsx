@@ -1,4 +1,5 @@
 'use client';
+// ruta app/(shop)/blog/create-blog/page.tsx
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';

@@ -1,10 +1,11 @@
-// ruta: src/app/(shop)/admin/page.tsx
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
 
 interface User {
-  id: string; // ID del usuario
+  id: string;
   email: string;
   roles: string[];
   createdAt: string;
@@ -16,9 +17,19 @@ interface User {
 }
 
 const AdminPage: React.FC = () => {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  // Mueve los hooks al inicio
   const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [uloading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!loading && (!user || !user.roles?.includes('admin'))) {
+      router.push('/'); // Redirige al home si no es admin
+    }
+  }, [user, loading, router]);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -60,7 +71,7 @@ const AdminPage: React.FC = () => {
     }
   };
 
-  if (loading) return <div className="text-center">Cargando usuarios...</div>;
+  if (loading || uloading) return <div className="text-center">Cargando...</div>;
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (

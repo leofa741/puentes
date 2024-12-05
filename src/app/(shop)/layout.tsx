@@ -1,4 +1,5 @@
 
+import { AuthProvider } from '@/context/AuthContext';
 import { Footer, NavbarDark, PartNer, Sidebar, Social, } from '../components';
 import '../globals.css'
 
@@ -23,6 +24,7 @@ export default function ShopLayout({
         <meta property="og:url" content="https://www.puentesdigitales.com.ar" />
 
       </head>
+      <AuthProvider>
       <NavbarDark />
       <Sidebar />
       <Social />
@@ -37,6 +39,7 @@ export default function ShopLayout({
 
       <PartNer />
       <Footer />
+      </AuthProvider>
     </main>
   );
 }

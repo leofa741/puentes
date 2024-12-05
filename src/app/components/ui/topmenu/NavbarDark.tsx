@@ -8,14 +8,56 @@ import { useUIStore } from '@/app/store';
 import Image from 'next/image';
 import './dropdown.css'
 import { IoSearchSharp } from 'react-icons/io5';
-
-
+import { useEffect, useState } from 'react';
+import { FiLogOut } from 'react-icons/fi';
+import { FiLogIn } from 'react-icons/fi';
+import { FiUserPlus } from 'react-icons/fi';
 
 
 export const NavbarDark = () => {
 
   const pathname = usePathname();
   const openMenu = useUIStore(state => state.openSideMenu);
+
+  const [user, setUser] = useState<{ name: string;email: string; avatar: string } | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // Consulta al backend para obtener el estado del usuario
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch('/api/auth/me', { credentials: 'include' });
+       
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data);
+          
+        } else {
+          setUser(null);
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
+      if (response.ok) {
+        setUser(null);
+      } else {
+        console.error('Error logging out');
+      }
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
 
   return (
     <>
@@ -148,16 +190,50 @@ export const NavbarDark = () => {
               Contacto</span>  </Link>
         </div>
 
+        {
+          user ? (
+            loading ? (
+              <span className='text-white'>Cargando...</span>
+            ) : (
+              <div className='flex items-center space-x-4'>
+                <Image
+                  src={user.avatar || '/assets/img/noimage.png'}
+                  alt={user.name}
+                  width={30}
+                  height={30}
+                  className="rounded-full"
+                />
+                <br/>
+                <span className='text-xs text-white font-bold'>{user.email}</span>
+                <div className='flex items-center space-x-4'>
+                  <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white' onClick={() => handleLogout()}>
+                    <FiLogOut className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            )
+          ) : (
+            <div className='flex items-center space-x-4'>
+              <Link href='/auth/login'>
+                <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white'>
+                <FiLogIn className="w-5 h-5" />
+                  </button>
+              </Link>
+              <Link href='/auth/register'>
+                <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white'>
+                <FiUserPlus className="w-5 h-5" />
+                  </button>
+              </Link>
+            </div>
+          )
+        }
+
         <div className='flex items-center px-4 cursor-pointer  space-x-4 '>
-
-
           <button className=' text-white font-bold py-2 px-4 rounded   visible xl:invisible lg:invisible md:invisible sm:block ' onClick={() => openMenu()}  >
             <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
               <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 12h16M4 18h16' />
             </svg>
-
           </button>
-
         </div>
       </nav>
     </>

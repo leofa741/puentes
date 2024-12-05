@@ -1,8 +1,9 @@
 'use client';
 // ruta app/(shop)/blog/create-blog/page.tsx
 
-import React, { useState } from 'react';
+import React, {useEffect,useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
 
 const CreateBlog = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,20 @@ const CreateBlog = () => {
   });
 
   const router = useRouter();
+
+  const { user, loading } = useAuth();
+ 
+
+  // Redirige si el usuario no está autenticado o autorizado
+  useEffect(() => {
+    if (!loading && (!user || !user.roles?.includes('admin'))) {
+      router.push('/blog'); // Redirige al home si no está autenticado o no tiene el rol de admin
+    }
+  }, [user, loading, router]);
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;

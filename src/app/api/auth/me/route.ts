@@ -47,6 +47,7 @@ export async function GET(req: Request) {
     return NextResponse.json({
       name: user.profile?.name || '',
       avatar: user.profile?.avatar || '',
+      roles: user.roles || [],
         email: user.email || '',
     });
   } catch (error) {

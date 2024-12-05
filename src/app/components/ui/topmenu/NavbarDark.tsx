@@ -198,13 +198,13 @@ export const NavbarDark = () => {
               <div className='flex items-center space-x-4'>
                 <Image
                   src={user.avatar || '/assets/img/noimage.png'}
-                  alt={user.name}
+                  alt={user.email}
                   width={30}
                   height={30}
                   className="rounded-full"
                 />
                 <br/>
-                <span className='text-xs text-white font-bold'>{user.email}</span>
+                <span className='text-xs text-white font-bold'>{user.email.substring(0, 4)}...</span>
                 <div className='flex items-center space-x-4'>
                   <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white' onClick={() => handleLogout()}>
                     <FiLogOut className="w-5 h-5" />

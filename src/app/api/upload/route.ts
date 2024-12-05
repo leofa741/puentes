@@ -1,57 +1,35 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs-extra';
-import path from 'path';
+import { v2 as cloudinary } from 'cloudinary';
 
-// Ruta de destino para guardar imágenes
-const uploadDir = path.join(process.cwd(), 'public/assets/imgfiles');
-fs.ensureDirSync(uploadDir); // Crea la carpeta si no existe
-
-export const runtime = 'nodejs';
+// Configuración automática desde `CLOUDINARY_URL`
+cloudinary.config({
+  cloud_name: 'dnv2e0j4l', 
+  api_key: '994123746111941', 
+  api_secret: 'abb_rT2N9F_vlKW69ytjxDs8taE',
+});
 
 export async function POST(req: Request) {
   try {
-    console.log('Procesando archivo...');
+    const formData = await req.formData();
+    const file = formData.get('file') as File;
 
-    const contentType = req.headers.get('content-type') || '';
-    if (!contentType.includes('multipart/form-data')) {
-      return NextResponse.json({ message: 'Tipo de contenido no soportado' }, { status: 400 });
+    if (!file) {
+      return NextResponse.json({ message: 'No se envió ningún archivo' }, { status: 400 });
     }
 
-    const boundary = contentType.split('boundary=')[1];
-    if (!boundary) {
-      return NextResponse.json({ message: 'Boundary no encontrado en la solicitud' }, { status: 400 });
-    }
+    // Subir imagen a Cloudinary
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const result = await cloudinary.uploader.upload(`data:${file.type};base64,${buffer.toString('base64')}`, {
+      folder: 'uploads', // Carpeta opcional en Cloudinary
+    });
 
-    const body = await req.arrayBuffer();
-    const bodyString = Buffer.from(body).toString('binary');
-    const parts = bodyString.split(`--${boundary}`);
-
-    for (const part of parts) {
-      if (part.includes('Content-Disposition: form-data;') && part.includes('filename=')) {
-        // Extraer el nombre del archivo
-        const fileNameMatch = part.match(/filename="(.+?)"/);
-        const fileName = fileNameMatch ? fileNameMatch[1] : `uploaded-file-${Date.now()}`;
-
-        // Extraer el contenido del archivo
-        const fileContentStart = part.indexOf('\r\n\r\n') + 4;
-        const fileContentEnd = part.lastIndexOf('\r\n');
-        const fileContent = part.slice(fileContentStart, fileContentEnd);
-
-        // Guardar el archivo como binario
-        const filePath = path.join(uploadDir, fileName);
-        fs.writeFileSync(filePath, new Uint8Array(Buffer.from(fileContent, 'binary')));
-
-        console.log('Archivo procesado exitosamente:', fileName);
-        return NextResponse.json({
-          message: 'Imagen subida exitosamente',
-          filePath: `/assets/imgfiles/${fileName}`,
-        });
-      }
-    }
-
-    return NextResponse.json({ message: 'No se encontró ningún archivo en la solicitud' }, { status: 400 });
+    return NextResponse.json({
+      message: 'Imagen subida exitosamente',
+      url: result.secure_url,
+    });
   } catch (error) {
-    console.error('Error al subir el archivo:', error);
-    return NextResponse.json({ message: 'Error al subir el archivo' }, { status: 500 });
+    console.error('Error al subir la imagen:', error);
+    return NextResponse.json({ message: 'Error al subir la imagen' }, { status: 500 });
   }
 }

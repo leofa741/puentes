@@ -5,7 +5,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    console.log('Datos recibidos en el backend:', body);
+   
 
     const client = await clientPromise;
     const db = client.db();

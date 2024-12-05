@@ -19,7 +19,7 @@ interface Post {
 async function fetchPost(id: string): Promise<Post | null> {
   try {
     console.log('fetchPost', id);
-    const response = await fetch(`/api/blogs?id=${id}`, {
+    const response = await fetch(`https://www.puentesdigitales.com.ar/api/blogs?id=${id}`, {
       cache: 'no-store', // Evita el almacenamiento en caché
     });
 

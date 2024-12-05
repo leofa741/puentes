@@ -1,64 +1,57 @@
-import nextConnect from 'next-connect';
-import { NextApiRequest, NextApiResponse } from 'next';
-import path from 'path';
-import formidable from 'formidable';
+import { NextResponse } from 'next/server';
 import fs from 'fs-extra';
-import { IncomingMessage } from 'http';
+import path from 'path';
 
 // Ruta de destino para guardar imágenes
 const uploadDir = path.join(process.cwd(), 'public/assets/img');
+fs.ensureDirSync(uploadDir); // Crea la carpeta si no existe
 
-// Configurar formidable
-const form = formidable({
-  uploadDir, // Carpeta donde guardar las imágenes
-  keepExtensions: true, // Mantener la extensión original
-});
+export const runtime = 'nodejs';
 
-// Asegúrate de que el directorio de destino existe
-fs.ensureDirSync(uploadDir);
-
-export const config = {
-  api: {
-    bodyParser: false, // Deshabilitamos el body parser para manejar archivos
-  },
-};
-
-const handler = nextConnect<NextApiRequest, NextApiResponse>();
-
-handler.post(async (req: IncomingMessage, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { message: string; filePath?: string; }): any; new(): any; }; }; }) => {
+export async function POST(req: Request) {
   try {
-    // Parsear la solicitud con formidable
-    const data: any = await new Promise((resolve, reject) => {
-      form.parse(req, (err, fields, files) => {
-        if (err) return reject(err);
-        resolve({ fields, files });
-      });
-    });
+    console.log('Procesando archivo...');
 
-    console.log('Datos recibidos:', data);
-
-    // Obtener el archivo cargado
-    const file = data.files.file;
-
-    if (!file) {
-      return res.status(400).json({ message: 'No se envió un archivo' });
+    const contentType = req.headers.get('content-type') || '';
+    if (!contentType.includes('multipart/form-data')) {
+      return NextResponse.json({ message: 'Tipo de contenido no soportado' }, { status: 400 });
     }
 
-    // Generar el nombre del archivo y moverlo
-    const fileName = `${Date.now()}-${file.originalFilename}`;
-    const filePath = path.join(uploadDir, fileName);
+    const boundary = contentType.split('boundary=')[1];
+    if (!boundary) {
+      return NextResponse.json({ message: 'Boundary no encontrado en la solicitud' }, { status: 400 });
+    }
 
-    console.log('Moviendo archivo a:', filePath);
-    await fs.move(file.filepath, filePath);
+    const body = await req.arrayBuffer();
+    const bodyString = Buffer.from(body).toString('binary');
+    const parts = bodyString.split(`--${boundary}`);
 
-    return res.status(200).json({
-      message: 'Imagen subida exitosamente',
-      filePath: `/assets/img/${fileName}`,
-    });
+    for (const part of parts) {
+      if (part.includes('Content-Disposition: form-data;') && part.includes('filename=')) {
+        // Extraer el nombre del archivo
+        const fileNameMatch = part.match(/filename="(.+?)"/);
+        const fileName = fileNameMatch ? fileNameMatch[1] : `uploaded-file-${Date.now()}`;
+
+        // Extraer el contenido del archivo
+        const fileContentStart = part.indexOf('\r\n\r\n') + 4;
+        const fileContentEnd = part.lastIndexOf('\r\n');
+        const fileContent = part.slice(fileContentStart, fileContentEnd);
+
+        // Guardar el archivo como binario
+        const filePath = path.join(uploadDir, fileName);
+        fs.writeFileSync(filePath, new Uint8Array(Buffer.from(fileContent, 'binary')));
+
+        console.log('Archivo procesado exitosamente:', fileName);
+        return NextResponse.json({
+          message: 'Imagen subida exitosamente',
+          filePath: `/assets/img/${fileName}`,
+        });
+      }
+    }
+
+    return NextResponse.json({ message: 'No se encontró ningún archivo en la solicitud' }, { status: 400 });
   } catch (error) {
-    console.error('Error al subir la imagen:', error);
-    return res.status(500).json({ message: 'Error al subir la imagen' });
+    console.error('Error al subir el archivo:', error);
+    return NextResponse.json({ message: 'Error al subir el archivo' }, { status: 500 });
   }
-});
-
-export default handler;
+}

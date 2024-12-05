@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './home.css';
 
 interface Post {
-    id: number;
+    _id: number;
     title: string;
     imageUrl: string;
     link: string;
@@ -20,6 +20,7 @@ export const HomeComponent = () => {
                     throw new Error('Failed to fetch posts');
                 }
                 const data: Post[] = await response.json();
+                
                 // Selecciona los 3 primeros artículos (puedes ordenar por likes u otra lógica)
                 setMostReadPosts(
                     data.sort((a, b) => b.likes - a.likes).slice(0, 3)
@@ -83,7 +84,8 @@ export const HomeComponent = () => {
                             <ul className="space-y-4">
                                 {mostReadPosts.length > 0 ? (
                                     mostReadPosts.map((post) => (
-                                        <li key={post.id} className="flex items-center space-x-4">
+                                       
+                                        <li key={post._id} className="flex items-center space-x-4">
                                             <img
                                                 src={post.imageUrl}
                                                 alt={post.title}
@@ -91,7 +93,7 @@ export const HomeComponent = () => {
                                             />
                                             <div>
                                                 <a
-                                                   href={`/blog/${post.id}/${post.title // Cambiado a title
+                                                   href={`/blog/${post._id}/${post.title // Cambiado a title
                                                     .toLowerCase()
                                                     .replace(/ /g, '-')
                                                     .replace(/[^\w-]+/g, '')}`}

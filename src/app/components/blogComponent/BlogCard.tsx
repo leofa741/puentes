@@ -112,10 +112,10 @@ export const BlogCard = ({ post }: { post: Post }) => {
 
             <div className="flex items-center space-x-4">
         <button onClick={handleLike} className="text-green-500">
-          👍 {likes} Likes
+          👍 {likes} 
         </button>
         <button onClick={handleDislike} className="text-red-500">
-          👎 {dislikes} Dislikes
+          👎 {dislikes} 
         </button>
       </div>
 

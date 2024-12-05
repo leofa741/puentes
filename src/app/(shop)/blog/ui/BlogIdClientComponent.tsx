@@ -17,6 +17,8 @@ interface Post {
 }
 
 export default function BlogIdClientComponent({ post }: { post: Post }) {
+
+  console.log(post.imageUrl);
   const paragraphs = post.description
   .replace(/\\n/g, '\n') // Convierte "\n" en saltos de línea reales
   .split('\n');

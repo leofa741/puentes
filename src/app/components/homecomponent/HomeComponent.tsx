@@ -91,7 +91,10 @@ export const HomeComponent = () => {
                                             />
                                             <div>
                                                 <a
-                                                    href={post.link}
+                                                   href={`/blog/${post.id}/${post.title // Cambiado a title
+                                                    .toLowerCase()
+                                                    .replace(/ /g, '-')
+                                                    .replace(/[^\w-]+/g, '')}`}
                                                     className="text-blue-600 font-medium hover:underline"
                                                 >
                                                     {post.title}

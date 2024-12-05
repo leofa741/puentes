@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import path from 'path';
 
 // Ruta de destino para guardar imágenes
-const uploadDir = path.join(process.cwd(), 'public/assets/img');
+const uploadDir = path.join(process.cwd(), 'public/assets/imgfiles');
 fs.ensureDirSync(uploadDir); // Crea la carpeta si no existe
 
 export const runtime = 'nodejs';
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
         console.log('Archivo procesado exitosamente:', fileName);
         return NextResponse.json({
           message: 'Imagen subida exitosamente',
-          filePath: `/assets/img/${fileName}`,
+          filePath: `/assets/imgfiles/${fileName}`,
         });
       }
     }

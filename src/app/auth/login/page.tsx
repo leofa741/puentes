@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
 
 export default function AuthLogin() {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [captchaAnswer, setCaptchaAnswer] = useState('');

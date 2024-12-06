@@ -216,14 +216,14 @@ export const NavbarDark = () => {
               </div>
             )
           ) : (
-            <div className='flex items-center space-x-4'>
+            <div className='flex items-center space-x-4 '>
               <Link href='/auth/login'>
-                <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white'>
+                <button className='text-white font-bold py-2  rounded hover:bg-gray-900 hover:text-white'>
                 <FiLogIn className="w-5 h-5" />
                   </button>
               </Link>
               <Link href='/auth/register'>
-                <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white'>
+                <button className='text-white font-bold py-2  rounded hover:bg-gray-900 hover:text-white'>
                 <FiUserPlus className="w-5 h-5" />
                   </button>
               </Link>

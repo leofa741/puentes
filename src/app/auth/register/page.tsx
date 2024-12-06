@@ -11,23 +11,56 @@ const RegisterForm = () => {
     confirmPassword: '',
     profile: {
       name: '',
-      avatar: '',
+      avatar: '', // URL de la imagen subida
     },
   });
-
+  const [selectedFile, setSelectedFile] = useState<File | null>(null); // Archivo seleccionado
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    if (name === 'name' || name === 'avatar') {
+    if (name === 'name') {
       setFormData((prev) => ({
         ...prev,
         profile: { ...prev.profile, [name]: value },
       }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setSelectedFile(file); // Guardar el archivo seleccionado
+    }
+  };
+
+  const uploadImage = async (): Promise<string | null> => {
+    if (!selectedFile) return null;
+
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+
+    try {
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        return data.url; // URL de la imagen en Cloudinary
+      } else {
+        setError(data.message || 'Error al subir la imagen');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error al subir la imagen:', error);
+      setError('Error al subir la imagen');
+      return null;
     }
   };
 
@@ -38,6 +71,12 @@ const RegisterForm = () => {
     if (formData.password !== formData.confirmPassword) {
       setError('Las contraseñas no coinciden');
       return;
+    }
+
+    // Subir imagen si se seleccionó una
+    const avatarUrl = await uploadImage();
+    if (avatarUrl) {
+      formData.profile.avatar = avatarUrl; // Asignar URL al avatar
     }
 
     try {
@@ -74,70 +113,69 @@ const RegisterForm = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
-      <h1 className="text-2xl font-bold mb-5">Registrar Nuevo Usuario</h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {error && <div className="text-red-500">{error}</div>}
-        <div>
-          <label className="block text-gray-700">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-gray-700">Nombre</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.profile.name}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2"
-          />
-        </div>
-        <div>
-          <label className="block text-gray-700">Avatar (URL)</label>
-          <input
-            type="text"
-            name="avatar"
-            value={formData.profile.avatar}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2"
-          />
-        </div>
-        <div>
-          <label className="block text-gray-700">Contraseña</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-gray-700">Confirmar Contraseña</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Registrar
-        </button>
-      </form>
-    </div>
+        <h1 className="text-2xl font-bold mb-5">Registrar Nuevo Usuario</h1>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {error && <div className="text-red-500">{error}</div>}
+          <div>
+            <label className="block text-gray-700">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded p-2"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700">Nombre</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.profile.name}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded p-2"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700">Avatar</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              className="w-full border border-gray-300 rounded p-2"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700">Contraseña</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded p-2"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700">Confirmar Contraseña</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded p-2"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Registrar
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

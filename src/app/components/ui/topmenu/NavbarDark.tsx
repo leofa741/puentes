@@ -194,42 +194,43 @@ export const NavbarDark = () => {
         </div>
 
         {
-          user ? (
-            loading ? (
-              <span className='text-white'>Cargando...</span>
-            ) : (
-              <div className='flex items-center space-x-4'>
-                <Image
-                  src={user.avatar || '/assets/img/noimage.png'}
-                  alt={user.email}
-                  width={30}
-                  height={30}
-                  className="rounded-full"
-                />
-                <br/>
-                <span className='text-xs text-white font-bold'>{user.email.substring(0, 4)}...</span>
-                <div className='flex items-center space-x-4'>
-                  <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white' onClick={() => handleLogout()}>
-                    <FiLogOut className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-            )
-          ) : (
-            <div className='flex items-center space-x-4 '>
-              <Link href='/auth/login'>
-                <button className='text-white font-bold py-2  rounded hover:bg-gray-900 hover:text-white'>
-                <FiLogIn className="w-5 h-5" />
-                  </button>
-              </Link>
-              <Link href='/auth/register'>
-                <button className='text-white font-bold py-2  rounded hover:bg-gray-900 hover:text-white'>
-                <FiUserPlus className="w-5 h-5" />
-                  </button>
-              </Link>
-            </div>
-          )
-        }
+  user ? (
+    loading ? (
+      <span className='text-white'>Cargando...</span>
+    ) : (
+      <div className='flex items-center space-x-4'>
+        <Image
+          src={user.avatar || '/assets/img/noimage.png'}
+          alt={user.email}
+          width={30}
+          height={30}
+          className="rounded-full"
+        />
+        <br />
+        <span className='text-xs text-white font-bold'>{user.email.substring(0, 4)}...</span>
+        <div className='flex items-center space-x-4'>
+          <button className='text-white font-bold py-2 px-4 rounded hover:bg-gray-900 hover:text-white' onClick={() => handleLogout()}>
+            <FiLogOut className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    )
+  ) : (
+    <div className='flex items-center space-x-4 '>
+      <Link href='/auth/login'>
+        <button className='text-white font-bold py-2 rounded hover:bg-gray-900 hover:text-white'>
+          <FiLogIn className="w-5 h-5" />
+        </button>
+      </Link>
+      <Link href='/auth/register'>
+        <button className='text-white font-bold py-2 rounded hover:bg-gray-900 hover:text-white'>
+          <FiUserPlus className="w-5 h-5" />
+        </button>
+      </Link>
+    </div>
+  )
+}
+
 
         <div className='flex items-center px-4 cursor-pointer  space-x-4 '>
           <button className=' text-white font-bold py-2 px-4 rounded   visible xl:invisible lg:invisible md:invisible sm:block ' onClick={() => openMenu()}  >

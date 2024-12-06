@@ -54,6 +54,7 @@ export const BlogCard = ({ post }: { post: Post }) => {
         title: 'No estás autenticado',
         text: 'Por favor, inicia sesión para comentar.',
         confirmButtonText: 'Iniciar sesión',
+        timer: 5000,
       }).then((result) => {
         if (result.isConfirmed || result.dismiss) {
           // Redirigir al login con returnUrl

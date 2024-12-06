@@ -4,6 +4,7 @@
 import React, {useEffect,useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
+import Swal from 'sweetalert2';
 
 const CreateBlog = () => {
   const [formData, setFormData] = useState({
@@ -79,10 +80,11 @@ const CreateBlog = () => {
       });
 
       if (blogResponse.ok) {
-        alert('Blog creado exitosamente');
+        Swal.fire('Blog creado', 'El blog se creó exitosamente', 'success');
         router.push('/blog'); // Redirigir a la página de blogs
       } else {
-        alert('Error al crear el blog');
+        const errorData = await blogResponse.json();
+        Swal.fire('Error', errorData.message, 'error');
       }
     } catch (error) {
       console.error('Error al enviar el formulario:', error);

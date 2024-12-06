@@ -50,8 +50,13 @@ export default function AuthLogin() {
           showConfirmButton: false,
           timer: 1500,
         });
+
         document.cookie = `token=${data.token}; path=/`;
-        router.push('/'); // Redirige al dashboard o página principal
+
+        // Obtener returnUrl de la URL o redirigir al dashboard por defecto
+        const searchParams = new URLSearchParams(window.location.search);
+        const returnUrl = searchParams.get('returnUrl') || '/';
+        router.push(returnUrl);
       } else {
         Swal.fire({
           icon: 'error',

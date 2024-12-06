@@ -1,15 +1,30 @@
+import { NavbarDark, Sidebar, Social, PartNer, Footer } from '../components';
 import '../globals.css'
 
 
 export default function AuthLayout({
- children
+  children
 }: {
- children: React.ReactNode;
+  children: React.ReactNode;
 }) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Hello Root Layout Login</h1>
-        {children}
+
+      <NavbarDark />
+      <Sidebar />
+      <Social />
+
+      {children}
+      <h4 className="text-center  font-bold text-4xl xs:text-5xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl">
+        <br />
+        Tecnologías que usamos
+        <br />
+      </h4>
+      <br />
+
+
+      <PartNer />
+      <Footer />
     </main>
   );
 }

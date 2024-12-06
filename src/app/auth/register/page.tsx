@@ -66,9 +66,10 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="container mx-auto mt-10">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
+      <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
       <h1 className="text-2xl font-bold mb-5">Registrar Nuevo Usuario</h1>
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-6">
         {error && <div className="text-red-500">{error}</div>}
         <div>
           <label className="block text-gray-700">Email</label>
@@ -130,6 +131,7 @@ const RegisterForm = () => {
           Registrar
         </button>
       </form>
+    </div>
     </div>
   );
 };

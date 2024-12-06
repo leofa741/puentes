@@ -2,14 +2,27 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 
 export default function AuthLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captchaQuestion] = useState('¿Cuánto es 2 + 3?'); // Pregunta fija
+  const correctAnswer = '5'; // Respuesta correcta
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (captchaAnswer !== correctAnswer) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Captcha incorrecto',
+        text: 'Respuesta incorrecta al captcha, intenta de nuevo.',
+      });
+      return;
+    }
 
     try {
       const response = await fetch('/api/auth/login', {
@@ -21,14 +34,27 @@ export default function AuthLogin() {
       const data = await response.json();
 
       if (response.ok) {
-        alert('Login exitoso');
-        // Guarda el token en cookies/localStorage
+        Swal.fire({
+          icon: 'success',
+          title: 'Login exitoso',
+          showConfirmButton: false,
+          timer: 1500,
+        });
         document.cookie = `token=${data.token}; path=/`;
         router.push('/'); // Redirige al dashboard o página principal
       } else {
-        alert(data.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error en el login',
+          text: data.message,
+        });
       }
     } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error en el servidor',
+        text: 'Por favor, intenta nuevamente.',
+      });
       console.error('Error en el login:', error);
     }
   };
@@ -53,6 +79,16 @@ export default function AuthLogin() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="w-full border border-gray-300 rounded p-2"
+            required
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700">{captchaQuestion}</label>
+          <input
+            type="text"
+            value={captchaAnswer}
+            onChange={(e) => setCaptchaAnswer(e.target.value)}
             className="w-full border border-gray-300 rounded p-2"
             required
           />

@@ -91,15 +91,22 @@ export const BlogCard = ({ post }: { post: Post }) => {
         title: 'No estás autenticado',
         text: 'Por favor, inicia sesión para comentar.',
         confirmButtonText: 'Iniciar sesión',
-        showCancelButton: true,
-        cancelButtonText: 'Cancelar',
+        showCancelButton: true,     
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+       
+       
       }).then((result) => {
-        if (result.isConfirmed || result.dismiss) {
+        if (result.isConfirmed) {
+          // El usuario hizo clic en "Iniciar sesión"
           router.push(`/auth/login?returnUrl=/blog`);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          // El usuario hizo clic en "Cancelar"
+          console.log('Acción cancelada, no se redirige.');
         }
-      });
+       
+      }) ;
       return;
     }
 

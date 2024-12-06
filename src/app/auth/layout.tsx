@@ -8,7 +8,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main >
 
       <NavbarDark />
       <Sidebar />
@@ -21,8 +21,6 @@ export default function AuthLayout({
         <br />
       </h4>
       <br />
-
-
       <PartNer />
       <Footer />
     </main>

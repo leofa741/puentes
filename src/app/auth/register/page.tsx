@@ -138,14 +138,38 @@ const RegisterForm = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-700">Avatar</label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleFileChange}
-              className="w-full border border-gray-300 rounded p-2"
-            />
+            <label className="block text-gray-700 mb-2">Avatar</label>
+            <div className="relative">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden" // Ocultamos el input por defecto
+                id="fileInput"
+              />
+              <label
+                htmlFor="fileInput"
+                className="flex items-center justify-center gap-2 w-full px-4 py-2 text-white bg-blue-500 rounded cursor-pointer hover:bg-blue-600 focus:ring-2 focus:ring-blue-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 16v-4m0 0V8m0 4h4m-4 0H8m12-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>Seleccionar archivo</span>
+              </label>
+            </div>
           </div>
+
           <div>
             <label className="block text-gray-700">Contraseña</label>
             <input

@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import { FiLogOut } from 'react-icons/fi';
 import { FiLogIn } from 'react-icons/fi';
 import { FiUserPlus } from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
 
 
 export const NavbarDark = () => {
@@ -189,7 +190,7 @@ export const NavbarDark = () => {
           <Link href='/contact'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
             ${pathname == '/contact' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
-              Contacto</span>  </Link>
+              <FiMail className="w-5 h-5" /></span>  </Link>
         </div>
 
         {

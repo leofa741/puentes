@@ -36,7 +36,7 @@ export async function GET(req: Request) {
       roles: string[];
     };
 
-    console.log('Token decodificado:', decoded);
+    //console.log('Token decodificado:', decoded);
 
     const client = await clientPromise;
     const db = client.db();

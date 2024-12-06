@@ -2,7 +2,7 @@
 
 import { montserrat } from "@/app/config/fonts";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import './navbar.css';
 import { useUIStore } from '@/app/store';
 import Image from 'next/image';
@@ -18,6 +18,7 @@ export const NavbarDark = () => {
 
   const pathname = usePathname();
   const openMenu = useUIStore(state => state.openSideMenu);
+  const router = useRouter();
 
   const [user, setUser] = useState<{ name: string;email: string; avatar: string } | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -50,7 +51,8 @@ export const NavbarDark = () => {
     try {
       const response = await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
       if (response.ok) {
-        setUser(null);
+        router.push('/auth/login');
+       
       } else {
         console.error('Error logging out');
       }

@@ -115,6 +115,24 @@ export default function AuthLogin() {
           Iniciar sesión
         </button>
       </form>
+
+
+      <p className="mt-4">
+        ¿Olvidaste tu contraseña?{' '}
+        <a href="/auth/forgot-password" className="text-blue-500 hover:underline">
+          Recupérala aquí
+        </a>
+      </p>
+      
+
+      <p className="mt-4">
+        ¿No tienes una cuenta?{' '}
+        <a href="/auth/register" className="text-blue-500 hover:underline">
+          Regístrate
+        </a>
+      </p>
+
+
     </div>
   );
 }

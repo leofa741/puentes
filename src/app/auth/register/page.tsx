@@ -211,6 +211,16 @@ const RegisterForm = () => {
             Registrar
           </button>
         </form>
+
+        <p className="mt-4 text-center">
+          ¿Ya tienes una cuenta?{' '}
+          <a href="/auth/login" className="text-blue-500 hover:underline">
+            Inicia sesión
+          </a>
+        </p>
+
+        
+
       </div>
     </div>
   );

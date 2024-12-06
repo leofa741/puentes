@@ -5,23 +5,32 @@ import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
 
 export default function AuthLogin() {
-  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [captchaAnswer, setCaptchaAnswer] = useState('');
-  const [captchaQuestion] = useState('¿Cuánto es 2 + 3?'); // Pregunta fija
-  const correctAnswer = '5'; // Respuesta correcta
+  const [captcha, setCaptcha] = useState(generateCaptcha()); // Generar captcha dinámico
   const router = useRouter();
+
+  // Generar preguntas de captcha dinámicas
+  function generateCaptcha() {
+    const num1 = Math.floor(Math.random() * 10) + 1; // Números del 1 al 10
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    return {
+      question: `¿Cuánto es ${num1} + ${num2}?`,
+      answer: (num1 + num2).toString(),
+    };
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (captchaAnswer !== correctAnswer) {
+    if (captchaAnswer !== captcha.answer) {
       Swal.fire({
         icon: 'error',
         title: 'Captcha incorrecto',
         text: 'Respuesta incorrecta al captcha, intenta de nuevo.',
       });
+      setCaptcha(generateCaptcha()); // Regenera el captcha si falla
       return;
     }
 
@@ -85,7 +94,7 @@ export default function AuthLogin() {
           />
         </div>
         <div>
-          <label className="block text-gray-700">{captchaQuestion}</label>
+          <label className="block text-gray-700">{captcha.question}</label>
           <input
             type="text"
             value={captchaAnswer}

@@ -88,7 +88,15 @@ const CreateBlog = () => {
       console.error('Error al enviar el formulario:', error);
     }
   };
+ // Bloquear renderizado mientras se verifica el usuario
+ if (loading || (!user && !loading)) {
+  return <div className="text-center">Verificando permisos...</div>;
+}
 
+// Mostrar mensaje si el usuario no está autorizado (como precaución extra)
+if (!user || !user.roles?.includes('admin')) {
+  return null; // O puedes mostrar un mensaje como un 404 o un texto de "No autorizado".
+}
   return (
     <div className="container mx-auto mt-10">
       <h1 className="text-2xl font-bold mb-5">Crear Nuevo Blog</h1>

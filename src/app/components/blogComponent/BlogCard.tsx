@@ -4,8 +4,8 @@ import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 
 interface Post {
   id: string;
@@ -28,16 +28,14 @@ export const BlogCard = ({ post }: { post: Post }) => {
   const [user, setUser] = useState<{ id: string; name: string; email: string } | null>(null);
   const router = useRouter();
 
-  // Obtener el usuario autenticado
+  // Obtener usuario autenticado
   const fetchUser = async () => {
     try {
       const response = await fetch('/api/auth/me', { credentials: 'include' });
       if (response.ok) {
         const userData = await response.json();
-        console.log('Usuario autenticado:', userData);
         setUser(userData);
       } else {
-        console.log('No se encontró un usuario autenticado.');
         setUser(null);
       }
     } catch (error) {
@@ -45,25 +43,66 @@ export const BlogCard = ({ post }: { post: Post }) => {
     }
   };
 
-  // Manejar el envío de comentarios
+  // Manejar likes
+  const handleLike = async () => {
+    const newLikes = likes + 1;
+    try {
+      const response = await fetch('/api/like', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ postId: post.id, likes: newLikes, dislikes }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setLikes(data.likes);
+      } else {
+        console.error('Error al actualizar los likes');
+      }
+    } catch (error) {
+      console.error('Error al hacer la solicitud:', error);
+    }
+  };
+
+  // Manejar dislikes
+  const handleDislike = async () => {
+    const newDislikes = dislikes + 1;
+    try {
+      const response = await fetch('/api/like', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ postId: post.id, likes, dislikes: newDislikes }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setDislikes(data.dislikes);
+      } else {
+        console.error('Error al actualizar los dislikes');
+      }
+    } catch (error) {
+      console.error('Error al hacer la solicitud:', error);
+    }
+  };
+
+  // Manejar comentarios
   const handleComment = async () => {
     if (!user) {
-      // Mostrar alerta y redirigir al login
       Swal.fire({
         icon: 'error',
         title: 'No estás autenticado',
         text: 'Por favor, inicia sesión para comentar.',
         confirmButtonText: 'Iniciar sesión',
-        timer: 5000,
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
       }).then((result) => {
         if (result.isConfirmed || result.dismiss) {
-          // Redirigir al login con returnUrl
           router.push(`/auth/login?returnUrl=/blog`);
         }
       });
       return;
     }
-  
+
     try {
       const response = await fetch('/api/comments', {
         method: 'POST',
@@ -72,10 +111,9 @@ export const BlogCard = ({ post }: { post: Post }) => {
         },
         body: JSON.stringify({ postId: post.id, comment, user }),
       });
-  
+
       const data = await response.json();
-      console.log('Respuesta del servidor al enviar comentario:', data);
-  
+
       if (response.ok) {
         Swal.fire({
           icon: 'success',
@@ -92,25 +130,18 @@ export const BlogCard = ({ post }: { post: Post }) => {
           title: 'Error al enviar comentario',
           text: data.message,
         });
-        console.error('Error del servidor al enviar comentario:', data);
       }
     } catch (error) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error interno',
-        text: 'Hubo un problema al enviar tu comentario. Inténtalo de nuevo.',
-      });
       console.error('Error al enviar el comentario:', error);
     }
   };
-  
+
   // Obtener comentarios
   const fetchComments = async () => {
     try {
       const response = await fetch(`/api/comments?postId=${post.id}`);
       if (response.ok) {
         const data = await response.json();
-        console.log('Comentarios obtenidos:', data);
         setComments(data);
       } else {
         console.error('Error al obtener los comentarios.');
@@ -140,12 +171,22 @@ export const BlogCard = ({ post }: { post: Post }) => {
             <h1 className="text-xl font-semibold text-gray-800">{post.title}</h1>
             <h3 className="text-gray-600 mt-2 font-semibold">{post.subtitle}</h3>
 
+            <div className="flex items-center space-x-4">
+              <button onClick={handleLike} className="text-green-500">
+                👍 {likes}
+              </button>
+              <button onClick={handleDislike} className="text-red-500">
+                👎 {dislikes}
+              </button>
+            </div>
+
             {/* Formulario para comentarios */}
             <textarea
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               className="w-full border border-gray-300 rounded p-2 mt-4"
               placeholder="Escribe tu comentario aquí..."
+              disabled={!user}
             />
             <button
               onClick={handleComment}

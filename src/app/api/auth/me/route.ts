@@ -1,8 +1,8 @@
 // src/app/api/auth/me/route.ts
-
 import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 import clientPromise from '@/lib/mongodb';
+import { ObjectId } from 'mongodb';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'tu_secreto_jwt';
 
@@ -30,25 +30,34 @@ export async function GET(req: Request) {
     }
 
     // Verifica el token
-    const decoded = jwt.verify(token, JWT_SECRET) as { userId: string; email: string };
+    const decoded = jwt.verify(token, JWT_SECRET) as {
+      id: string;
+      email: string;
+      roles: string[];
+    };
+
+    console.log('Token decodificado:', decoded);
 
     const client = await clientPromise;
     const db = client.db();
 
-    const user = await db.collection('users').findOne({ _id: new (require('mongodb').ObjectId)(decoded.userId) });
+    // Busca el usuario en la base de datos por su ID
+    const user = await db.collection('users').findOne({ _id: new ObjectId(decoded.id) });
 
     if (!user) {
+      console.error('Usuario no encontrado. ID buscado:', decoded.id);
       return NextResponse.json(
-        { message: 'Usuario no encontrado' },
+        { message: `Usuario no encontrado con el ID: ${decoded.id}` },
         { status: 404 }
       );
     }
 
+    // Devuelve los datos del usuario
     return NextResponse.json({
       name: user.profile?.name || '',
       avatar: user.profile?.avatar || '',
       roles: user.roles || [],
-        email: user.email || '',
+      email: user.email || '',
     });
   } catch (error) {
     console.error('Error en /api/auth/me:', error);

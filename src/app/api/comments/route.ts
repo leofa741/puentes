@@ -2,44 +2,38 @@ import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 import { ObjectId } from 'mongodb';
 
-// Crear un comentario
+// Crear comentario
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { postId, comment } = body;
+    const { postId, comment, user } = await req.json();
 
-    // Validar los datos recibidos
-    if (!postId || !comment) {
-      return NextResponse.json({ message: 'El postId y el comentario son obligatorios.' }, { status: 400 });
+    if (!postId || !comment || !user) {
+      return NextResponse.json({ message: 'Faltan datos obligatorios.' }, { status: 400 });
     }
 
     const client = await clientPromise;
     const db = client.db();
 
-    // Insertar el comentario en la colección de comentarios
     const result = await db.collection('comments').insertOne({
       postId: new ObjectId(postId),
       comment,
+      user, // Guardar el usuario enviado desde el frontend
       createdAt: new Date(),
     });
 
-    return NextResponse.json({ 
-      message: 'Comentario creado exitosamente', 
-      id: result.insertedId 
-    }, { status: 201 });
+    return NextResponse.json({ message: 'Comentario creado exitosamente.', id: result.insertedId });
   } catch (error) {
     console.error('Error al crear el comentario:', error);
-    return NextResponse.json({ message: 'Error al crear el comentario' }, { status: 500 });
+    return NextResponse.json({ message: 'Error interno del servidor.' }, { status: 500 });
   }
 }
 
-// Obtener comentarios de un post específico
+// Obtener comentarios
 export async function GET(req: Request) {
   try {
     const url = new URL(req.url);
     const postId = url.searchParams.get('postId');
 
-    // Validar el parámetro postId
     if (!postId) {
       return NextResponse.json({ message: 'El parámetro postId es obligatorio.' }, { status: 400 });
     }
@@ -47,15 +41,14 @@ export async function GET(req: Request) {
     const client = await clientPromise;
     const db = client.db();
 
-    // Buscar comentarios relacionados con el postId
     const comments = await db.collection('comments')
       .find({ postId: new ObjectId(postId) })
-      .sort({ createdAt: -1 }) // Ordenar por fecha de creación descendente
+      .sort({ createdAt: -1 })
       .toArray();
 
-    return NextResponse.json(comments, { status: 200 });
+    return NextResponse.json(comments);
   } catch (error) {
     console.error('Error al obtener los comentarios:', error);
-    return NextResponse.json({ message: 'Error al obtener los comentarios' }, { status: 500 });
+    return NextResponse.json({ message: 'Error interno del servidor.' }, { status: 500 });
   }
 }

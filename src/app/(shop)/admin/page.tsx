@@ -74,6 +74,16 @@ const AdminPage: React.FC = () => {
   if (loading || uloading) return <div className="text-center">Cargando...</div>;
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
+   // Bloquear renderizado mientras se verifica el usuario
+   if (loading || (!user && !error)) {
+    return <div className="text-center">Verificando permisos...</div>;
+  }
+
+  // Mostrar mensaje si el usuario no está autorizado (como precaución extra)
+  if (!user || !user.roles?.includes('admin')) {
+    return null; // O puedes mostrar un mensaje como un 404 o un texto de "No autorizado".
+  }
+
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-4xl font-bold text-center mb-10">Panel de Administración</h1>

@@ -185,7 +185,20 @@ export const BlogCard = ({ post }: { post: Post }) => {
               <button onClick={handleDislike} className="text-red-500">
                 👎 {dislikes}
               </button>
+              <small className="text-gray-500">
+                {formatDistanceToNow(new Date(post.date), { addSuffix: true, locale: es })}
+              </small>
+
+             
             </div>
+
+            <p className="mt-4 text-gray-700">{post.description.substring(0, 654)}...  <a
+                href={post.link}              
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                Leer más &rarr;
+              </a></p>
 
             {/* Formulario para comentarios */}
             <textarea

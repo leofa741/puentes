@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +54,12 @@ const RegisterForm = () => {
       });
 
       if (response.ok) {
-        alert('Registro exitoso');
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario registrado',
+          showConfirmButton: false,
+          timer: 1500,
+        });
         router.push('/auth/login'); // Redirigir al login o a otra página
       } else {
         const data = await response.json();

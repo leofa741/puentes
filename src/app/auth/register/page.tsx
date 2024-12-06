@@ -148,7 +148,7 @@ const RegisterForm = () => {
         const file = event.target.files ? event.target.files[0] : null;
         if (file) {
           if (fileLabel) {
-            fileLabel.textContent = `Archivo seleccionado: ${file.name}`;
+            fileLabel.textContent = `Archivo seleccionado: ${file.name.substring(0, 10)}...`;
           }
         } else {
           if (fileLabel) {

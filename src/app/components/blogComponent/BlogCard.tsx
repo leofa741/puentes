@@ -227,7 +227,16 @@ export const BlogCard = ({ post }: { post: Post }) => {
 
             {/* Mostrar comentarios */}
             <div className="mt-6">
-              <h2 className="text-lg font-semibold text-gray-800">Comentarios</h2>
+              <h2 className="text-lg font-semibold text-gray-800">
+                {
+                  comments.length === 0
+                    ? 'No hay comentarios'
+                    : comments.length === 1
+                      ? '1 comentario'
+                      : `${comments.length} comentarios`
+                }
+
+              </h2>
               {comments.map((comment) => (
                 <div key={comment._id} className="border-b py-2">
                   <p>{comment.comment}</p>

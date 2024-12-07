@@ -1,4 +1,3 @@
-// src/app/api/auth/me/route.ts
 import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 import clientPromise from '@/lib/mongodb';
@@ -36,18 +35,15 @@ export async function GET(req: Request) {
       roles: string[];
     };
 
-    //console.log('Token decodificado:', decoded);
-
     const client = await clientPromise;
     const db = client.db();
 
-    // Busca el usuario en la base de datos por su ID
-    const user = await db.collection('users').findOne({ _id: new ObjectId(decoded.id) });
+    // Busca el usuario en la base de datos
+    const user = await db.collection('users').findOne({ email: decoded.email });
 
     if (!user) {
-      console.error('Usuario no encontrado. ID buscado:', decoded.id);
       return NextResponse.json(
-        { message: `Usuario no encontrado con el ID: ${decoded.id}` },
+        { message: 'Usuario no encontrado' },
         { status: 404 }
       );
     }
@@ -55,7 +51,7 @@ export async function GET(req: Request) {
     // Devuelve los datos del usuario
     return NextResponse.json({
       name: user.profile?.name || '',
-      avatar: user.profile?.avatar || '',
+      avatar: user.profile?.picture || '',
       roles: user.roles || [],
       email: user.email || '',
     });

@@ -9,7 +9,7 @@ const REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI!;
 export async function GET(req: Request) {
   try {
     const url = new URL(req.url);
-    const code = url.searchParams.get('code'); // Extrae el parámetro `code`
+    const code = url.searchParams.get('code');
 
     if (!code) {
       return NextResponse.json(
@@ -20,16 +20,23 @@ export async function GET(req: Request) {
 
     // Configura el cliente OAuth2 de Google
     const auth = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+    console.log('Código de autorización:', code);
+    console.log('URL de redirección:', REDIRECT_URI);
 
     // Intercambia el código por tokens
     const { tokens } = await auth.getToken(code);
+    console.log('Tokens de Google:', tokens);
+
+
     auth.setCredentials(tokens);
 
     // Obtén información del usuario
     const oauth2 = google.oauth2({ auth, version: 'v2' });
     const userInfo = await oauth2.userinfo.get();
 
-    // Guarda o actualiza el usuario en tu base de datos
+    console.log('Información del usuario:', userInfo.data);
+
+    // Guarda o actualiza el usuario en la base de datos
     const client = await clientPromise;
     const db = client.db();
     await db.collection('users').updateOne(
@@ -39,7 +46,8 @@ export async function GET(req: Request) {
     );
 
     // Configura el token JWT como cookie
-    const response = NextResponse.redirect('/');
+    const response = NextResponse.redirect('/blog');
+    console.log('Redirigiendo a /blog');
     response.headers.append(
       'Set-Cookie',
       `token=${tokens.id_token}; Path=/; HttpOnly; Secure; SameSite=Strict`

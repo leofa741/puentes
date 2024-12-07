@@ -20,7 +20,7 @@ export async function GET(req: Request) {
     }
 
     const auth = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
-    console.log('Código de autorización:', code);
+
 
     const { tokens } = await auth.getToken(code);
     auth.setCredentials(tokens);
@@ -28,7 +28,7 @@ export async function GET(req: Request) {
     const oauth2 = google.oauth2({ auth, version: 'v2' });
     const userInfo = await oauth2.userinfo.get();
 
-    console.log('Información del usuario:', userInfo.data);
+
 
     const client = await clientPromise;
     const db = client.db();

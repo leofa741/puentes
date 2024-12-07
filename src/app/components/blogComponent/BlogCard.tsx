@@ -192,7 +192,7 @@ export const BlogCard = ({ post }: { post: Post }) => {
              
             </div>
 
-            <p className="mt-4 text-gray-700">{post.description.substring(0, 354)}...  <a
+            <p className="mt-4 text-gray-700">{post.description.substring(0, 300)}...  <a
                 href={post.link}              
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"

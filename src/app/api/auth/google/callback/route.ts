@@ -34,7 +34,7 @@ export async function GET(req: Request) {
     const db = client.db();
     await db.collection('users').updateOne(
       { email: userInfo.data.email },
-      { $set: { profile: userInfo.data, updatedAt: new Date(), role: 'user' } },
+      { $set: { profile: userInfo.data, updatedAt: new Date(),  roles: ['user'], } },
       { upsert: true }
     );
 

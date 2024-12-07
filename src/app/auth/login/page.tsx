@@ -22,6 +22,13 @@ export default function AuthLogin() {
       answer: (num1 + num2).toString(),
     };
   }
+  const handleGoogleLogin = () => {
+    const googleAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&scope=openid%20email%20profile`;
+  
+    console.log("URL de autenticación de Google:", googleAuthURL); // Asegúrate de que la URL se genera correctamente
+    window.location.href = googleAuthURL;
+  };
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -143,7 +150,19 @@ export default function AuthLogin() {
         >
           {isLocked ? 'Bloqueado' : 'Iniciar sesión'}
         </button>
+
       </form>
+
+      <div className="mt-4 w-full max-w-sm">
+      <hr className="my-4" />
+      
+      <button
+        onClick={handleGoogleLogin}
+        className="w-full bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+      >
+        Iniciar sesión con Google
+      </button>
+    </div>
 
       <p className="mt-4">
         ¿Olvidaste tu contraseña?{' '}

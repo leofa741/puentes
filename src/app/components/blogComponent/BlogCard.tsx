@@ -28,6 +28,10 @@ export const BlogCard = ({ post }: { post: Post }) => {
   const [user, setUser] = useState<{ id: string; name: string; email: string } | null>(null);
   const router = useRouter();
 
+  const paragraphs = post.description.substring(0, 500) // Limita el texto a 500 caracteres
+  .replace(/\\n/g, '\n') // Convierte "\n" en saltos de línea reales
+  .split('\n'); // Divide el texto en párrafos
+
   // Obtener usuario autenticado
   const fetchUser = async () => {
     try {
@@ -192,7 +196,13 @@ export const BlogCard = ({ post }: { post: Post }) => {
              
             </div>
 
-            <p className="mt-4 text-gray-700">{post.description.substring(0, 300)}...  <a
+            <p className="mt-4 text-gray-700">
+              {paragraphs.map((paragraph, index) => (
+                <p key={index} className="mb-4">
+                  {paragraph}
+                </p>
+              ))}
+              <a
                 href={post.link}              
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"

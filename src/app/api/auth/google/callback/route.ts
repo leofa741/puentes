@@ -38,7 +38,7 @@ export async function GET(req: Request) {
       { upsert: true }
     );
 
-    const absoluteRedirectURL = new URL('/blog', FRONTEND_URL);
+    const absoluteRedirectURL = new URL('/', FRONTEND_URL);
     const response = NextResponse.redirect(absoluteRedirectURL);
 
     response.headers.append(

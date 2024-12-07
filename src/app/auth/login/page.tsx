@@ -22,12 +22,15 @@ export default function AuthLogin() {
       answer: (num1 + num2).toString(),
     };
   }
+ 
+
   const handleGoogleLogin = () => {
     const googleAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&scope=openid%20email%20profile`;
   
-    console.log("URL de autenticación de Google:", googleAuthURL); // Asegúrate de que la URL se genera correctamente
+    console.log('URL de autenticación de Google:', googleAuthURL); // Verifica que la URL sea correcta
     window.location.href = googleAuthURL;
   };
+  
   
 
   const handleSubmit = async (e: React.FormEvent) => {

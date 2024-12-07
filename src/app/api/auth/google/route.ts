@@ -2,9 +2,10 @@ import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import clientPromise from '@/lib/mongodb';
 
-const CLIENT_ID = process.env.GOOGLE_CLIENT_ID!;
-const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET!;
-const REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI!;
+const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+const REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI;
+
 
 export async function GET(req: Request) {
   try {
@@ -19,6 +20,11 @@ export async function GET(req: Request) {
     }
 
     // Configura el cliente OAuth2 de Google
+    
+    console.log('CLIENT_ID:', CLIENT_ID);
+    console.log('CLIENT_SECRET:', CLIENT_SECRET);
+    console.log('REDIRECT_URI:', REDIRECT_URI);
+
     const auth = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 
     // Intercambia el código por tokens

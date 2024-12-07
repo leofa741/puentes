@@ -232,7 +232,7 @@ export const BlogCard = ({ post }: { post: Post }) => {
                   comments.length === 0
                     ? 'No hay comentarios'
                     : comments.length === 1
-                      ? '1 comentario'
+                      ? `${comments.length} comentario`
                       : `${comments.length} comentarios`
                 }
 

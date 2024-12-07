@@ -207,12 +207,13 @@ export const NavbarDark = () => {
           className="rounded-full"
         />
         <br />
-        <span className='text-xs text-white font-bold'>{user.email.substring(0, 4)}...</span>
         <div className='flex items-center space-x-4'>
           <button className='text-white font-bold py-2  rounded hover:bg-gray-900 hover:text-white' onClick={() => handleLogout()}>
             <FiLogOut className="w-5 h-5" />
           </button>
         </div>
+        <span className='text-xs text-white font-bold'>{user.email.substring(0, 4)}...</span>
+        
       </div>
     )
   ) : (

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
+import Swal from 'sweetalert2';
 
 interface User {
   id: string;
@@ -54,7 +55,19 @@ const AdminPage: React.FC = () => {
 
   // Eliminar usuario
   const deleteUser = async (userId: string) => {
-    if (!confirm('¿Estás seguro de que deseas eliminar este usuario?')) return;
+    const result = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción no se puede deshacer',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar',
+    });
+
+    if (result.isDenied) {
+      return;
+    }
+    
 
     try {
       const response = await fetch(`/api/admin/users/${userId}`, {
@@ -68,43 +81,69 @@ const AdminPage: React.FC = () => {
       }
     } catch (err) {
       console.error(err);
-      alert('No se pudo eliminar el usuario');
+      Swal.fire('Error', 'No se pudo eliminar el usuario', 'error');
     }
   };
 
   // Actualizar roles
   const updateRole = async (userId: string, currentRoles: string[]) => {
-    const newRole = prompt(
-      'Introduce el nuevo rol para este usuario (separado por comas si hay más de uno):',
-      currentRoles.join(', ')
-    );
-
+    // Abrir un SweetAlert para pedir el nuevo rol
+    const { value: newRole } = await Swal.fire({
+      title: 'Actualizar Rol',
+      input: 'text',
+      inputLabel: 'Introduce el nuevo rol para este usuario (separado por comas):',
+      inputValue: currentRoles.join(', '),
+      showCancelButton: true,
+      confirmButtonText: 'Actualizar',
+      cancelButtonText: 'Cancelar',
+      inputValidator: (value) => {
+        if (!value) {
+          return 'Por favor, introduce al menos un rol';
+        }
+        return null;
+      },
+    });
+  
+    // Si se cancela, no continuar
     if (!newRole) return;
-
+  
     try {
-      const response = await fetch(`/api/admin/users/${userId}`, {
+      const response: Response = await fetch(`/api/admin/users/${userId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ roles: newRole.split(',').map((role) => role.trim()) }),
+        body: JSON.stringify({ roles: newRole.split(',').map((role: string) => role.trim()) }),
       });
-
+  
       if (response.ok) {
         const updatedUser = await response.json();
         setUsers((prevUsers) =>
           prevUsers.map((user) => (user.id === userId ? { ...user, roles: updatedUser.roles } : user))
         );
-        alert('Rol actualizado exitosamente');
+  
+        // Mostrar un SweetAlert de éxito
+        Swal.fire({
+          icon: 'success',
+          title: '¡Rol actualizado!',
+          text: 'El rol del usuario ha sido actualizado exitosamente.',
+          timer: 3000,
+          timerProgressBar: true,
+        });
       } else {
         throw new Error('Error al actualizar el rol');
       }
     } catch (err) {
       console.error(err);
-      alert('No se pudo actualizar el rol del usuario');
+  
+      // Mostrar un SweetAlert de error
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo actualizar el rol del usuario.',
+      });
     }
   };
-
   // Estados de carga y error
   if (loading || uloading) return <div className="text-center">Cargando...</div>;
   if (error) return <div className="text-center text-red-500">{error}</div>;

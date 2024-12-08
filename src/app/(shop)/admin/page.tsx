@@ -98,7 +98,7 @@ const AdminPage: React.FC = () => {
       cancelButtonText: 'Cancelar',
       inputValidator: (value) => {
         if (!value) {
-          return 'Por favor, introduce al menos un rol';
+          return 'Por favor, introduce al menos un rol "user" o "admin"';
         }
         return null;
       },

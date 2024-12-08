@@ -83,7 +83,34 @@ const AdminPage: React.FC = () => {
   if (!user || !user.roles?.includes('admin')) {
     return null; // O puedes mostrar un mensaje como un 404 o un texto de "No autorizado".
   }
-
+  const updateRole = async (userId: string, currentRoles: string[]) => {
+    const newRole = prompt('Introduce el nuevo rol para este usuario (separado por comas si hay más de uno):', currentRoles.join(', '));
+    
+    if (!newRole) return;
+  
+    try {
+      const response = await fetch(`/api/admin/users/${userId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ roles: newRole.split(',').map((role) => role.trim()) }),
+      });
+  
+      if (response.ok) {
+        const updatedUser = await response.json();
+        setUsers((prevUsers) =>
+          prevUsers.map((user) => (user.id === userId ? { ...user, roles: updatedUser.roles } : user))
+        );
+      } else {
+        throw new Error('Error al actualizar el rol');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('No se pudo actualizar el rol del usuario');
+    }
+  };
+  
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-4xl font-bold text-center mb-10">Panel de Administración</h1>
@@ -112,6 +139,12 @@ const AdminPage: React.FC = () => {
               <td className="border border-gray-300 px-4 py-2">{user?.email}</td>
               <td className="border border-gray-300 px-4 py-2">{user.roles?.join(', ')}</td>
               <td className="border border-gray-300 px-4 py-2 text-center">
+              <button
+    className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-700 mr-2"
+    onClick={() => updateRole(user.id, user.roles)}
+  >
+    Actualizar Rol
+  </button>
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700"
                   onClick={() => deleteUser(user.id)}

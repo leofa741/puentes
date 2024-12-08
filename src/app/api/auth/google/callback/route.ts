@@ -32,12 +32,28 @@ export async function GET(req: Request) {
 
     const client = await clientPromise;
     const db = client.db();
+
+    // Busca al usuario existente en la base de datos
+    const existingUser = await db.collection('users').findOne({ email: userInfo.data.email });
+    
+    // Construye los cambios
+    const updates: { profile: any; updatedAt: Date; roles?: string[] } = {
+      profile: userInfo.data, // Actualiza el perfil
+      updatedAt: new Date(), // Marca la última actualización
+    };
+    
+    // Solo asigna el rol 'user' si el usuario no tiene roles asignados
+    if (!existingUser?.roles || existingUser.roles.length === 0) {
+      updates.roles = ['user']; // Si no hay roles, asigna el rol predeterminado
+    }
+    
+    // Actualiza o inserta el usuario
     await db.collection('users').updateOne(
       { email: userInfo.data.email },
-      { $set: { profile: userInfo.data, updatedAt: new Date(),  roles: ['user'], } },
+      { $set: updates },
       { upsert: true }
     );
-
+    
     const absoluteRedirectURL = new URL('/', FRONTEND_URL);
     const response = NextResponse.redirect(absoluteRedirectURL);
 

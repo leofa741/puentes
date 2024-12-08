@@ -89,6 +89,9 @@ export async function GET(req: Request) {
       );
     }
 
+    // console.log('Usuario autenticado:', user.email);
+    // console.log('Roles:', user.roles);
+
     // Devuelve los datos del usuario
     return NextResponse.json({
       name: user.name || payload.name || '',

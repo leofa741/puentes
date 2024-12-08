@@ -62,6 +62,8 @@ const AdminPage: React.FC = () => {
       showCancelButton: true,
       confirmButtonText: 'Sí, eliminar',
       cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
     });
 
     if (result.isDenied) {
@@ -96,6 +98,8 @@ const AdminPage: React.FC = () => {
       showCancelButton: true,
       confirmButtonText: 'Actualizar',
       cancelButtonText: 'Cancelar',
+      cancelButtonColor: '#d33',
+      confirmButtonColor: '#3085d6',
       inputValidator: (value) => {
         if (!value) {
           return 'Por favor, introduce al menos un rol "user" o "admin"';
@@ -127,7 +131,7 @@ const AdminPage: React.FC = () => {
           icon: 'success',
           title: '¡Rol actualizado!',
           text: 'El rol del usuario ha sido actualizado exitosamente.',
-          timer: 3000,
+          timer: 2000,
           timerProgressBar: true,
         });
       } else {

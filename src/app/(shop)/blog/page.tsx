@@ -125,27 +125,44 @@ const BlogPage: React.FC = () => {
           </div>
           {/* Filtro por etiquetas */}
           <div className="relative">
-            <label className="block text-gray-700 font-bold mb-2">Filtrar por etiqueta</label>
-            <button
-              className="w-full border border-gray-300 rounded px-4 py-2 text-left"
-              onClick={() => setShowTagDropdown((prev) => !prev)}
-            >
-              {selectedTag || 'Seleccionar etiqueta'}
-            </button>
-            {showTagDropdown && (
-              <div className="absolute z-10 w-full bg-white border border-gray-300 rounded shadow-md max-h-48 overflow-y-auto">
-                {Array.from(new Set(posts.flatMap((post) => post.contenido))).map((tag) => (
-                  <div
-                    key={tag}
-                    className="px-4 py-2 cursor-pointer hover:bg-gray-200"
-                    onClick={() => handleTagSelection(tag)}
-                  >
-                    {tag}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+  <label className="block text-gray-700 font-bold mb-2">Filtrar por etiqueta</label>
+  <button
+    className="w-full border border-gray-300 rounded px-4 py-2 text-left flex justify-between items-center"
+    onClick={() => setShowTagDropdown((prev) => !prev)}
+  >
+    {selectedTag || 'Seleccionar etiqueta'}
+    {selectedTag && (
+      <button
+        className="text-gray-500 hover:text-red-500 ml-2"
+        onClick={(e) => {
+          e.stopPropagation(); // Evita que el clic cierre el menú
+          setSelectedTag(''); // Limpia la etiqueta seleccionada
+        }}
+      >
+        ✕
+      </button>
+    )}
+  </button>
+  {showTagDropdown && (
+    <div className="absolute z-10 w-full bg-white border border-gray-300 rounded shadow-md max-h-48 overflow-y-auto">
+      {Array.from(new Set(posts.flatMap((post) => post.contenido))).map((tag) => (
+        <div
+          key={tag}
+          className={`px-4 py-2 cursor-pointer hover:bg-gray-200 ${
+            selectedTag === tag ? 'bg-blue-100' : ''
+          }`}
+          onClick={() => {
+            setSelectedTag(tag);
+            setShowTagDropdown(false); // Cierra el menú después de seleccionar
+          }}
+        >
+          {tag}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
         </aside>
 
         {/* Posts filtrados */}

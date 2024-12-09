@@ -5,6 +5,7 @@ import { BlogGrid } from '@/app/components/blogComponent/BlogGrid';
 import Loading from '@/app/components/loading/LoadingEfect';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import BannerBlog from '@/app/components/bannerblog/BanerBlog';
 
 interface Post {
   _id: number;
@@ -31,6 +32,8 @@ const BlogPage: React.FC = () => {
   const { user, loading } = useAuth();
   const router = useRouter();
 
+ 
+
   const [mostReadPosts, setMostReadPosts] = useState<Post[]>([]);
   useEffect(() => {
     const fetchPosts = async () => {
@@ -43,7 +46,7 @@ const BlogPage: React.FC = () => {
 
         // Selecciona los 3 primeros artículos (puedes ordenar por likes u otra lógica)
         setMostReadPosts(
-          data.sort((a, b) => b.likes - a.likes).slice(0, 63)
+          data.sort((a, b) => b.likes - a.likes).slice(0, 5)
         );
 
       } catch (error) {
@@ -189,10 +192,6 @@ const BlogPage: React.FC = () => {
           <hr className="my-4 border-t-2 border-gray-300" />
           <div className="mb-8"></div>
 
-
-
-
-
           <h5 className="text-lg font-bold mb-4">Artículos más leídos</h5>
           <ul className="space-y-4">
             {mostReadPosts.length > 0 ? (
@@ -221,6 +220,8 @@ const BlogPage: React.FC = () => {
               <p className="text-gray-500">Cargando artículos...</p>
             )}
           </ul>
+    
+           <BannerBlog />
 
         </aside>
 

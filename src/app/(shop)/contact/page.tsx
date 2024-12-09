@@ -99,7 +99,7 @@ export default function Contact() {
             <div className="flex flex-col items-center">
               <FaMapMarkerAlt className="text-[#009FFF] text-4xl mb-2" />
               <h2 className="text-xl font-bold">Dirección</h2>
-              <p className="text-lg">Buenos Aires, Argentina</p>
+              <p className="text-lg">Monte Grande, Buenos Aires, Argentina</p>
             </div>
           </div>
 

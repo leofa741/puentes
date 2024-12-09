@@ -47,45 +47,82 @@ export const BlogCard = ({ post }: { post: Post }) => {
     }
   };
 
-  // Manejar likes
-  const handleLike = async () => {
-    const newLikes = likes + 1;
-    try {
-      const response = await fetch('/api/like', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ postId: post.id, likes: newLikes, dislikes }),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setLikes(data.likes);
-      } else {
-        console.error('Error al actualizar los likes');
+// Manejar likes
+const handleLike = async () => {
+  if (!user) {
+    Swal.fire({
+      icon: 'error',
+      title: 'No estás autenticado',
+      text: 'Por favor, inicia sesión para dar like.',
+      confirmButtonText: 'Iniciar sesión',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        router.push(`/auth/login?returnUrl=/blog`);
       }
-    } catch (error) {
-      console.error('Error al hacer la solicitud:', error);
-    }
-  };
+    });
+    return;
+  }
 
-  // Manejar dislikes
-  const handleDislike = async () => {
-    const newDislikes = dislikes + 1;
-    try {
-      const response = await fetch('/api/like', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ postId: post.id, likes, dislikes: newDislikes }),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setDislikes(data.dislikes);
-      } else {
-        console.error('Error al actualizar los dislikes');
-      }
-    } catch (error) {
-      console.error('Error al hacer la solicitud:', error);
+  const newLikes = likes + 1;
+  try {
+    const response = await fetch('/api/like', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ postId: post.id, likes: newLikes, dislikes }),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      setLikes(data.likes);
+    } else {
+      console.error('Error al actualizar los likes');
     }
-  };
+  } catch (error) {
+    console.error('Error al hacer la solicitud:', error);
+  }
+};
+
+// Manejar dislikes
+const handleDislike = async () => {
+  if (!user) {
+    Swal.fire({
+      icon: 'error',
+      title: 'No estás autenticado',
+      text: 'Por favor, inicia sesión para dar dislike.',
+      confirmButtonText: 'Iniciar sesión',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        router.push(`/auth/login?returnUrl=/blog`);
+      }
+    });
+    return;
+  }
+
+  const newDislikes = dislikes + 1;
+  try {
+    const response = await fetch('/api/like', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ postId: post.id, likes, dislikes: newDislikes }),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      setDislikes(data.dislikes);
+    } else {
+      console.error('Error al actualizar los dislikes');
+    }
+  } catch (error) {
+    console.error('Error al hacer la solicitud:', error);
+  }
+};
+
 
   // Manejar comentarios
   const handleComment = async () => {

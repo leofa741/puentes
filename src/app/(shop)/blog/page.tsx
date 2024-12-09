@@ -220,7 +220,8 @@ const BlogPage: React.FC = () => {
               <p className="text-gray-500">Cargando artículos...</p>
             )}
           </ul>
-    
+          <hr className="my-4 border-t-2 border-gray-300" />
+          <div className="mb-8"></div>
            <BannerBlog />
 
         </aside>

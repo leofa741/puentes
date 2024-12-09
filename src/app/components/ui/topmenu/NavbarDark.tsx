@@ -22,8 +22,7 @@ export const NavbarDark = () => {
   const router = useRouter();
 
   const [user, setUser] = useState<{ name: string; email: string; avatar: string; roles: string } | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  console.log(user);
+  const [loading, setLoading] = useState<boolean>(true); 
 
   // Consulta al backend para obtener el estado del usuario
   useEffect(() => {
@@ -185,7 +184,7 @@ export const NavbarDark = () => {
               Nosotros</span>
           </Link>
 
-         
+
           <Link href='/blog'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
             ${pathname == '/blog' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
@@ -194,20 +193,18 @@ export const NavbarDark = () => {
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
            `} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
               <FiMail className="w-5 h-5" /></span>  </Link>
-              {
-                user ? (
-                  user.roles.includes('admin') ? (
-                    <Link href='/admin'>
-                      <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
+          {
+            user ? (
+              user.roles.includes('admin') ? (
+                <Link href='/admin'>
+                  <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
             ${pathname == '/admin' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
-                        admin</span>
-                    </Link>
-                  ) : null
-                ) : null
-              }
+                    admin</span>
+                </Link>
+              ) : null
+            ) : null
+          }
 
-          
-       
         </div>
 
         {

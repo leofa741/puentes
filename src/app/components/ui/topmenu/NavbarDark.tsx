@@ -21,19 +21,20 @@ export const NavbarDark = () => {
   const openMenu = useUIStore(state => state.openSideMenu);
   const router = useRouter();
 
-  const [user, setUser] = useState<{ name: string;email: string; avatar: string } | null>(null);
+  const [user, setUser] = useState<{ name: string; email: string; avatar: string; roles: string } | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  console.log(user);
 
   // Consulta al backend para obtener el estado del usuario
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await fetch('/api/auth/me', { credentials: 'include' });
-       
+
         if (response.ok) {
           const data = await response.json();
           setUser(data);
-          
+
         } else {
           setUser(null);
         }
@@ -53,7 +54,7 @@ export const NavbarDark = () => {
       const response = await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
       if (response.ok) {
         router.push('/auth/login');
-       
+
       } else {
         console.error('Error logging out');
       }
@@ -119,7 +120,7 @@ export const NavbarDark = () => {
               </div>
             </div>
           </div>
-        
+
 
           {/* DropdownList soluciones */}
           <div className="  dropdown hover:bg-gray-900 hover:text-white">
@@ -140,8 +141,8 @@ export const NavbarDark = () => {
               <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
 
                 <div className="py-1">
-                <Link href="/soluciones/convertirse-en-comercio-minorista-basado-en-datos" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones/convertirse-en-comercio-minorista-basado-en-datos' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >La importancia de los datos</Link>
-               
+                  <Link href="/soluciones/convertirse-en-comercio-minorista-basado-en-datos" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones/convertirse-en-comercio-minorista-basado-en-datos' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >La importancia de los datos</Link>
+
                   <Link href="/soluciones/datos" tabIndex={0} className={`text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-gray-600  hover:bg-[length:10px_10px] hover:text-white rounded transition-all ${pathname == '/soluciones/datos' ? 'bg-gray-900 text-white' : ''}`} role="menuitem" >La importancia de los datos</Link>
                 </div>
               </div>
@@ -183,6 +184,8 @@ export const NavbarDark = () => {
             ${pathname == '/empresa' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
               Nosotros</span>
           </Link>
+
+         
           <Link href='/blog'>
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
             ${pathname == '/blog' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
@@ -191,46 +194,60 @@ export const NavbarDark = () => {
             <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
            `} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
               <FiMail className="w-5 h-5" /></span>  </Link>
+              {
+                user ? (
+                  user.roles.includes('admin') ? (
+                    <Link href='/admin'>
+                      <span className={`${montserrat.className}m-2 p-2 rounded-md transition duration-500   border-b border-solid border-transparent hover:border-gray-600 hover:text-text-white
+            ${pathname == '/admin' ? 'bg-gray-900' : ''}`} style={{ letterSpacing: '0.1rem', fontSize: '0.9rem' }}>
+                        admin</span>
+                    </Link>
+                  ) : null
+                ) : null
+              }
+
+          
+       
         </div>
 
         {
-  user ? (
-    loading ? (
-      <span className='text-white'>Cargando...</span>
-    ) : (
-      <div className='flex items-center space-x-4'>
-        <div className='flex items-center space-x-4'>
-          <button className='text-white font-bold py-2  rounded hover:bg-gray-900 hover:text-white' onClick={() => handleLogout()}>
-            <FiLogOut className="w-5 h-5" />
-          </button>
-        </div>
-        <Image
-          src={user.avatar || '/assets/img/noimage.png'}
-          alt={user.email}
-          width={30}
-          height={30}
-          className="rounded-full"
-        />      
-        
-        <span className='text-xs text-white font-bold'>{user.email.substring(0, 3)}...</span>
-        
-      </div>
-    )
-  ) : (
-    <div className='flex items-center space-x-4 '>
-      <Link href='/auth/login'>
-        <button className='text-white font-bold py-2 rounded hover:bg-gray-900 hover:text-white'>
-          <FiLogIn className="w-5 h-5" />
-        </button>
-      </Link>
-      <Link href='/auth/register'>
-        <button className='text-white font-bold py-2 rounded hover:bg-gray-900 hover:text-white'>
-          <FiUserPlus className="w-5 h-5" />
-        </button>
-      </Link>
-    </div>
-  )
-}
+          user ? (
+            loading ? (
+              <span className='text-white'>Cargando...</span>
+            ) : (
+              <div className='flex items-center space-x-4'>
+                <div className='flex items-center space-x-4'>
+                  <button className='text-white font-bold py-2  rounded hover:bg-gray-900 hover:text-white' onClick={() => handleLogout()}>
+                    <FiLogOut className="w-5 h-5" />
+                  </button>
+                </div>
+                <Image
+                  src={user.avatar || '/assets/img/noimage.png'}
+                  alt={user.email}
+                  width={30}
+                  height={30}
+                  className="rounded-full"
+                />
+
+                <span className='text-xs text-white font-bold'>{user.email.substring(0, 3)}...</span>
+
+              </div>
+            )
+          ) : (
+            <div className='flex items-center space-x-4 '>
+              <Link href='/auth/login'>
+                <button className='text-white font-bold py-2 rounded hover:bg-gray-900 hover:text-white'>
+                  <FiLogIn className="w-5 h-5" />
+                </button>
+              </Link>
+              <Link href='/auth/register'>
+                <button className='text-white font-bold py-2 rounded hover:bg-gray-900 hover:text-white'>
+                  <FiUserPlus className="w-5 h-5" />
+                </button>
+              </Link>
+            </div>
+          )
+        }
 
 
         <div className='flex items-center px-4 cursor-pointer  space-x-4 '>

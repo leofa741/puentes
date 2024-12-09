@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { BlogGrid } from '@/app/components/blogComponent/BlogGrid';
 import Loading from '@/app/components/loading/LoadingEfect';
 import { useAuth } from '@/context/AuthContext';
@@ -224,6 +225,97 @@ const BlogPage: React.FC = () => {
           <div className="mb-8"></div>
           <BannerBlog />
 
+          <hr className="my-4 border-t-2 border-gray-300" />
+
+          {/* Publicidad de partners */}
+          <div className="mt-6">
+            <h5 className="text-lg font-bold mb-4 text-center">Nuestros Partners</h5>
+            <div className="flex justify-center items-center">
+              <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="/assets/img/google.png"
+                  alt="Publicidad de Partners"
+                  width={200}
+                  height={100}
+                  className="w-full h-auto max-w-md rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+            <p className="text-center text-sm mt-2"
+              >Google Cloud es una plataforma de computación en la nube que ofrece servicios de alojamiento y almacenamiento de datos.</p>
+          </div>
+
+          {/* Publicidad de partners */}
+          <div className="mt-6">           
+            <div className="flex justify-center items-center">
+              <a href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="/assets/img/gitlab.png"
+                  alt="Publicidad de Partners"
+                  width={200}
+                  height={100}
+                  className="w-full h-auto max-w-md rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>            
+            </div>
+            <p className="text-center text-sm mt-2"
+               >GitLab es una compañía Open Core que desarrolla software para el ciclo de vida del desarrollo de software.</p>
+          </div>
+
+          {/* Publicidad de partners */}
+          <div className="mt-6">
+
+            <div className="flex justify-center items-center">
+              <a href="https://www.mongodb.com/es" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="/assets/img/mongo.png"
+                  alt="Publicidad de Partners"
+                  width={200}
+                  height={100}
+                  className="w-full h-auto max-w-md rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+            <p className="text-center text-sm mt-2"
+                >MongoDB es un sistema de base de datos NoSQL, orientado a documentos y de código abierto.</p>
+          </div>
+
+          {/* Publicidad de partners */}
+          <div className="mt-6">
+
+            <div className="flex justify-center items-center">
+              <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="/assets/img/vercel.png"
+                  alt="Publicidad de Partners"
+                  width={200}
+                  height={100}
+                  className="w-full h-auto max-w-md rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </a>
+            </div>
+            <p className="text-center text-sm mt-2"
+                >Vercel es una plataforma de computación en la nube para alojar aplicaciones web y sitios web estáticos.</p>
+          </div>
+
+            {/* Publicidad de partners */}
+            <div className="mt-6">
+
+<div className="flex justify-center items-center">
+  <a href="https://www.sonarqube.org/"  target="_blank" rel="noopener noreferrer">
+    <Image
+      src="/assets/img/Sonar-transparente-1-300x74.png"
+      alt="Publicidad de Partners"
+      width={200}
+      height={100}
+      className="w-full h-auto max-w-md rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+    />
+  </a>
+</div>
+<p className="text-center text-sm mt-2"
+    >SonarQube es una plataforma de código abierto desarrollada por SonarSource para la inspección continua de la calidad del código fuente para realizar análisis automáticos.</p>
+</div>
+
         </aside>
 
         {/* Posts filtrados */}
@@ -237,35 +329,35 @@ const BlogPage: React.FC = () => {
             <Loading />
           )}
         </div>
-    
+
       </main>
       <div className="flex  justify-center items-center   space-x-2   ">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`px-4 py-2 rounded ${currentPage === page ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-800'
-                }`}
-            >
-              {page}
-            </button>
-          ))}
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <button
+            key={page}
+            onClick={() => setCurrentPage(page)}
+            className={`px-4 py-2 rounded ${currentPage === page ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-800'
+              }`}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
+      <footer className="bg-white text-black py-10 mt-10">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-xl font-bold mb-4">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
+          <p className="text-sm mb-6">
+            Contáctanos y descubre cómo podemos ayudarte a lograr tus objetivos.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
+          >
+            ¡Hablemos!
+          </a>
+
         </div>
-        <footer className="bg-white text-black py-10 mt-10">
-  <div className="container mx-auto px-4 text-center">
-    <h2 className="text-xl font-bold mb-4">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
-    <p className="text-sm mb-6">
-      Contáctanos y descubre cómo podemos ayudarte a lograr tus objetivos.
-    </p>
-    <a
-      href="/contact"
-      className="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
-    >
-      ¡Hablemos!
-    </a>
-   
-  </div>
-</footer>
+      </footer>
 
 
     </div>

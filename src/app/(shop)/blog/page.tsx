@@ -27,7 +27,7 @@ const BlogPage: React.FC = () => {
   const [selectedTag, setSelectedTag] = useState<string>(''); // Filtro por etiqueta
   const [showTagDropdown, setShowTagDropdown] = useState<boolean>(false); // Mostrar opciones de etiquetas
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 6;
+  const postsPerPage = 4;
 
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -46,7 +46,7 @@ const BlogPage: React.FC = () => {
 
         // Selecciona los 3 primeros artículos (puedes ordenar por likes u otra lógica)
         setMostReadPosts(
-          data.sort((a, b) => b.likes - a.likes).slice(0, 5)
+          data.sort((a, b) => b.likes - a.likes).slice(0, 4)
         );
 
       } catch (error) {

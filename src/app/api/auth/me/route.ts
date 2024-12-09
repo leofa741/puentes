@@ -89,13 +89,15 @@ export async function GET(req: Request) {
       );
     }
 
-    // console.log('Usuario autenticado:', user.email);
-    // console.log('Roles:', user.roles);
+    console.log('Usuario autenticado:', user.email);
+     console.log('Roles:', user.roles);
+     console.log('Perfil:', user.profile);
+     console.log('imagen:', user.profile.avatar);
 
     // Devuelve los datos del usuario
     return NextResponse.json({
       name: user.name || payload.name || '',
-      avatar: user.avatar || payload.picture || '',
+      avatar: user.profile.avatar || payload.picture || '',
       email: user.email || payload.email || '',
       roles: user.roles || [],
     });

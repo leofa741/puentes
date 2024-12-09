@@ -7,6 +7,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 
 interface Post {
+  _id: number;
   id: string;
   contenido: string[];
   title: string;
@@ -29,6 +30,29 @@ const BlogPage: React.FC = () => {
 
   const { user, loading } = useAuth();
   const router = useRouter();
+
+  const [mostReadPosts, setMostReadPosts] = useState<Post[]>([]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('/api/blog'); // Cambia a la ruta de tu API
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts');
+        }
+        const data: Post[] = await response.json();
+
+        // Selecciona los 3 primeros artículos (puedes ordenar por likes u otra lógica)
+        setMostReadPosts(
+          data.sort((a, b) => b.likes - a.likes).slice(0, 63)
+        );
+
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -125,43 +149,78 @@ const BlogPage: React.FC = () => {
           </div>
           {/* Filtro por etiquetas */}
           <div className="relative">
-  <label className="block text-gray-700 font-bold mb-2">Filtrar por etiqueta</label>
-  <button
-    className="w-full border border-gray-300 rounded px-4 py-2 text-left flex justify-between items-center"
-    onClick={() => setShowTagDropdown((prev) => !prev)}
-  >
-    {selectedTag || 'Seleccionar etiqueta'}
-    {selectedTag && (
-      <button
-        className="text-gray-500 hover:text-red-500 ml-2"
-        onClick={(e) => {
-          e.stopPropagation(); // Evita que el clic cierre el menú
-          setSelectedTag(''); // Limpia la etiqueta seleccionada
-        }}
-      >
-        ✕
-      </button>
-    )}
-  </button>
-  {showTagDropdown && (
-    <div className="absolute z-10 w-full bg-white border border-gray-300 rounded shadow-md max-h-48 overflow-y-auto">
-      {Array.from(new Set(posts.flatMap((post) => post.contenido))).map((tag) => (
-        <div
-          key={tag}
-          className={`px-4 py-2 cursor-pointer hover:bg-gray-200 ${
-            selectedTag === tag ? 'bg-blue-100' : ''
-          }`}
-          onClick={() => {
-            setSelectedTag(tag);
-            setShowTagDropdown(false); // Cierra el menú después de seleccionar
-          }}
-        >
-          {tag}
-        </div>
-      ))}
-    </div>
-  )}
-</div>
+            <label className="block text-gray-700 font-bold mb-2">Filtrar por etiqueta</label>
+            <button
+              className="w-full border border-gray-300 rounded px-4 py-2 text-left flex justify-between items-center"
+              onClick={() => setShowTagDropdown((prev) => !prev)}
+            >
+              {selectedTag || 'Seleccionar etiqueta'}
+              {selectedTag && (
+                <button
+                  className="text-gray-500 hover:text-red-500 ml-2"
+                  onClick={(e) => {
+                    e.stopPropagation(); // Evita que el clic cierre el menú
+                    setSelectedTag(''); // Limpia la etiqueta seleccionada
+                  }}
+                >
+                  ✕
+                </button>
+              )}
+            </button>
+            {showTagDropdown && (
+              <div className="absolute z-10 w-full bg-white border border-gray-300 rounded shadow-md max-h-48 overflow-y-auto">
+                {Array.from(new Set(posts.flatMap((post) => post.contenido))).map((tag) => (
+                  <div
+                    key={tag}
+                    className={`px-4 py-2 cursor-pointer hover:bg-gray-200 ${selectedTag === tag ? 'bg-blue-100' : ''
+                      }`}
+                    onClick={() => {
+                      setSelectedTag(tag);
+                      setShowTagDropdown(false); // Cierra el menú después de seleccionar
+                    }}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <hr className="my-4 border-t-2 border-gray-300" />
+          <div className="mb-8"></div>
+
+
+
+
+
+          <h5 className="text-lg font-bold mb-4">Artículos más leídos</h5>
+          <ul className="space-y-4">
+            {mostReadPosts.length > 0 ? (
+              mostReadPosts.map((post) => (
+
+                <li key={post._id} className="flex items-center space-x-4">
+                  <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    className="w-16 h-16 object-cover rounded-md"
+                  />
+                  <div>
+                    <a
+                      href={`/blog/${post._id}/${post.title // Cambiado a title
+                        .toLowerCase()
+                        .replace(/ /g, '-')
+                        .replace(/[^\w-]+/g, '')}`}
+                      className="text-blue-600 font-medium hover:underline"
+                    >
+                      {post.title}
+                    </a>
+                  </div>
+                </li>
+              ))
+            ) : (
+              <p className="text-gray-500">Cargando artículos...</p>
+            )}
+          </ul>
 
         </aside>
 
@@ -175,9 +234,8 @@ const BlogPage: React.FC = () => {
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`px-4 py-2 rounded ${
-                      currentPage === page ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-800'
-                    }`}
+                    className={`px-4 py-2 rounded ${currentPage === page ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-800'
+                      }`}
                   >
                     {page}
                   </button>

@@ -11,6 +11,7 @@ interface Post {
 }
 
 export const HomeComponent = () => {
+    
     const [mostReadPosts, setMostReadPosts] = useState<Post[]>([]);
     useEffect(() => {
         const fetchPosts = async () => {

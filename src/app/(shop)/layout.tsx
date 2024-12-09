@@ -35,8 +35,6 @@ export default function ShopLayout({
         <br />
       </h4>
       <br />
-
-
       <PartNer />
       <Footer />
       </AuthProvider>

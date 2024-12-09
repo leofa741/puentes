@@ -32,7 +32,7 @@ const BlogPage: React.FC = () => {
   const { user, loading } = useAuth();
   const router = useRouter();
 
- 
+
 
   const [mostReadPosts, setMostReadPosts] = useState<Post[]>([]);
   useEffect(() => {
@@ -222,7 +222,7 @@ const BlogPage: React.FC = () => {
           </ul>
           <hr className="my-4 border-t-2 border-gray-300" />
           <div className="mb-8"></div>
-           <BannerBlog />
+          <BannerBlog />
 
         </aside>
 
@@ -231,24 +231,43 @@ const BlogPage: React.FC = () => {
           {filteredPosts.length > 0 ? (
             <>
               <BlogGrid posts={currentPosts} />
-              <div className="flex justify-center mt-8 space-x-2">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                  <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`px-4 py-2 rounded ${currentPage === page ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-800'
-                      }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-              </div>
+
             </>
           ) : (
             <Loading />
           )}
         </div>
+    
       </main>
+      <div className="flex  justify-center items-center   space-x-2   ">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`px-4 py-2 rounded ${currentPage === page ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-800'
+                }`}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+        <footer className="bg-white text-black py-10 mt-10">
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-xl font-bold mb-4">¿Listo para llevar tu proyecto al siguiente nivel?</h2>
+    <p className="text-sm mb-6">
+      Contáctanos y descubre cómo podemos ayudarte a lograr tus objetivos.
+    </p>
+    <a
+      href="/contact"
+      className="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
+    >
+      ¡Hablemos!
+    </a>
+   
+  </div>
+</footer>
+
+
     </div>
   );
 };

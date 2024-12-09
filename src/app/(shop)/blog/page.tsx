@@ -141,7 +141,7 @@ const BlogPage: React.FC = () => {
           <h5 className="text-lg font-bold mb-4">Filtros</h5>
           {/* Búsqueda por nombre */}
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Buscar por nombre</label>
+            <label className="block text-gray-700 font-bold mb-2">Buscar por titulo</label>
             <input
               type="text"
               placeholder="Buscar..."

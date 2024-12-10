@@ -318,7 +318,8 @@ const BlogPage: React.FC = () => {
 <p className="text-center text-sm mt-2"
     >SonarQube es una plataforma de código abierto desarrollada por SonarSource para la inspección continua de la calidad del código fuente para realizar análisis automáticos.</p>
 </div>
-
+<hr className="my-4 border-t-2 border-gray-300" />
+<div className="mb-8"></div>
 {/* <TagTree posts={posts} /> */}
 <PopularPostsPieChart posts={posts} />
 

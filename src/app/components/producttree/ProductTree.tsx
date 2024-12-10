@@ -27,15 +27,18 @@ const ProductImage: React.FC<ProductImageProps> = ({ imageUrl, title, price }) =
       {/* Contenedor con sombra dinámica */}
       <div
         style={{
-          width: '100%',
-          height: '100%',
-          borderRadius: 'inherit',
-          overflow: 'hidden',
-          position: 'relative',
-          transition: 'box-shadow 0.8s ease-in-out',
-          boxShadow: hovered
-            ? '0 25px 50px rgba(0, 0, 0, 0.4)'
-            : '0 10px 20px rgba(0, 0, 0, 0.15)',
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            boxShadow: hovered
+                ? '0 10px 20px rgba(0, 0, 0, 0.5)'
+                : '0 5px 10px rgba(0, 0, 0, 0.3)',
+            transition: 'box-shadow 0.8s ease-in-out',
+            borderRadius: 'inherit',
+            
+        
         }}
       >
         {/* Imagen con efecto de luminosidad */}

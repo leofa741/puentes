@@ -1,5 +1,6 @@
 import { BanerServicesContact, ServicesComp, Title } from '@/app/components'
 import { BannerHeader } from '@/app/components/bannerheader/BannerHeader'
+import ProductTree from '@/app/components/producttree/ProductTree'
 import { ImagenCard } from '@/app/components/services/ImagenCard'
 
 import { Metadata } from 'next'
@@ -40,14 +41,26 @@ export default function Ecommerce() {
               Mantenemos una comunicación constante con nuestros clientes para que puedan ver el avance del proyecto y realizar modificaciones en el mismo.
               Nuestros desarrollos son escalables, lo que significa que pueden crecer junto a tu negocio.
 
+
+
+            </p>
+            <p className="text-gray-600 mb-8">
+              Destaca tus productos y servicios con un E-commerce a medida.
+              Implementamos sistemas de pago y envío para que puedas vender tus productos y servicios a través de internet.
+              Mostra tus productos y servicios de forma atractiva y fácil de usar.
             </p>
           </div>
 
 
           <div className="w-full sm:w-1/2 p-6">
-            <ImagenCard
+            {/* <ImagenCard
               url={"https://github.com/leofa741/prixma/blob/master/src/assets/img/E-Commerce.png?raw=true"}
-            />
+            /> */}
+            <ProductTree
+      imageUrl="/assets/img/red-t-shirt-free-png.webp"
+      title="Producto Destacado"
+      price={100}
+    />
           </div>
         </div>
 

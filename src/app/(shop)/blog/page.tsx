@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import BannerBlog from '@/app/components/bannerblog/BanerBlog';
 import { TagTree } from '@/app/components/taggtree/TagTree';
 import PopularPostsPieChart from '@/app/components/popularpostspiechart/PopularPostsPieChart';
+import ProductTree from '@/app/components/producttree/ProductTree';
 
 interface Post {
   _id: number;
@@ -25,6 +26,33 @@ interface Post {
 }
 
 const BlogPage: React.FC = () => {
+
+  const treeData = [
+    {
+      id: '1',
+      label: 'Categorías',
+      children: [
+        { id: '1-1', label: 'Electrónica' },
+        {
+          id: '1-2',
+          label: 'Hogar',
+          children: [
+            { id: '1-2-1', label: 'Muebles' },
+            { id: '1-2-2', label: 'Decoración' },
+          ],
+        },
+      ],
+    },
+    {
+      id: '2',
+      label: 'Especificaciones',
+      children: [
+        { id: '2-1', label: 'Peso: 1.2kg' },
+        { id: '2-2', label: 'Dimensiones: 20x30cm' },
+      ],
+    },
+    { id: '3', label: 'Opiniones' },
+  ];
   const [posts, setPosts] = useState<Post[]>([]);
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>(''); // Búsqueda por nombre
@@ -322,6 +350,11 @@ const BlogPage: React.FC = () => {
 <div className="mb-8"></div>
 {/* <TagTree posts={posts} /> */}
 <PopularPostsPieChart posts={posts} />
+
+{/* <ProductTree
+      imageUrl="/assets/img/red-t-shirt-free-png.webp"
+      title="Producto Destacado"
+    /> */}
 
         </aside>
 

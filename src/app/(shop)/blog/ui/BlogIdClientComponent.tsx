@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { TagTree } from '@/app/components/taggtree/TagTree';
 
 interface Post {
   id: string; // _id será convertido a string
@@ -86,6 +87,9 @@ export default function BlogIdClientComponent({ post }: { post: Post }) {
             <span className="text-gray-500">No tags disponibles</span>
           )}
         </div>
+
+       
+
       </div>
     </div>
   );

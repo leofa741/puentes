@@ -7,6 +7,8 @@ import Loading from '@/app/components/loading/LoadingEfect';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import BannerBlog from '@/app/components/bannerblog/BanerBlog';
+import { TagTree } from '@/app/components/taggtree/TagTree';
+import PopularPostsPieChart from '@/app/components/popularpostspiechart/PopularPostsPieChart';
 
 interface Post {
   _id: number;
@@ -19,6 +21,7 @@ interface Post {
   link: string;
   date: string;
   likes: number;
+  comments: number; // Add the comments property
 }
 
 const BlogPage: React.FC = () => {
@@ -315,6 +318,9 @@ const BlogPage: React.FC = () => {
 <p className="text-center text-sm mt-2"
     >SonarQube es una plataforma de código abierto desarrollada por SonarSource para la inspección continua de la calidad del código fuente para realizar análisis automáticos.</p>
 </div>
+
+{/* <TagTree posts={posts} /> */}
+<PopularPostsPieChart posts={posts} />
 
         </aside>
 

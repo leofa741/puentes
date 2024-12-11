@@ -1,8 +1,6 @@
-import type { Config } from 'tailwindcss'
-
+import type { Config } from 'tailwindcss';
 
 const withMT = require("@material-tailwind/react/utils/withMT");
-
 
 module.exports = withMT({
   content: [
@@ -12,24 +10,32 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
-        animation: {
-            loading: 'loading 1.5s infinite',
+      // Animaciones existentes
+      animation: {
+        loading: 'loading 1.5s infinite',
+      },
+      keyframes: {
+        loading: {
+          '0%': { transform: 'translateX(-100%)' },
+          '50%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
-        keyframes: {
-            loading: {
-                '0%': { transform: 'translateX(-100%)' },
-                '50%': { transform: 'translateX(0%)' },
-                '100%': { transform: 'translateX(100%)' },
-            },
+      },
+      // Fuentes personalizadas
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'], // Agrega la fuente 'Poppins'
+      },
+      // Colores personalizados
+      colors: {
+        brand: {
+          DEFAULT: '#1E40AF',
+          light: '#3B82F6',
         },
+      },
     },
-},
+  },
   plugins: [],
 });
-
-
-
-
 
 const config: Config = {
   content: [
@@ -38,12 +44,14 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      // Opcional: Puedes mover extensiones aquí también si es necesario.
+    },
   },
   plugins: [],
-}
-export default config
+};
 
+export default config;
 
 
 

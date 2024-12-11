@@ -79,53 +79,56 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   };
 
   return (
-    <div className="product-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-      <div className="product-view" style={stile}>
-        <Canvas camera={{ position: [0, 2, 45], fov: 40 }}>
-          <ambientLight intensity={0.8} />
-          <directionalLight position={[5, 10, 5]} intensity={1} />
-          <MannequinWithShirt modelUrl={modelUrl} color={shirtColor} />
-          <OrbitControls enableZoom={true} />
-        </Canvas>
-      </div>
-      <div className="product-info" style={{ textAlign: 'center', marginTop: '20px' }}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <p>
-          <strong>Precio:</strong> ${price.toFixed(2)}
-        </p>
-        <div>
-          <strong>Tallas:</strong>
-          <select value={selectedSize} onChange={handleSizeChange} style={{ marginLeft: '10px' }}>
-            {sizes.map((size) => (
-              <option key={size} value={size}>
-                {size}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <strong>Colores:</strong>
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-            {colors.map((color) => (
-              <button
-                key={color.name}
-                onClick={() => handleColorChange(color.hex)}
-                style={{
-                  backgroundColor: color.hex,
-                  width: '30px',
-                  height: '30px',
-                  margin: '5px',
-                  borderRadius: '50%',
-                  border: color.hex === shirtColor.getStyle() ? '2px solid black' : 'none',
-                }}
-                title={color.name}
-              />
-            ))}
-          </div>
-        </div>
+    <div className="product-card flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+  <div className="product-view w-full h-96 bg-gray-100 flex items-center justify-center">
+    <Canvas camera={{ position: [0, 2, 45], fov: 40 }}>
+      <ambientLight intensity={1.6} />
+      <directionalLight position={[5, 10, 5]} intensity={1} />
+      <MannequinWithShirt modelUrl={modelUrl} color={shirtColor} />
+      <OrbitControls enableZoom={true} />
+    </Canvas>
+  </div>
+  <div className="product-info text-center p-6">
+    <h2 className="text-2xl font-semibold text-gray-800">{title}</h2>
+    <p className="text-gray-600 mt-2">{description}</p>
+    <p className="text-lg font-bold text-gray-800 mt-4">
+      Precio: <span className="text-green-600">${price.toFixed(2)}</span>
+    </p>
+    <div className="mt-4">
+      <strong className="block text-gray-700 mb-1">Tallas:</strong>
+      <select
+        value={selectedSize}
+        onChange={handleSizeChange}
+        className="border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+      >
+        {sizes.map((size) => (
+          <option key={size} value={size}>
+            {size}
+          </option>
+        ))}
+      </select>
+    </div>
+    <div className="mt-6">
+      <strong className="block text-gray-700 mb-1">Colores:</strong>
+      <div className="flex justify-center gap-4 mt-2">
+        {colors.map((color) => (
+          <button
+            key={color.name}
+            onClick={() => handleColorChange(color.hex)}
+            className={`w-8 h-8 rounded-full border-2 ${
+              color.hex === shirtColor.getStyle()
+                ? 'border-black'
+                : 'border-transparent'
+            }`}
+            style={{ backgroundColor: color.hex }}
+            title={color.name}
+          />
+        ))}
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 

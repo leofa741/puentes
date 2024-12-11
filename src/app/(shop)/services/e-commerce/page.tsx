@@ -134,9 +134,9 @@ export default function Ecommerce() {
               { name: 'Amarillo', hex: '#ffff00' },
               { name: 'Rosa', hex: '#ff00ff' }
               ]}
-              title="Gorra"
+              title="Chombas"
               price={19.99}
-              description="Gorra unisex de alta calidad, perfecta para protegerte del sol y complementar tu estilo. Disponible en varios colores."
+              description="Chombas unisex de alta calidad, perfecta para protegerte del sol y complementar tu estilo. Disponible en varios colores."
               sizes={['S', 'M', 'L', 'XL']}
                scala={[36.9, 36.9, 36.9]}
                position={[0, -48.5, 0]}

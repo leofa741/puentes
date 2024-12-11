@@ -79,55 +79,62 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   };
 
   return (
-    <div className="product-card flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm:w-[95%] md:w-[90%]">
-  <div className="product-view w-full h-72 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center">
-    <Canvas camera={{ position: [0, 2, 45], fov: 40 }}>
-      <ambientLight intensity={1.6} />
-      <directionalLight position={[5, 10, 5]} intensity={1} />
-      <MannequinWithShirt modelUrl={modelUrl} color={shirtColor} />
-      <OrbitControls enableZoom={true} />
-    </Canvas>
-  </div>
-  <div className="product-info text-center p-4 sm:p-6">
-    <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{title}</h2>
-    <p className="text-gray-600 mt-2">{description}</p>
-    <p className="text-lg font-bold text-gray-800 mt-4">
-      Precio: <span className="text-green-600">${price.toFixed(2)}</span>
-    </p>
-    <div className="mt-4">
-      <strong className="block text-gray-700 mb-1">Tallas:</strong>
-      <select
-        value={selectedSize}
-        onChange={handleSizeChange}
-        className="border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300 w-full max-w-xs"
-      >
-        {sizes.map((size) => (
-          <option key={size} value={size}>
-            {size}
-          </option>
-        ))}
-      </select>
+    <div className="product-card relative flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm:w-[95%] md:w-[90%]">
+    {/* Vista del producto con prioridad */}
+    <div className="product-view relative z-30 w-full h-72 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center rounded-t-lg">
+      <Canvas camera={{ position: [0, 2, 45], fov: 40 }}>
+        <ambientLight intensity={1.6} />
+        <directionalLight position={[5, 10, 5]} intensity={1} />
+        <MannequinWithShirt modelUrl={modelUrl} color={shirtColor} />
+        <OrbitControls enableZoom={true} />
+      </Canvas>
     </div>
-    <div className="mt-6">
-      <strong className="block text-gray-700 mb-1">Colores:</strong>
-      <div className="flex justify-center gap-2 flex-wrap mt-2">
-        {colors.map((color) => (
-          <button
-            key={color.name}
-            onClick={() => handleColorChange(color.hex)}
-            className={`w-8 h-8 rounded-full border-2 ${
-              color.hex === shirtColor.getStyle()
-                ? 'border-black'
-                : 'border-transparent'
-            }`}
-            style={{ backgroundColor: color.hex }}
-            title={color.name}
-          />
-        ))}
+    
+    {/* Fondo de contenido detrás */}
+    <div className="absolute inset-0 z-10 bg-gray-50 rounded-lg -translate-y-6"></div>
+  
+    {/* Información del producto */}
+    <div className="product-info z-30 relative text-center p-4 sm:p-6">
+      <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{title}</h2>
+      <p className="text-gray-600 mt-2">{description}</p>
+      <p className="text-lg font-bold text-gray-800 mt-4">
+        Precio: <span className="text-green-600">${price.toFixed(2)}</span>
+      </p>
+      <div className="mt-4">
+        <strong className="block text-gray-700 mb-1">Tallas:</strong>
+        <select
+          value={selectedSize}
+          onChange={handleSizeChange}
+          className="border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300 w-full max-w-xs"
+        >
+          {sizes.map((size) => (
+            <option key={size} value={size}>
+              {size}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="mt-6">
+        <strong className="block text-gray-700 mb-1">Colores:</strong>
+        <div className="flex justify-center gap-2 flex-wrap mt-2">
+          {colors.map((color) => (
+            <button
+              key={color.name}
+              onClick={() => handleColorChange(color.hex)}
+              className={`w-8 h-8 rounded-full border-2 ${
+                color.hex === shirtColor.getStyle()
+                  ? 'border-black'
+                  : 'border-transparent'
+              }`}
+              style={{ backgroundColor: color.hex }}
+              title={color.name}
+            />
+          ))}
+        </div>
       </div>
     </div>
   </div>
-</div>
+  
 
   );
 };

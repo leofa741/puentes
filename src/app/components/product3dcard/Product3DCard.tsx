@@ -95,6 +95,24 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
 
   {/* Información del producto */}
   <div className="product-info z-30 relative text-center p-4 sm:p-6">
+  <div className="mt-6">
+      <strong className="block text-gray-700 mb-1">Colores:</strong>
+      <div className="flex justify-center gap-2 flex-wrap mt-2">
+        {colors.map((color) => (
+          <button
+            key={color.name}
+            onClick={() => handleColorChange(color.hex)}
+            className={`w-8 h-8 rounded-full border-2 ${
+              color.hex === shirtColor.getStyle()
+                ? 'border-black'
+                : 'border-transparent'
+            }`}
+            style={{ backgroundColor: color.hex }}
+            title={color.name}
+          />
+        ))}
+      </div>
+    </div>
     <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{title}</h2>
     <p className="text-gray-600 mt-2">{description}</p>
     <p className="text-lg font-bold text-gray-800 mt-4">
@@ -114,24 +132,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
         ))}
       </select>
     </div>
-    <div className="mt-6">
-      <strong className="block text-gray-700 mb-1">Colores:</strong>
-      <div className="flex justify-center gap-2 flex-wrap mt-2">
-        {colors.map((color) => (
-          <button
-            key={color.name}
-            onClick={() => handleColorChange(color.hex)}
-            className={`w-8 h-8 rounded-full border-2 ${
-              color.hex === shirtColor.getStyle()
-                ? 'border-black'
-                : 'border-transparent'
-            }`}
-            style={{ backgroundColor: color.hex }}
-            title={color.name}
-          />
-        ))}
-      </div>
-    </div>
+  
   </div>
 </div>
 

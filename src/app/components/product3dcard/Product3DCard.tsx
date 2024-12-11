@@ -79,8 +79,8 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   };
 
   return (
-    <div className="product-card flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-  <div className="product-view w-full h-96 bg-gray-100 flex items-center justify-center">
+    <div className="product-card flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm:w-[95%] md:w-[90%]">
+  <div className="product-view w-full h-72 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center">
     <Canvas camera={{ position: [0, 2, 45], fov: 40 }}>
       <ambientLight intensity={1.6} />
       <directionalLight position={[5, 10, 5]} intensity={1} />
@@ -88,8 +88,8 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
       <OrbitControls enableZoom={true} />
     </Canvas>
   </div>
-  <div className="product-info text-center p-6">
-    <h2 className="text-2xl font-semibold text-gray-800">{title}</h2>
+  <div className="product-info text-center p-4 sm:p-6">
+    <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{title}</h2>
     <p className="text-gray-600 mt-2">{description}</p>
     <p className="text-lg font-bold text-gray-800 mt-4">
       Precio: <span className="text-green-600">${price.toFixed(2)}</span>
@@ -99,7 +99,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
       <select
         value={selectedSize}
         onChange={handleSizeChange}
-        className="border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+        className="border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300 w-full max-w-xs"
       >
         {sizes.map((size) => (
           <option key={size} value={size}>
@@ -110,7 +110,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
     </div>
     <div className="mt-6">
       <strong className="block text-gray-700 mb-1">Colores:</strong>
-      <div className="flex justify-center gap-4 mt-2">
+      <div className="flex justify-center gap-2 flex-wrap mt-2">
         {colors.map((color) => (
           <button
             key={color.name}

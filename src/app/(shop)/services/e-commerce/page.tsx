@@ -96,7 +96,7 @@ export default function Ecommerce() {
               ]}
               title="Camiseta Cuello redondo"
               price={29.99}
-              description="Camiseta unisex cómoda y de alta calidad, perfecta para cualquier ocasión."
+              description="Camiseta unisex "
               sizes={['S', 'M', 'L', 'XL']}
               scala={[0.3, 0.3, 0.3]}
               stile={{ width: '360px', height: '500px' }}   

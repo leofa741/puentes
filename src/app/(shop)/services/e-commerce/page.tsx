@@ -1,10 +1,12 @@
-import { BanerServicesContact, ServicesComp, Title } from '@/app/components'
+import { BanerServicesContact, Title } from '@/app/components'
 import { BannerHeader } from '@/app/components/bannerheader/BannerHeader'
-import ProductTree from '@/app/components/producttree/ProductTree'
+import MannequinScene from '@/app/components/ejemplothree/Image3DEffect'
+import Product3DCard from '@/app/components/product3dcard/Product3DCard'
 import { ImagenCard } from '@/app/components/services/ImagenCard'
-
 import { Metadata } from 'next'
-import Image from 'next/image'
+
+
+
 
 export const metadata: Metadata = {
   keywords: 'E-commerce, diseño web, apis, Desarrollo web, ecommerce, aplicaciones web, aplicaciones móviles, desarrollo de software, desarrollo de aplicaciones, desarrollo de aplicaciones móviles, desarrollo de aplicaciones web ',
@@ -45,9 +47,19 @@ export default function Ecommerce() {
 
             </p>
             <p className="text-gray-600 mb-8">
-              Destaca tus productos y servicios con un E-commerce a medida.
-              Implementamos sistemas de pago y envío para que puedas vender tus productos y servicios a través de internet.
-              Mostra tus productos y servicios de forma atractiva y fácil de usar.
+              <strong>Destaca tus productos y servicios</strong> con un <strong>E-commerce personalizado</strong>.
+              Creamos plataformas que maximizan el impacto visual de tus productos a través de <strong>imágenes de alta calidad y diseño intuitivo</strong>.
+              Implementamos <strong>sistemas de pago y envío seguros</strong> para facilitar tus ventas en línea.
+              Haz que tu catálogo sea irresistible y accesible, mostrando tus productos de manera <strong>atractiva y fácil de usar</strong>.
+              Nuestro enfoque combina creatividad y tecnología para potenciar tu negocio.
+            </p>
+
+            <p className="text-gray-600 mb-8">
+              <strong>¿Qué es un E-commerce?</strong>
+              Un E-commerce es una plataforma digital que permite a los usuarios comprar y vender productos y servicios a través de internet.
+              Los E-commerce son una excelente opción para las empresas que desean expandir su alcance y aumentar sus ventas.
+              Con un E-commerce, puedes llegar a una audiencia global y ofrecer tus productos y servicios a clientes de todo el mundo.
+              Los E-commerce son una forma conveniente y eficiente de hacer negocios en línea.
             </p>
           </div>
 
@@ -56,17 +68,84 @@ export default function Ecommerce() {
             {/* <ImagenCard
               url={"https://github.com/leofa741/prixma/blob/master/src/assets/img/E-Commerce.png?raw=true"}
             /> */}
-            <ProductTree
-      imageUrl="/assets/img/red-t-shirt-free-png.webp"
-      title="Producto Destacado"
-      price={100}
-    />
+            {/* <ProductTree
+          imageUrl="/assets/img/red-t-shirt-free-png.webp"
+          title="Producto Destacado"
+          price={100}
+        /> */}
+            {/* <Image3DEffect 
+        modelUrl="/assets/models/maniqui.glb"
+        /> */}
+            {/* <MannequinScene
+           modelUrl="/assets/img/maniqui.glb"
+           textureUrl="/assets/img/red-t-shirt-free-png.webp"
+           
+                 /> */}
+
+            <Product3DCard
+              modelUrl="/assets/img/remera_modelo_3d_-_creditos_a_quien_corresponda.glb"
+              defaultColor="#ffffff"
+              colors={[
+                { name: 'Blanco', hex: '#ffffff' },
+                { name: 'Rojo', hex: '#ff0000' },
+                { name: 'Negro', hex: '#000000' },
+                { name: 'Verde', hex: '#00ff00' },
+                { name: 'Azul', hex: '#0000ff' },
+                { name: 'Amarillo', hex: '#ffff00' },
+                { name: 'Rosa', hex: '#ff00ff' }
+              ]}
+              title="Camiseta Cuello redondo"
+              price={29.99}
+              description="Camiseta unisex cómoda y de alta calidad, perfecta para cualquier ocasión."
+              sizes={['S', 'M', 'L', 'XL']}
+              scala={[0.3, 0.3, 0.3]}
+              stile={{ width: '500px', height: '500px' }}   
+            />
           </div>
         </div>
+        <div className="w-full sm:w-1/2 p-6">
+            {/* <ImagenCard
+              url={"https://github.com/leofa741/prixma/blob/master/src/assets/img/E-Commerce.png?raw=true"}
+            /> */}
+            {/* <ProductTree
+          imageUrl="/assets/img/red-t-shirt-free-png.webp"
+          title="Producto Destacado"
+          price={100}
+        /> */}
+            {/* <Image3DEffect 
+        modelUrl="/assets/models/maniqui.glb"
+        /> */}
+            {/* <MannequinScene
+           modelUrl="/assets/img/maniqui.glb"
+           textureUrl="/assets/img/red-t-shirt-free-png.webp"
+           
+                 /> */}
 
-        <h2 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
-          Implentación de nuestro E-commerce
-        </h2>
+            <Product3DCard
+              modelUrl="/assets/img/gorravicera.glb"
+              defaultColor="#ffffff"
+              colors={[
+              { name: 'Blanco', hex: '#ffffff' },
+              { name: 'Rojo', hex: '#ff0000' },
+              { name: 'Negro', hex: '#000000' },
+              { name: 'Verde', hex: '#00ff00' },
+              { name: 'Azul', hex: '#0000ff' },
+              { name: 'Amarillo', hex: '#ffff00' },
+              { name: 'Rosa', hex: '#ff00ff' }
+              ]}
+              title="Gorra"
+              price={19.99}
+              description="Gorra unisex de alta calidad, perfecta para protegerte del sol y complementar tu estilo. Disponible en varios colores."
+              sizes={['S', 'M', 'L', 'XL']}
+               scala={[0.9, 0.9, 0.9]}
+               stile={{ width: '200px', height: '200px' }}              
+
+            />
+            </div>
+            
+          <h2 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
+            Implementación de nuestro E-commerce
+          </h2>
 
         <p className="text-gray-600 mb-8">
           La implementación de “Puented Digitales” consta de un Portal Web de eCommerce
@@ -104,8 +183,8 @@ export default function Ecommerce() {
 
                 <div className="card animacion-block">
                   <div className="card-image ">
-                    <ImagenCard                    
-                       url={"../assets/img/726_6219f1cbb41bb.webp"}
+                    <ImagenCard
+                      url={"../assets/img/726_6219f1cbb41bb.webp"}
                     />
                   </div>
                   <div className="card-body">
@@ -124,7 +203,7 @@ export default function Ecommerce() {
                 <div className="card animacion-block">
                   <div className="card-image ">
                     <ImagenCard
-                       url={"../assets/img/ShopApp-para-la-gestión-de-pedidos-y-ventas.jpg"}
+                      url={"../assets/img/ShopApp-para-la-gestión-de-pedidos-y-ventas.jpg"}
                     />
                   </div>
                   <div className="card-body">

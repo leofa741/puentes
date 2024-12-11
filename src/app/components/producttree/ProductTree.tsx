@@ -99,4 +99,4 @@ const ProductImage: React.FC<ProductImageProps> = ({ imageUrl, title, price }) =
   );
 };
 
-export default ProductImage;
+export default  ProductImage;

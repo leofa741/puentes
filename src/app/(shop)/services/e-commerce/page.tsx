@@ -99,7 +99,7 @@ export default function Ecommerce() {
               description="Camiseta unisex "
               sizes={['S', 'M', 'L', 'XL']}
               scala={[0.3, 0.3, 0.3]}
-              stile={{ width: '360px', height: '500px' }}   
+              stile={{ width: '300px', height: '500px' }}   
             />
           </div>
         </div>

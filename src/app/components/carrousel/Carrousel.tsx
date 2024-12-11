@@ -94,11 +94,17 @@ export const Carrousel = () => {
 
 
                 <div className="relative h-full w-full">
-                    <img
-                        src="/assets/img/carrousel2.jpg"
-                        alt="image 2"
-                        className="h-full w-full object-cover"
-                    />
+                <video autoPlay loop muted
+                        style={{
+                            width: "100%",
+                            objectFit: "cover",
+                            position: "absolute",
+                            top: "0",
+                            left: "0",
+                            zIndex: "-1"
+                        }} >
+                        <source src='/assets/videos/puentes.mp4' type="video/mp4" />
+                    </video>
                     <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
                         <div className="w-3/4 text-center md:w-2/4">
                             <Typography

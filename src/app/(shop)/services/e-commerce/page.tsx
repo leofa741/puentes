@@ -99,6 +99,7 @@ export default function Ecommerce() {
               description="Camiseta unisex "
               sizes={['S', 'M', 'L', 'XL']}
               scala={[0.3, 0.3, 0.3]}
+              position={[0, -11.5, 0]}
               stile={{ width: '300px', height: '500px' }}   
             />
           </div>
@@ -122,7 +123,7 @@ export default function Ecommerce() {
                  /> */}
 
             <Product3DCard
-              modelUrl="/assets/img/gorravicera.glb"
+              modelUrl="/assets/img/primera_camisa.glb"
               defaultColor="#ffffff"
               colors={[
               { name: 'Blanco', hex: '#ffffff' },
@@ -137,7 +138,8 @@ export default function Ecommerce() {
               price={19.99}
               description="Gorra unisex de alta calidad, perfecta para protegerte del sol y complementar tu estilo. Disponible en varios colores."
               sizes={['S', 'M', 'L', 'XL']}
-               scala={[0.9, 0.9, 0.9]}
+               scala={[36.9, 36.9, 36.9]}
+               position={[0, -48.5, 0]}
                stile={{ width: '200px', height: '200px' }}              
 
             />

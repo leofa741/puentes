@@ -15,6 +15,7 @@ interface Product3DCardProps {
   description: string;
   sizes: string[];
   scala : number[];
+  position : number[];
   stile : any;
 
 }
@@ -28,6 +29,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   description,
   sizes,
     scala,
+    position,
     stile
 }) => {
     console.log(scala);
@@ -71,7 +73,8 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
 
     return (
       <primitive object={gltf.scene} scale={[scala[0], scala[1], scala[2]]}
-       position={[0, -11.5, 0]} />
+       position={[position[0], position[1], position[2]]}
+       />
     );
   };
 

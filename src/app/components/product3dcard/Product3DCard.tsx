@@ -104,7 +104,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   <spotLight
     ref={spotLightRef}
     position={[2, 5, 5]}
-    intensity={lightOn ? 45 : 0} // Cambia la intensidad según el estado
+    intensity={lightOn ? 75 : 0} // Cambia la intensidad según el estado
     angle={2.4}
     penumbra={0.9}
     castShadow // Activa la sombra

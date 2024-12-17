@@ -101,7 +101,9 @@ export default function Ecommerce() {
               scala={[0.3, 0.3, 0.3]}
               position={[0, -11.5, 0]}
               stile={{ width: '300px', height: '500px' }}   
-            />
+             />
+
+             
           </div>
         </div>
         <div className="w-full sm:w-1/2 p-6">
@@ -123,7 +125,7 @@ export default function Ecommerce() {
                  /> */}
 
             <Product3DCard
-              modelUrl="/assets/img/primera_camisa.glb"
+              modelUrl="/assets/img/casco.glb"
               defaultColor=""
               colors={[
               { name: 'Blanco', hex: '#ffffff' },
@@ -138,8 +140,8 @@ export default function Ecommerce() {
               price={19.99}
               description="Chombas unisex de alta calidad, perfecta para protegerte del sol y complementar tu estilo. Disponible en varios colores."
               sizes={['S', 'M', 'L', 'XL']}
-              scala={[30.9, 30.9, 30.9]}
-              position={[0, -38.5, 0]}
+              scala={[42.3, 42.3, 42.3]}
+              position={[0, -24.5, 0]}
                stile={{ width: '200px', height: '200px' }}              
 
             />

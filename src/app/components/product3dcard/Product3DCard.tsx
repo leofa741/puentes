@@ -13,16 +13,16 @@ interface Color {
 }
 
 interface Product3DCardProps {
-  modelUrl: string; // URL del modelo 3D
-  defaultColor: string; // Color inicial en formato HEX
-  colors: Color[]; // Lista de colores disponibles
-  title: string; // Título del producto
-  price: number; // Precio del producto
-  description: string; // Descripción del producto
-  sizes: string[]; // Tallas disponibles
-  scala: number[]; // Escala del modelo [x, y, z]
-  position: number[]; // Posición del modelo [x, y, z]
-  stile : any;
+  modelUrl: string;
+  defaultColor: string;
+  colors: Color[];
+  title: string;
+  price: number;
+  description: string;
+  sizes: string[];
+  scala: number[];
+  position: number[];
+  stile: any;
 }
 
 const Product3DCard: React.FC<Product3DCardProps> = ({
@@ -40,6 +40,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   const [shirtColor, setShirtColor] = useState(new THREE.Color(defaultColor));
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
   const [lightOn, setLightOn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Estado de carga
 
   const spotLightRef = useRef<THREE.SpotLight | null>(null);
 
@@ -52,38 +53,29 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   };
 
   const MannequinWithShirt: React.FC<{ modelUrl: string; color: THREE.Color }> = ({ modelUrl, color }) => {
-    const gltf = useLoader(GLTFLoader, modelUrl) as GLTF;
-
-    const applyColorToMaterial = (child: THREE.Object3D) => {
-      if ((child as THREE.Mesh).isMesh) {
-        const mesh = child as THREE.Mesh;
-        if (!mesh.material) {
-          mesh.material = new THREE.MeshStandardMaterial();
-        }
-        if (Array.isArray(mesh.material)) {
-          mesh.material.forEach((material) => {
-            if (material instanceof THREE.MeshStandardMaterial) {
-              material.color = color;
-              material.needsUpdate = true;
-            }
-          });
-        } else if (mesh.material instanceof THREE.MeshStandardMaterial) {
-          mesh.material.color = color;
-          mesh.material.needsUpdate = true;
-        }
-      }
-    };
+    const gltf = useLoader(GLTFLoader, modelUrl, (loader) => {
+      loader.manager.onStart = () => setIsLoading(true);
+      loader.manager.onLoad = () => setIsLoading(false); // Oculta el texto cuando se carga
+    }) as GLTF;
 
     React.useEffect(() => {
-      gltf.scene.traverse(applyColorToMaterial);
+      gltf.scene.traverse((child) => {
+        if ((child as THREE.Mesh).isMesh) {
+          const mesh = child as THREE.Mesh;
+          if (mesh.material instanceof THREE.MeshStandardMaterial) {
+            mesh.material.color = color;
+            mesh.material.needsUpdate = true;
+          }
+        }
+      });
     }, [gltf, color]);
 
     return (
       <primitive
         object={gltf.scene}
-        scale={[scala[0], scala[1], scala[2]]}
-        position={[position[0], position[1], position[2]]}
-        castShadow 
+        scale={scala}
+        position={position}
+        castShadow
         receiveShadow
       />
     );
@@ -92,85 +84,38 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   return (
     <div className="product-card relative flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm:w-[95%] md:w-[90%]">
       <div className="product-view relative z-20 w-full h-72 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center rounded-t-lg">
-      <Canvas shadows camera={{ position: [0, 2, 45], fov: 40 }}>
-  {/* Configuración de neblina para profundidad */}
-  <fog attach="fog" args={["#e5e7eb", 40, 70]} />
-
-  {/* Luces generales */}
-  <ambientLight intensity={0.5} />
-  <directionalLight position={[5, 10, 5]} intensity={1} />
-
-  {/* Luz dinámica */}
-  <spotLight
-    ref={spotLightRef}
-    position={[2, 5, 5]}
-    intensity={lightOn ? 75 : 0} // Cambia la intensidad según el estado
-    angle={2.4}
-    penumbra={0.9}
-    castShadow // Activa la sombra
-    color="#ffff00" // Color de la luz
-
-    // Configuración de sombra
-
-    shadow-mapSize-width={5024}
-
-    shadow-mapSize-height={5024}
-
-    shadow-camera-near={10}
-
-    shadow-camera-far={100}
-
-    shadow-camera-top={10}
-
-    shadow-camera-right={10}
-
-    shadow-camera-bottom={-10}
-
-    shadow-camera-left={-10}
-
-    shadow-bias={-0.0001}
-
-    shadow-radius={4}
-
-
-   
-  />
-
-  {/* Luz trasera para profundidad */}
-  <spotLight
-    position={[0, 5, -5]}
-    intensity={0.8}
-    angle={1}
-    penumbra={0.5}
-    castShadow
-    color="#d1d5db"
-  />
-
-  {/* Luz superior */}
-  <spotLight
-    position={[0, 10, 0]}
-    intensity={0.5}
-    angle={0.6}
-    penumbra={0.3}
-    castShadow
-    color="#ffffff"
-  />
-
-  {/* Mannequin */}
-  <MannequinWithShirt modelUrl={modelUrl} color={shirtColor} />
-
-  {/* Orbit controls */}
-  <OrbitControls enableZoom={true} />
-</Canvas>
-
+        {isLoading && (
+          <div className="absolute z-30 text-gray-800 font-semibold text-lg">
+            Cargando...
+          </div>
+        )}
+        <Canvas
+          shadows
+          camera={{ position: [0, 2, 45], fov: 40 }}
+          onCreated={() => setIsLoading(false)} // Asegura que se actualice el estado
+        >
+          <fog attach="fog" args={["#e5e7eb", 40, 70]} />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 10, 5]} intensity={1} />
+          <spotLight
+            ref={spotLightRef}
+            position={[2, 5, 5]}
+            intensity={lightOn ? 75 : 0}
+            angle={2.4}
+            penumbra={0.9}
+            castShadow
+            color="#ffff00"
+          />
+          <MannequinWithShirt modelUrl={modelUrl} color={shirtColor} />
+          <OrbitControls enableZoom={true} />
+        </Canvas>
       </div>
 
       <div className="product-info z-30 relative text-center p-4 sm:p-6">
-      <LightSwitch
-  lightOn={lightOn}
-  toggleLight={() => setLightOn(!lightOn)} // Cambia el estado de la luz
-/>
-
+        <LightSwitch
+          lightOn={lightOn}
+          toggleLight={() => setLightOn(!lightOn)}
+        />
         <div className="mt-6">
           <strong className="block text-gray-700 mb-1">Colores:</strong>
           <div className="flex justify-center gap-2 flex-wrap mt-2">

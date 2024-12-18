@@ -5,17 +5,8 @@ import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
-import '@google/model-viewer';
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { src: string; ar: boolean; 'ar-modes': string; 'camera-controls': boolean; 'shadow-intensity': string; alt: string; style: React.CSSProperties };
-    }
-  }
-}
+import '@google/model-viewer'; // Importa el visor AR
 import LightSwitch from './LightSwitch';
-
 
 interface Color {
   name: string;
@@ -101,7 +92,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
         </Canvas>
       </div>
 
-      {/* Funcionalidad AR con model-viewer */}
+      {/* AR - Model Viewer integrado */}
       <div className="mt-4 w-full">
         <h3 className="text-center text-gray-800 font-bold mb-2">Visualiza en Realidad Aumentada</h3>
         <model-viewer

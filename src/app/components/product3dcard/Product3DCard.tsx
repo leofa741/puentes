@@ -74,6 +74,12 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
 
   return (
     <div className="product-card relative flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm:w-[95%] md:w-[90%]">
+      {/* AR - Model Viewer */}
+      <div className="mt-4 w-full">
+        <h3 className="text-center text-gray-800 font-bold mb-2">Visualiza en Realidad Aumentada</h3>
+        <ModelViewer modelUrl={modelUrl} />
+      </div>
+     
       {/* Renderizado 3D con Three.js */}
       <div className="product-view relative z-20 w-full h-72 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center rounded-t-lg">
         <Canvas shadows camera={{ position: [0, 2, 45], fov: 40 }}>
@@ -93,11 +99,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
         </Canvas>
       </div>
 
-      {/* AR - Model Viewer */}
-      <div className="mt-4 w-full">
-        <h3 className="text-center text-gray-800 font-bold mb-2">Visualiza en Realidad Aumentada</h3>
-        <ModelViewer modelUrl={modelUrl} />
-      </div>
+     
 
       {/* Información del producto */}
       <div className="product-info z-30 relative text-center p-4 sm:p-6">

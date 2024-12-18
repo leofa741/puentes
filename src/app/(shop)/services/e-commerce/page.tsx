@@ -100,7 +100,7 @@ export default function Ecommerce() {
               sizes={['S', 'M', 'L', 'XL']}
               scala={[0.3, 0.3, 0.3]}
               position={[0, -11.5, 0]}
-              stile={{ width: '300px', height: '500px' }}   
+              
              />
 
              
@@ -142,7 +142,7 @@ export default function Ecommerce() {
               sizes={['S', 'M', 'L', 'XL']}
               scala={[49.3, 49.3, 49.3]}
               position={[0, -0.5, 0]}
-               stile={{ width: '200px', height: '200px' }}              
+                         
 
             />
             </div>

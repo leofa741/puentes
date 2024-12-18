@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import dynamic from 'next/dynamic';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
+import dynamic from 'next/dynamic';
 import LightSwitch from './LightSwitch';
 
-// Importa model-viewer dinámicamente con tipos explícitos
+// Importa model-viewer dinámicamente
 const ModelViewer = dynamic(() => import('./ModelViewerClient'), {
   ssr: false,
-}) as React.ComponentType<{ modelUrl: string }>;
+}) as React.ComponentType<{ modelUrl: string , colors: { name: string; hex: string }[] , defaultColor: string }>;
 
 interface Color {
   name: string;
@@ -52,10 +52,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
     setSelectedSize(event.target.value);
 
   const MannequinWithShirt: React.FC<{ modelUrl: string; color: THREE.Color }> = ({ modelUrl, color }) => {
-    const gltf = useLoader(GLTFLoader, modelUrl, (loader) => {
-      loader.manager.onStart = () => {};
-      loader.manager.onLoad = () => {};
-    }) as GLTF;
+    const gltf = useLoader(GLTFLoader, modelUrl) as GLTF;
 
     React.useEffect(() => {
       gltf.scene.traverse((child) => {
@@ -76,11 +73,16 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
     <div className="product-card relative flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm:w-[95%] md:w-[90%]">
       {/* AR - Model Viewer */}
       <div className="mt-4 w-full">
-        <h3 className="text-center text-gray-800 font-bold mb-2">Visualiza en Realidad Aumentada</h3>
-        <ModelViewer modelUrl={modelUrl} />
-      </div>
-     
-      {/* Renderizado 3D con Three.js */}
+  <h3 className="text-center text-gray-800 font-bold mb-2">Visualiza en Realidad Aumentada</h3>
+  <ModelViewer
+    modelUrl={modelUrl}
+    colors={colors}
+    defaultColor={defaultColor}
+  />
+</div>
+
+
+      {/* Renderizado 3D con Three.js 
       <div className="product-view relative z-20 w-full h-72 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center rounded-t-lg">
         <Canvas shadows camera={{ position: [0, 2, 45], fov: 40 }}>
           <ambientLight intensity={0.5} />
@@ -97,13 +99,13 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
           <MannequinWithShirt modelUrl={modelUrl} color={shirtColor} />
           <OrbitControls enableZoom={true} />
         </Canvas>
-      </div>
+      </div> */}
 
-     
+   
 
       {/* Información del producto */}
       <div className="product-info z-30 relative text-center p-4 sm:p-6">
-        <LightSwitch lightOn={lightOn} toggleLight={() => setLightOn(!lightOn)} />
+        {/* <LightSwitch lightOn={lightOn} toggleLight={() => setLightOn(!lightOn)} /> */}
         <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{title}</h2>
         <p className="text-gray-600 mt-2">{description}</p>
         <p className="text-lg font-bold text-gray-800 mt-4">
@@ -126,7 +128,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
           </select>
         </div>
 
-        {/* Selector de Colores */}
+        {/* Selector de Colores 
         <div className="mt-6">
           <strong className="block text-gray-700 mb-1">Colores:</strong>
           <div className="flex justify-center gap-2 flex-wrap mt-2">
@@ -142,7 +144,7 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
               />
             ))}
           </div>
-        </div>
+        </div>*/}
       </div>
     </div>
   );

@@ -1,12 +1,21 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
-import '@google/model-viewer'; // Importa el visor AR
 import LightSwitch from './LightSwitch';
+
+
+
+
+// Importa model-viewer dinámicamente con tipos explícitos
+const ModelViewer = dynamic(() => import('./ModelViewerClient'), {
+  ssr: false,
+}) as React.ComponentType<{ modelUrl: string }>;
+
 
 interface Color {
   name: string;
@@ -92,39 +101,15 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
         </Canvas>
       </div>
 
-      {/* AR - Model Viewer integrado */}
+      {/* AR - Model Viewer */}
       <div className="mt-4 w-full">
         <h3 className="text-center text-gray-800 font-bold mb-2">Visualiza en Realidad Aumentada</h3>
-        <model-viewer
-          src={modelUrl}
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          camera-controls
-          shadow-intensity="1"
-          alt="Visualización de producto en AR"
-          style={{ width: '100%', height: '400px' }}
-        ></model-viewer>
+        <ModelViewer modelUrl={modelUrl} />
       </div>
 
       {/* Información del producto */}
       <div className="product-info z-30 relative text-center p-4 sm:p-6">
         <LightSwitch lightOn={lightOn} toggleLight={() => setLightOn(!lightOn)} />
-        <div className="mt-6">
-          <strong className="block text-gray-700 mb-1">Colores:</strong>
-          <div className="flex justify-center gap-2 mt-2">
-            {colors.map((color) => (
-              <button
-                key={color.name}
-                onClick={() => handleColorChange(color.hex)}
-                className={`w-8 h-8 rounded-full border-2 ${
-                  color.hex === shirtColor.getStyle() ? 'border-black' : 'border-transparent'
-                }`}
-                style={{ backgroundColor: color.hex }}
-                title={color.name}
-              />
-            ))}
-          </div>
-        </div>
         <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{title}</h2>
         <p className="text-gray-600 mt-2">{description}</p>
         <p className="text-lg font-bold text-gray-800 mt-4">

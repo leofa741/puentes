@@ -8,14 +8,10 @@ import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
 import LightSwitch from './LightSwitch';
 
-
-
-
 // Importa model-viewer dinámicamente con tipos explícitos
 const ModelViewer = dynamic(() => import('./ModelViewerClient'), {
   ssr: false,
 }) as React.ComponentType<{ modelUrl: string }>;
-
 
 interface Color {
   name: string;
@@ -48,7 +44,6 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
   const [shirtColor, setShirtColor] = useState(new THREE.Color(defaultColor));
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
   const [lightOn, setLightOn] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const spotLightRef = useRef<THREE.SpotLight | null>(null);
 
@@ -58,8 +53,8 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
 
   const MannequinWithShirt: React.FC<{ modelUrl: string; color: THREE.Color }> = ({ modelUrl, color }) => {
     const gltf = useLoader(GLTFLoader, modelUrl, (loader) => {
-      loader.manager.onStart = () => setIsLoading(true);
-      loader.manager.onLoad = () => setIsLoading(false);
+      loader.manager.onStart = () => {};
+      loader.manager.onLoad = () => {};
     }) as GLTF;
 
     React.useEffect(() => {
@@ -81,9 +76,6 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
     <div className="product-card relative flex flex-col items-center w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm:w-[95%] md:w-[90%]">
       {/* Renderizado 3D con Three.js */}
       <div className="product-view relative z-20 w-full h-72 sm:h-80 md:h-96 bg-gray-100 flex items-center justify-center rounded-t-lg">
-        {/* {isLoading && (
-          <div className="absolute z-30 text-gray-800 font-semibold text-lg">Cargando...</div>
-        )} */}
         <Canvas shadows camera={{ position: [0, 2, 45], fov: 40 }}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[5, 10, 5]} intensity={1} />
@@ -115,6 +107,8 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
         <p className="text-lg font-bold text-gray-800 mt-4">
           Precio: <span className="text-green-600">${price.toFixed(2)}</span>
         </p>
+
+        {/* Selector de Tallas */}
         <div className="mt-4">
           <strong className="block text-gray-700 mb-1">Tallas:</strong>
           <select
@@ -128,6 +122,24 @@ const Product3DCard: React.FC<Product3DCardProps> = ({
               </option>
             ))}
           </select>
+        </div>
+
+        {/* Selector de Colores */}
+        <div className="mt-6">
+          <strong className="block text-gray-700 mb-1">Colores:</strong>
+          <div className="flex justify-center gap-2 flex-wrap mt-2">
+            {colors.map((color) => (
+              <button
+                key={color.name}
+                onClick={() => handleColorChange(color.hex)}
+                className={`w-8 h-8 rounded-full border-2 ${
+                  color.hex === shirtColor.getStyle() ? 'border-black' : 'border-transparent'
+                }`}
+                style={{ backgroundColor: color.hex }}
+                title={color.name}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

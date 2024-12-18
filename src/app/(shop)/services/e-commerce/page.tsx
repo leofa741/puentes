@@ -136,20 +136,18 @@ export default function Ecommerce() {
               { name: 'Amarillo', hex: '#ffff00' },
               { name: 'Rosa', hex: '#ff00ff' }
               ]}
-              title="Chombas"
+              title="Zapatillas"
               price={19.99}
-              description="Chombas unisex de alta calidad, perfecta para protegerte del sol y complementar tu estilo. Disponible en varios colores."
+              description="Zapatillas cómodas y elegantes para cualquier ocasión."
               sizes={['S', 'M', 'L', 'XL']}
               scala={[49.3, 49.3, 49.3]}
               position={[0, -0.5, 0]}
-                         
-
             />
             </div>
             
-          <h2 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
+            <h2 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
             Implementación de nuestro E-commerce
-          </h2>
+            </h2>
 
         <p className="text-gray-600 mb-8">
           La implementación de “Puented Digitales” consta de un Portal Web de eCommerce

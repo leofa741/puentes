@@ -1,10 +1,9 @@
-
 @-webkit-keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 10));
+    transform: translateX(calc(-250px * 14)); /* Ajusta al número real de diapositivas */
   }
 }
 
@@ -13,9 +12,12 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 10));
+    transform: translateX(calc(-250px * 14)); /* Ajusta al número real de diapositivas */
   }
 }
+
+
+
 .slider {
   background: white;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.125);
@@ -42,11 +44,13 @@
   left: 0;
   top: 0;
 }
+
+
 .slider .slide-track {
   -webkit-animation: scroll 40s linear infinite;
-          animation: scroll 40s linear infinite;
+  animation: scroll 40s linear infinite;
   display: flex;
-  width: calc(250px * 14);
+  width: calc(250px * 14); /* Ajusta el ancho total */
 }
 .slider .slide {
     height: 80px;

@@ -4,6 +4,7 @@ import './carrousel.css';
 import './scrol.css';
 import { Carousel, Typography, Button } from '@material-tailwind/react';
 
+
 export const Carrousel = () => {
   return (
     <>
@@ -40,6 +41,9 @@ export const Carrousel = () => {
                 variant="h1"
                 color="white"
                 className="mt-32 text-lg xs:text-xl sm:text-xl md:text-4xl lg:text-5xl"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 PUENTES DIGITALES
               </Typography>
@@ -47,6 +51,9 @@ export const Carrousel = () => {
                 variant="lead"
                 color="white"
                 className="text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 IMPULSO DIGITAL PARA TU NEGOCIO
               </Typography>
@@ -77,6 +84,9 @@ export const Carrousel = () => {
                 variant="h1"
                 color="white"
                 className="mt-32 text-lg xs:text-xl sm:text-xl md:text-4xl lg:text-5xl"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 PUENTES DIGITALES
               </Typography>
@@ -84,6 +94,9 @@ export const Carrousel = () => {
                 variant="lead"
                 color="white"
                 className="text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 IMPULSO DIGITAL PARA TU NEGOCIO
               </Typography>
@@ -113,6 +126,9 @@ export const Carrousel = () => {
                 variant="h1"
                 color="white"
                 className="mb-2 text-lg xs:text-xl sm:text-xl md:text-4xl lg:text-5xl"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 ÚNETE A PUENTES DIGITALES
               </Typography>
@@ -120,6 +136,9 @@ export const Carrousel = () => {
                 variant="lead"
                 color="white"
                 className="mb-12 text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 AYUDAMOS A LAS EMPRESAS A INNOVAR
               </Typography>
@@ -140,6 +159,9 @@ export const Carrousel = () => {
                 variant="h1"
                 color="white"
                 className="mb-2 text-lg xs:text-xl sm:text-xl md:text-4xl lg:text-5xl"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 INNOVACIÓN Y TECNOLOGÍA AL ALCANCE DE TU MANO
               </Typography>
@@ -147,6 +169,9 @@ export const Carrousel = () => {
                 variant="lead"
                 color="white"
                 className="mb-12 text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 AYUDAMOS A LAS EMPRESAS A INNOVAR
               </Typography>
@@ -166,6 +191,9 @@ export const Carrousel = () => {
                 variant="h1"
                 color="white"
                 className="mb-2 text-lg xs:text-xl sm:text-xl md:text-4xl lg:text-5xl"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 UNLEASHING INNOVATION
               </Typography>
@@ -173,6 +201,9 @@ export const Carrousel = () => {
                 variant="lead"
                 color="white"
                 className="mb-12 text-sm xs:text-xl sm:text-xl md:text-2xl lg:text-3xl opacity-80"
+                onPointerEnterCapture={() => {}} // Propiedad requerida
+                onPointerLeaveCapture={() => {}} // Propiedad requerida
+                placeholder="" // Opcional, si la librería lo pide
               >
                 Brindamos soluciones a emprendedores, pymes y empresas de cualquier tamaño.
               </Typography>

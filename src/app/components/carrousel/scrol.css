@@ -32,6 +32,16 @@
   animation: scroll-vertical 1.5s infinite;
 }
 
+.mouse-wheel:nth-child(2) {
+  top: 16px; /* Ajustado para encajar en tamaños más pequeños */
+}
+
+.mouse-wheel:nth-child(3) {
+  top: 24px; /* Ajustado para encajar en tamaños más pequeños */
+}
+
+
+
 @keyframes scroll-vertical {
   0% {
     opacity: 1;

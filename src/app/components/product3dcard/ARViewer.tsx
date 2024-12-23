@@ -31,7 +31,7 @@ const ARViewer: React.FC<ARViewerProps> = ({ modelUrl, scale = [1, 1, 1], positi
           aframeScript.async = true;
           aframeScript.onload = () => {
             const arScript = document.createElement('script');
-            arScript.src = 'https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.min.js';
+            arScript.src = 'https://rawcdn.githack.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js';
             arScript.async = true;
             arScript.onload = () => setIsARJsLoaded(true);
             document.body.appendChild(arScript);

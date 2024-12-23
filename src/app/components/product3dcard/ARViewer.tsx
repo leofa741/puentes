@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
 
 declare global {
   namespace JSX {
@@ -13,28 +12,36 @@ declare global {
   }
 }
 
-// Define las props del componente
 interface ARViewerProps {
   modelUrl: string;
   scale?: [number, number, number];
   position?: [number, number, number];
 }
 
-// Componente que se cargará dinámicamente
-const ARViewer: React.FC<ARViewerProps> = ({
-  modelUrl,
-  scale = [1, 1, 1],
-  position = [0, 0, 0],
-}) => {
+const ARViewer: React.FC<ARViewerProps> = ({ modelUrl, scale = [1, 1, 1], position = [0, 0, 0] }) => {
   const [isARSupported, setIsARSupported] = useState(false);
+  const [isARJsLoaded, setIsARJsLoaded] = useState(false);
 
+  // Cargar AR.js dinámicamente
   useEffect(() => {
+    const loadARJs = async () => {
+      if (!isARJsLoaded) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js@3.3.2/aframe/build/aframe-ar.min.js';
+        script.async = true;
+        script.onload = () => setIsARJsLoaded(true);
+        document.body.appendChild(script);
+      }
+    };
+
+    loadARJs();
+
     if (navigator.xr) {
       navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
         setIsARSupported(supported);
       });
     }
-  }, []);
+  }, [isARJsLoaded]);
 
   if (!isARSupported) {
     return (
@@ -42,6 +49,10 @@ const ARViewer: React.FC<ARViewerProps> = ({
         Tu dispositivo no soporta AR. Intenta desde un dispositivo compatible.
       </p>
     );
+  }
+
+  if (!isARJsLoaded) {
+    return <p className="text-center text-gray-500">Cargando AR.js...</p>;
   }
 
   return (
@@ -59,6 +70,4 @@ const ARViewer: React.FC<ARViewerProps> = ({
   );
 };
 
-const ARViewerDynamic = dynamic(() => Promise.resolve(ARViewer), { ssr: false });
-
-export default ARViewerDynamic;
+export default ARViewer;

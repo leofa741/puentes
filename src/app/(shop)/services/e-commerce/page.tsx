@@ -1,6 +1,7 @@
 import { BanerServicesContact, Title } from '@/app/components'
 import { BannerHeader } from '@/app/components/bannerheader/BannerHeader'
 import MannequinScene from '@/app/components/ejemplothree/Image3DEffect'
+import ARViewer from '@/app/components/product3dcard/ARViewer'
 import Product3DCard from '@/app/components/product3dcard/Product3DCard'
 import { ImagenCard } from '@/app/components/services/ImagenCard'
 import { Metadata } from 'next'
@@ -83,6 +84,7 @@ export default function Ecommerce() {
                  /> */}
 
             <Product3DCard
+
               modelUrl="/assets/img/remera_modelo_3d_-_creditos_a_quien_corresponda.glb"
               defaultColor="#ffffff"
               colors={[
@@ -143,6 +145,13 @@ export default function Ecommerce() {
               scala={[49.3, 49.3, 49.3]}
               position={[0, -0.5, 0]}
             />
+
+              {/* Carga de tu producto */}
+        <ARViewer
+          modelUrl="/assets/models/remera_modelo_3d_-_creditos_a_quien_corresponda.glb"
+          scale={[0.5, 0.5, 0.5]}
+          position={[0, 0, 0]}
+        />
             </div>
             
             <h2 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">

@@ -29,7 +29,9 @@ export default function RootLayout({children,}: {  children: React.ReactNode}) {
         {/* <meta property="og:image" content="/ruta/a/imagen.jpg" /> */}
         <meta property="og:url" content="https://www.puentesdigitales.com.ar/" />
         <meta property="og:type" content="website" />  
-           
+              {/* Incluir AR.js */}
+        <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
+     
    
         </head>
       <body className={montserrat.className}>

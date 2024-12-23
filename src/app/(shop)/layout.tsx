@@ -4,6 +4,7 @@ import { Footer, NavbarDark, PartNer, Sidebar, Social, } from '../components';
 import '../globals.css'
 
 import head from 'next/head';
+import Chatbot from '../components/chatbot/Chatbot';
 
 
 export default function ShopLayout({
@@ -37,6 +38,7 @@ export default function ShopLayout({
       <br />
       <PartNer />
       <Footer />
+      <Chatbot />
       </AuthProvider>
     </main>
   );

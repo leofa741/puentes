@@ -14,62 +14,69 @@ declare global {
 
 interface ARViewerProps {
   modelUrl: string;
+  scale?: [number, number, number];
+  position?: [number, number, number];
 }
 
-const ARViewer: React.FC<ARViewerProps> = ({ modelUrl }) => {
+const ARViewer: React.FC<ARViewerProps> = ({ modelUrl, scale = [1, 1, 1], position = [0, 0, 0] }) => {
+  const [isARSupported, setIsARSupported] = useState(false);
   const [isARJsLoaded, setIsARJsLoaded] = useState(false);
-  const [deviceWidth, setDeviceWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleResize = () => setDeviceWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-
     const loadScripts = async () => {
-      if (!document.querySelector('script[src="https://aframe.io/releases/1.2.0/aframe.min.js"]')) {
-        const aframeScript = document.createElement('script');
-        aframeScript.src = 'https://aframe.io/releases/1.2.0/aframe.min.js';
-        aframeScript.async = true;
-        aframeScript.onload = () => {
-          const arScript = document.createElement('script');
-          arScript.src = 'https://rawcdn.githack.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js';
-          arScript.async = true;
-          arScript.onload = () => setIsARJsLoaded(true);
-          document.body.appendChild(arScript);
-        };
-        document.body.appendChild(aframeScript);
+      try {
+        if (!document.querySelector('script[src="https://aframe.io/releases/1.2.0/aframe.min.js"]')) {
+          const aframeScript = document.createElement('script');
+          aframeScript.src = 'https://aframe.io/releases/1.2.0/aframe.min.js';
+          aframeScript.async = true;
+          aframeScript.onload = () => {
+            const arScript = document.createElement('script');
+            arScript.src = 'https://rawcdn.githack.com/jeromeetienne/ar.js/1.7.2/aframe/build/aframe-ar.min.js';
+            arScript.async = true;
+            arScript.onload = () => setIsARJsLoaded(true);
+            document.body.appendChild(arScript);
+          };
+          document.body.appendChild(aframeScript);
+        }
+      } catch (error) {
+        console.error('Error loading AR.js:', error);
       }
     };
 
     loadScripts();
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    if (navigator.xr) {
+      navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
+        setIsARSupported(supported);
+      });
+    }
   }, []);
 
   if (!isARJsLoaded) {
     return <p className="text-center text-gray-500">Cargando AR.js...</p>;
   }
 
-  const scale = deviceWidth < 768 ? [0.1, 0.1, 0.1] : [0.2, 0.2, 0.2];
-  const position = [0, 0.5, 0];
+  if (!isARSupported) {
+    return (
+      <p className="text-center text-red-600">
+        Tu dispositivo no soporta AR. Intenta desde un dispositivo compatible.
+      </p>
+    );
+  }
 
   return (
     <div
       style={{
-        width: '100vw',
-        height: '100vh',
-        position: 'relative',
-        overflow: 'hidden',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'black',
+        width: '100vw', // Ocupa el ancho completo de la pantalla
+        height: '100vh', // Ocupa el alto completo de la pantalla
+        position: 'relative', // Para asegurar un posicionamiento relativo
+        overflow: 'hidden', // Evita desbordamientos
+        backgroundColor: 'black', // Fondo negro para mejor visualización
       }}
     >
       <a-scene
         embedded
-        arjs="sourceType: webcam; debugUIEnabled: false;"
+        arjs="sourceType: webcam; debugUIEnabled: false;" // Configuración para móviles
         style={{ width: '100%', height: '100%' }}
       >
         <a-marker-camera preset="hiro"></a-marker-camera>

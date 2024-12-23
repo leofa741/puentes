@@ -67,11 +67,14 @@ const ARViewer: React.FC<ARViewerProps> = ({ modelUrl, scale = [1, 1, 1], positi
   return (
     <div
       style={{
-        width: '100vw', // Ocupa el ancho completo de la pantalla
-        height: '100vh', // Ocupa el alto completo de la pantalla
-        position: 'relative', // Para asegurar un posicionamiento relativo
-        overflow: 'hidden', // Evita desbordamientos
-        backgroundColor: 'black', // Fondo negro para mejor visualización
+        width: '100vw',
+        height: '100vh',
+        position: 'relative',
+        overflow: 'hidden',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'black',
       }}
     >
       <a-scene

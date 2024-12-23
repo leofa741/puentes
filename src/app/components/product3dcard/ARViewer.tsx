@@ -61,26 +61,29 @@ const ARViewer: React.FC<ARViewerProps> = ({ modelUrl }) => {
   return (
     <div
       style={{
-        width: '100vw',
-        height: '100vh',
-        position: 'relative',
-        overflow: 'hidden',
+        width: '100vw', // Ocupa todo el ancho visible
+        height: '100vh', // Ocupa todo el alto visible
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'black',
+        justifyContent: 'center', // Centra horizontalmente
+        alignItems: 'center', // Centra verticalmente
+        overflow: 'hidden', // Evita desbordes
+        position: 'relative',
+        backgroundColor: 'black', // Contraste visual
       }}
     >
       <a-scene
         embedded
         arjs="sourceType: webcam; debugUIEnabled: false;"
-        style={{ width: '100%', height: '100%' }}
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
       >
-        <a-marker-camera preset="hiro" style={{ position: 'absolute', top: 0, left: 0 }}></a-marker-camera>
+        <a-marker-camera preset="hiro"></a-marker-camera>
         <a-gltf-model
           src={modelUrl}
           position="0 0 0"
-          scale="0.5 0.5 0.5"
+          scale="0.1 0.1 0.1"
         ></a-gltf-model>
       </a-scene>
     </div>

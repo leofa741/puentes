@@ -61,11 +61,12 @@ const ARViewer: React.FC<ARViewerProps> = ({ modelUrl }) => {
   return (
     <div
       style={{
-        width: '100vw',
-        height: '100vh',
-        position: 'absolute',
-        top: 0,
-        left: 0,
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         overflow: 'hidden',
         backgroundColor: 'black',
       }}
@@ -78,8 +79,8 @@ const ARViewer: React.FC<ARViewerProps> = ({ modelUrl }) => {
         <a-marker-camera preset="hiro"></a-marker-camera>
         <a-gltf-model
           src={modelUrl}
-          position="0 0.1 0"
-          scale="0.1 0.1 0.1"
+          position="0 0 0"
+          scale="0.5 0.5 0.5"
         ></a-gltf-model>
       </a-scene>
     </div>

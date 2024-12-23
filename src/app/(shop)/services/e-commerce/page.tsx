@@ -147,11 +147,8 @@ export default function Ecommerce() {
             />
 
               {/* Carga de tu producto */}
-        <ARViewer
-          modelUrl="/assets/models/remera_modelo_3d_-_creditos_a_quien_corresponda.glb"
-          //scale={[0.3, 0.3, 0.3]}
-          //position={[0, 0.5, 0]}
-        />
+              <ARViewer modelUrl="/assets/models/remera_modelo_3d_-_creditos_a_quien_corresponda.glb" />
+
             </div>
             
             <h2 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">

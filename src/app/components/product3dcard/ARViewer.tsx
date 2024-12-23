@@ -61,13 +61,13 @@ const ARViewer: React.FC<ARViewerProps> = ({ modelUrl }) => {
   return (
     <div
       style={{
-        width: '100%',
-        height: '100%',
+        width: '100vw',
+        height: '100vh',
         position: 'relative',
+        overflow: 'hidden',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        overflow: 'hidden',
         backgroundColor: 'black',
       }}
     >
@@ -76,7 +76,7 @@ const ARViewer: React.FC<ARViewerProps> = ({ modelUrl }) => {
         arjs="sourceType: webcam; debugUIEnabled: false;"
         style={{ width: '100%', height: '100%' }}
       >
-        <a-marker-camera preset="hiro"></a-marker-camera>
+        <a-marker-camera preset="hiro" style={{ position: 'absolute', top: 0, left: 0 }}></a-marker-camera>
         <a-gltf-model
           src={modelUrl}
           position="0 0 0"

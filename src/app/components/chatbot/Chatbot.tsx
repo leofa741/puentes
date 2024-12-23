@@ -11,7 +11,7 @@ type ChatMessage = {
 };
 
 const Chatbot: React.FC = () => {
-    const url = 'https://chatbotsdialog.vercel.app'; // URL del chatbot
+   
     const [isOpen, setIsOpen] = useState(false);
     const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
     const [message, setMessage] = useState('');
@@ -49,6 +49,7 @@ const Chatbot: React.FC = () => {
     };
 
     const sendMessage = async () => {
+        const url = 'https://chatbotsdialog.vercel.app'; // URL del chatbot
         if (!message.trim()) return;
 
         const userMessage: ChatMessage = { sender: 'user', text: message };

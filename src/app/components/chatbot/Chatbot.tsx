@@ -48,6 +48,7 @@ const Chatbot: React.FC = () => {
     };
 
     const sendMessage = async () => {
+        const url = 'https://chatbotsdialog.vercel.app'; // URL de la API del chatbot
         if (!message.trim()) return;
 
         const userMessage: ChatMessage = { sender: 'user', text: message };
@@ -61,7 +62,7 @@ const Chatbot: React.FC = () => {
         if (typingTimeout) clearTimeout(typingTimeout);
 
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/df_query`, {
+            const res = await fetch(`${url}/api/chatbot`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: message }),

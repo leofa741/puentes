@@ -13,7 +13,8 @@ const ModelViewer = dynamic(() => import('./ModelViewerClient'), {
   ssr: false,
 }) as React.ComponentType<{ modelUrl: string , colors: { name: string; hex: string }[] , defaultColor: string }>;
 
-interface Color {
+interface Color { 
+  
   name: string;
   hex: string;
 }

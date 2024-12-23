@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FaRobot } from 'react-icons/fa';
+import { FaRobot, FaTrash } from 'react-icons/fa';
 import styles from './Chatbot.module.css';
 
 // Definimos los tipos para los mensajes del chat
@@ -11,7 +11,6 @@ type ChatMessage = {
 };
 
 const Chatbot: React.FC = () => {
-   
     const [isOpen, setIsOpen] = useState(false);
     const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
     const [message, setMessage] = useState('');
@@ -88,6 +87,10 @@ const Chatbot: React.FC = () => {
         setMessage('');
     };
 
+    const clearChat = () => {
+        setChatHistory([{ sender: 'bot', text: 'Hola, ¿en qué podemos asesorarte hoy?' }]);
+    };
+
     return (
         <div className={`${styles.chatbot} ${isOpen ? styles.open : ''}`}>
             <div className={styles.header} onClick={toggleChat}>
@@ -102,6 +105,11 @@ const Chatbot: React.FC = () => {
             {isOpen && (
                 <div className={styles.chatWindow}>
                     <div className={styles.chatHistory}>
+                        <div className={styles.clearChat}>
+                            <button onClick={clearChat} title="Vaciar chat">
+                                <FaTrash size={16} />
+                            </button>
+                        </div>
                         {chatHistory.map((msg, index) => (
                             <div
                                 key={index}

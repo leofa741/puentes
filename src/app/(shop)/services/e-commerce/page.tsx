@@ -126,7 +126,7 @@ export default function Ecommerce() {
            
                  /> */}
 
-        {/*    <Product3DCard
+            <Product3DCard
               modelUrl="/assets/img/zapatilla_demo.glb"
               defaultColor=""
               colors={[
@@ -146,16 +146,13 @@ export default function Ecommerce() {
               position={[0, -0.5, 0]}
             />
 
-               Carga de tu producto */}
-
-              
-            <ARViewer
+              {/* Carga de tu producto */}
+        <ARViewer
           modelUrl="/assets/models/remera_modelo_3d_-_creditos_a_quien_corresponda.glb"
-       
+          //scale={[0.3, 0.3, 0.3]}
+          //position={[0, 0.5, 0]}
         />
-      
             </div>
-
             
             <h2 className="w-full my-2 text-3xl font-bold leading-tight text-center text-gray-800">
             Implementación de nuestro E-commerce

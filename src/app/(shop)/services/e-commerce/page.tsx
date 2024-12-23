@@ -146,8 +146,8 @@ export default function Ecommerce() {
               position={[0, -0.5, 0]}
             />
 
-              {/* Carga de tu producto */}
-              <ARViewer modelUrl="/assets/models/remera_modelo_3d_-_creditos_a_quien_corresponda.glb" />
+              {/* Carga de tu producto 
+              <ARViewer modelUrl="/assets/models/remera_modelo_3d_-_creditos_a_quien_corresponda.glb" />*/}
 
             </div>
             

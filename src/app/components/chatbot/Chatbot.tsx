@@ -50,43 +50,47 @@ const Chatbot: React.FC = () => {
     const sendMessage = async () => {
         const url = 'https://chatbotsdialog.vercel.app'; // URL del chatbot
         if (!message.trim()) return;
-
+    
         const userMessage: ChatMessage = { sender: 'user', text: message };
         setChatHistory((prev) => [...prev, userMessage]);
         setIsTyping(false); // Ocultar "Escribiendo..." al enviar el mensaje
-
+    
         // Mostrar "Pensando..."
         setIsThinking(true);
-
+    
         // Limpiar el temporizador de "Escribiendo..."
         if (typingTimeout) clearTimeout(typingTimeout);
-
+    
         try {
             const res = await fetch(`${url}/api/df_query`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text: message }),
             });
-
+    
             const data = await res.json();
-
+    
+            // Verificar si la respuesta es válida
+            const botMessageText =
+                data.responseText?.trim() || 'No encontré una respuesta a tu consulta. Por favor, contáctanos para más información.';
+    
             // Agregar respuesta del bot al historial
-            const botMessage: ChatMessage = { sender: 'bot', text: data.responseText };
+            const botMessage: ChatMessage = { sender: 'bot', text: botMessageText };
             setChatHistory((prev) => [...prev, botMessage]);
         } catch (error) {
             console.error('Error sending message:', error);
             setChatHistory((prev) => [
                 ...prev,
-                { sender: 'bot', text: 'Hubo un error procesando tu mensaje.' }
+                { sender: 'bot', text: 'Hubo un error procesando tu mensaje. Por favor, inténtalo más tarde o contáctanos.' }
             ]);
         } finally {
             // Ocultar "Pensando..." cuando el bot responde
             setIsThinking(false);
         }
-
+    
         setMessage('');
     };
-
+    
     const clearChat = () => {
         setChatHistory([{ sender: 'bot', text: 'Hola, ¿en qué podemos asesorarte hoy?' }]);
     };
